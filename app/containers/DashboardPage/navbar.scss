@@ -1,0 +1,255 @@
+
+.navbar {
+  box-shadow: 0 1px 0 rgba(32,34,37,.7), 0 2px 0 rgba(0,0,0,.06);
+}
+
+
+.sidebar {
+    font-size: .9rem;
+    min-height: calc(100vh - 65px);
+    background: #222437;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    padding: 0;
+    width: 234px;
+    z-index: 11;
+    transition: width 0.25s ease, background 0.25s ease;
+    -webkit-transition: width 0.25s ease, background 0.25s ease;
+    -moz-transition: width 0.25s ease, background 0.25s ease;
+    -ms-transition: width 0.25s ease, background 0.25s ease;
+    border-right: 1px solid rgba(255,255,255,.07);
+
+    .row-item:hover {
+      //background: var(--side-menu-hover-background);
+      border-radius: 5px;
+    }
+}
+
+.nav-item {
+  color: var(--side-menu-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #FFF;
+}
+
+
+.form-control {
+  box-shadow: none !important;
+}
+
+
+
+.fixed-top {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 1031;
+}
+
+.wrapper {
+
+  width: 100%;
+}
+
+.square {
+  width: 50px;
+  height: 50px;
+  background: red;
+}
+
+
+main {
+  margin-left: 190px;
+  margin: 130px 50px 30px 190px;
+
+
+}
+
+.col-xs-center {
+  padding: 10px 15px;
+  text-align: left;
+}
+
+
+main .container-fluid {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.admin-sidebar .menu .menu-item {
+    position: relative;
+    display: block;
+    clear: both;
+    width: 100%;
+    list-style: none;
+    transition: opacity ease .2s;
+}
+
+.menu-item {
+
+    a {
+      margin-bottom: 0px;
+    }
+}
+
+.main-menu {
+  border: var(--card-border);
+  height: 100%;
+  background: var(--side-menu-background);
+  z-index: 2;
+  position: fixed;
+  transition: transform .3s;
+  //padding-top: 2px;
+  left: 0;
+  //border-right: 1px solid var(--side-menu-background);
+  width: inherit;
+  box-shadow: 0 3px 30px rgba(0,0,0,.1), 0 3px 20px rgba(0,0,0,.1);
+  overflow: auto;
+}
+#content {
+  width: calc(100% - 250px);
+
+  min-height: 100vh;
+  transition: all 0.3s;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.menu-arrow {
+  i {
+    line-height: 21px !important;
+    font-size: 18px !important;
+    margin-left: 0.25rem !important;
+  }
+}
+
+.sub-menu {
+  border-top: 1px solid rgba(255,255,255,.07);
+  border-bottom: 1px solid rgba(255,255,255,.07);
+  background: #36393F;
+  padding: 0;
+  padding-left: 10px;
+  list-style: none;
+  display: none;
+  margin-top: 0.5rem;
+  background: var(--side-menu-subMenu-background);
+
+  .menu-item > a > .row {
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+  }
+
+}
+
+.sub-menu-opened {
+  display: block;
+}
+
+.sidebar-fixed .main-menu ul {
+
+  padding-left: 0;
+  list-style: none;
+
+  li {
+
+    // display: inline;
+    &.active {
+      background: var(--side-menu-hover-background);
+    }
+
+    &:hover {
+      background: var(--side-menu-hover-background);
+      cursor: pointer;
+    }
+
+    &.after {
+
+    }
+
+    a {
+      font-style: normal;
+      text-decoration: none;
+      color: var(--side-menu-color);
+      text-align: center;
+      display: block;
+      padding: 10px 0px 10px 0px;
+
+
+
+      .row {
+
+        margin: 0;
+      }
+    }
+  }
+
+
+
+
+  li:after {
+    padding: 1em;
+    background: red;
+  }
+
+  i {
+    font-size: 32px;
+    line-height: 42px;
+  }
+
+
+
+  .menu-icon {
+    position: relative;
+    display: table-cell;
+    width: 40px;
+    height: 40px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: .25rem;
+    background: rgba(255,255,255,.22);
+
+    i {
+      font-size: 18px;
+      color: #FFF;
+    }
+
+    .icon-badge {
+      font-size: 10px;
+      position: absolute;
+      top: -7px;
+      right: -6px;
+      padding: .3em .6em;
+    }
+  }
+}
+
+.collapse-topMenu {
+  a {
+    cursor: pointer;
+  }
+  i {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+  }
+}
+
+
+
+
+
+
+
+
+.separator {
+  border-bottom: 1px solid #d7d7d7;
+}

@@ -1,0 +1,269 @@
+
+.css-lj0up9, [data-css-lj0up9] {
+  background: #00c77b;
+  border-radius: 5px;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+
+.menu-item-element {
+  display: flex;
+}
+
+.btn-primary.focus, .btn-primary:focus {
+  outline:none;
+  box-shadow: none !important;
+}
+
+.opacity-75 {
+    opacity: .75;
+}
+
+
+
+.p-b-90 {
+    padding-bottom: 90px;
+}
+.p-t-40 {
+    padding-top: 40px;
+}
+.text-white {
+    color: #fff!important;
+}
+
+
+.theme-section {
+  border: var(--subcard-border);
+  border-radius: .25rem;
+  background-color: var(--subcard-background);
+  box-shadow: var(--subcard-box-shadow);
+  color: var(--subcard-color);
+
+  .row {
+    .col-sm-4 {
+      padding-right: 0px;
+      padding-left: 0px;
+
+      .color {
+        height: 10rem;
+      }
+    }
+  }
+
+  .col-sm-12 {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+
+  .theme-name {
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: .5rem;
+    margin-top: .5rem;
+    font-family: 'Jost*',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  }
+}
+
+.theme-section.col-sm-4 {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+
+
+.section {
+  h1, h2, h3, h4, h5 {
+    color: var(--section-h5);
+  }
+}
+.content-wrapper {
+
+    width: 100%;
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+    //background: $dashboard-body;
+
+    .row {
+      margin: 0;
+    }
+
+    h1 {
+      font-weight: 500;
+      line-height: 1.2;
+      margin-bottom: .5rem;
+      color: #FFF;
+    }
+}
+
+
+body {
+  background: var(--body-background) !important;
+  font-family: sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+a {
+  font-family: 'Jost*',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: .5rem;
+  color: inherit;
+  color: #000;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.pb-5, .py-5 {
+  padding-bottom: 3rem!important;
+}
+
+.pt-5, .py-5 {
+  padding-top: 3rem!important;
+}
+
+.container-fluid {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.pet-background {
+  padding-top: 20px;
+  height: 250px;
+  background: var(--section-background);
+  border-bottom: 1px solid #1a191a;
+}
+
+.page-body-wrapper {
+  min-height: calc(100vh - 65px);
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 65px;
+}
+
+.form-row {
+  display: flex;
+  margin-right: -5px;
+  margin-left: -5px;
+  flex-wrap: wrap;
+}
+.avatar-xl {
+  width: 5.125rem;
+  height: 5.125rem;
+}
+
+.avatar {
+  width: 5rem;
+  height: 5rem;
+}
+.avatar {
+  position: relative;
+  display: inline-block;
+}
+
+.avatar-xl .rounded {
+  border-radius: 8px!important;
+}
+
+.avatar .rounded {
+  border-radius: 6px!important;
+}
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.avatar-sm {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.align-middle {
+  vertical-align: middle!important;
+}
+
+.ml-2, .mx-2 {
+  margin-left: .5rem!important;
+}
+
+
+.p-t-20 {
+  padding-top: 20px;
+}
+
+.p-b-60 {
+  padding-bottom: 60px;
+}
+
+.pull-up {
+  margin-top: -90px;
+}
+
+.avatar-lg .avatar-title {
+  font-size: 24px;
+}
+
+.avatar .avatar-title {
+  font-size: 18px;
+}
+
+.avatar-img:hover, .avatar-title:hover {
+  box-shadow: 0 0 0 2px #fff;
+}
+
+.avatar-title {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  background-color: #b1c2d9;
+  align-items: center;
+  justify-content: center;
+}
+
+.badge-soft-danger {
+  color: #f2545b!important;
+  background-color: #fcddde!important;
+}
+
+.rounded-circle {
+  border-radius: 50%!important;
+}
+
+.material-icons.md-dark {
+  color: inherit !important;
+}
+
+.m-b-30 {
+  margin-bottom: 30px;
+}

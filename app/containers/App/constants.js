@@ -12,3 +12,7 @@
 export const LOAD_REPOS = 'boilerplate/App/LOAD_REPOS';
 export const LOAD_REPOS_SUCCESS = 'boilerplate/App/LOAD_REPOS_SUCCESS';
 export const LOAD_REPOS_ERROR = 'boilerplate/App/LOAD_REPOS_ERROR';
+export const DEFAULT_ACTION = 'boilerplate/App/DEFAULT_ACTION';
+export const LOAD_ITEMS = 'boilerplate/App/LOAD_ITEMS';
+export const LOAD_ITEMS_SUCCESS = 'boilerplate/App/LOAD_ITEMS_SUCCESS';
+export const LOAD_CHANGE_THEME = 'boilerplate/App/LOAD_CHANGE_THEME';

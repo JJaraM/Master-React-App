@@ -1,0 +1,65 @@
+.table-responsive {
+    display: block;
+    overflow-x: auto;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.table {
+  color: #FFF;
+  border-spacing: 0 5px !important;
+  vertical-align: middle;
+  width: 100%;
+  background-color: transparent;
+  margin-bottom: 0;
+
+  tr {
+    background: var(table-background);
+  }
+
+  td, th {
+    border: none;
+  }
+
+  button {
+    background: var(table-button-background);
+    border: none;
+  }
+
+  button:hover {
+      background: var(table-button-background);
+  }
+
+
+}
+
+
+.table-hover tbody tr:hover {
+    background-color: var(table-hover);
+    color: #FFF;
+}
+
+.table tfoot th, .table thead th {
+    font-size: .7875rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--table-th-color);
+
+    border-top: var(--table-th-top-border);
+    border-bottom: var(--table-th-bottom-border);
+    background-color: var(--table-th-background);
+    font-size: .6rem;
+    vertical-align: bottom;
+
+}
+
+
+.table td {
+    vertical-align: top;
+    border-top: var(--table-td-border-top);
+}
+th {
+    text-align: inherit;
+}

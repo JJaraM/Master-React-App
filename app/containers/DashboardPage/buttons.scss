@@ -1,0 +1,30 @@
+.btn-tomato, .btn-tomato:hover {
+  border-color: #ff5a6e;
+  background: #ff5a6e;
+}
+
+.btn-disable {
+  border-color: #00e08b !important;
+  background-color: #00c77b !important;
+  cursor: wait !important;
+  opacity: 0.9 !important;
+}
+
+
+.btn-lettuce:hover, .btn-lettuce:not(:disabled):not(.disabled).active, .btn-lettuce:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+  border-color: #00e08b;
+  background-color: #00c77b;
+}
+
+.btn-lettuce {
+  border-color: #00e08b;
+  background-color: #00e08b;
+}
+
+.submit-big-button {
+  padding: .75rem 1.5rem;
+  font-weight: 600;
+  font-size: 1.05rem;
+  border: none;
+  margin-right: 10px;
+}

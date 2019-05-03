@@ -121,8 +121,10 @@ export function mapDispatchToProps(dispatch) {
   return {
     onChangeUsername: evt => dispatch(changeUsername(evt.target.value)),
     onSubmitForm: evt => {
-      if (evt !== undefined && evt.preventDefault) evt.preventDefault();
-      dispatch(loadRepos());
+      if (evt !== undefined && evt.preventDefault) {
+        evt.preventDefault();
+        dispatch(loadRepos());
+      }
     },
   };
 }
