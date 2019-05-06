@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import styles from './styles';
 
-const Button = styled.button`
+const Button = styled.div`
   ${styles};
 `;
 

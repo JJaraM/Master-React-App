@@ -3,10 +3,16 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
 import { useInjectReducer } from 'utils/injectReducer';
-import makeSelectThemePage from './selectors';
+import {makeSelectThemePage, makeSelectItems} from './selectors';
 import reducer from './reducer';
+import { FormattedMessage } from 'react-intl';
+import messages from './messages';
+import Themes from 'components/Themes';
+import PropTypes from 'prop-types';
 
-export function ThemePage() {
+export function ThemePage({
+  items
+}) {
   useInjectReducer({ key: 'themePage', reducer });
 
   return (
@@ -18,8 +24,8 @@ export function ThemePage() {
               <div className="avatar avatar-xl my-auto">
                 <img className="avatar-img rounded" src="#" alt="" />
               </div>
-              <h1>Title</h1>
-              <p>Desc</p>
+              <h1><FormattedMessage {...messages.title} /></h1>
+              <p><FormattedMessage {...messages.description} /></p>
             </div>
           </div>
         </div>
@@ -30,8 +36,12 @@ export function ThemePage() {
             <div className="card py-3 m-b-30">
               <div className="card-body">
                 <h3>T</h3>
-                <p className="text-muted">Desc</p>
-                <div className="row">Row</div>
+                <p className="text-muted">
+                  <FormattedMessage {...messages.instruction} />
+                </p>
+                <div className="row">
+                  <Themes items={items}/>
+                </div>
               </div>
             </div>
           </div>
@@ -41,8 +51,13 @@ export function ThemePage() {
   );
 }
 
+ThemePage.propTypes = {
+  items: PropTypes.oneOfType([PropTypes.array, PropTypes.bool]),
+};
+
 const mapStateToProps = createStructuredSelector({
   themePage: makeSelectThemePage(),
+  items: makeSelectItems(),
 });
 
 const withConnect = connect(mapStateToProps);

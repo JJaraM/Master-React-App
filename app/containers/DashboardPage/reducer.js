@@ -9,7 +9,7 @@ import {
 export const initialState = {
   theme: 'mnyama',
   items: false,
-  sidebarBig: false,
+  sidebarBig: true,
 };
 
 /* eslint-disable default-case, no-param-reassign */

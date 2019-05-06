@@ -21,5 +21,10 @@ const makeSelectThemePage = () =>
     substate => substate,
   );
 
-export default makeSelectThemePage;
-export { selectThemePageDomain };
+const makeSelectItems = () =>
+  createSelector(
+    selectThemePageDomain,
+    substate => substate.items,
+  );
+
+export { makeSelectThemePage, selectThemePageDomain, makeSelectItems };

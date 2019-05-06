@@ -4,8 +4,9 @@ import { LOAD_ITEMS, LOAD_COLLAPSE } from './constants';
 import { menuOptionsLoaded, collapseLoaded } from './actions';
 import { makeSelectionSideBarBig } from './selectors';
 import themesData from './themes';
+import menu from './menu';
 
-export default function* dashboardPage() {
+export default function* init() {
   yield takeLatest(LOAD_ITEMS, getMenuItems);
   yield takeLatest(LOAD_COLLAPSE, collapse);
   yield takeLatest(LOAD_CHANGE_THEME, changeTheme);
@@ -17,42 +18,7 @@ export function* collapse() {
 }
 
 export function* getMenuItems() {
-  const data = [
-    {
-      id: 0,
-      to: '/dashboard',
-      label: 'home', // menu.home
-      icon: 'fas fa-home',
-    },
-    {
-      id: 1,
-      to: '/ui',
-      label: 'ui', // menu.uiElements
-      icon: 'fas fa-bookmark',
-    },
-    {
-      id: 2,
-      to: '?',
-      label: 'settings', // menu.settings
-      icon: 'fas fa-cogs',
-      subMenu: [
-        {
-          id: 3,
-          to: '/settings/themes',
-          label: 'menu.themes',
-          icon: 'settings',
-        },
-        {
-          id: 4,
-          to: '/settings/users',
-          label: 'menu.users',
-          icon: 'person',
-        },
-      ],
-    },
-  ];
-
-  yield put(menuOptionsLoaded(data));
+  yield put(menuOptionsLoaded(menu));
 }
 
 export function* changeTheme() {

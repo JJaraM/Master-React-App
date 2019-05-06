@@ -6,10 +6,11 @@ const GlobalStyle = createGlobalStyle`
     height: 100%;
     width: 100%;
     line-height: 1.5;
+    font-size: 14px;
   }
 
   body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
   }
 
   body.fontLoaded {
@@ -17,14 +18,14 @@ const GlobalStyle = createGlobalStyle`
   }
 
   #app {
-    
+
     min-height: 100%;
     min-width: 100%;
   }
 
   p,
   label {
-    font-family: Georgia, Times, 'Times New Roman', serif;
+
     line-height: 1.5em;
   }
 `;

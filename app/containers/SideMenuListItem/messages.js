@@ -21,4 +21,12 @@ export default defineMessages({
     id: `${scope}.settings`,
     defaultMessage: 'Settings',
   },
+  themes: {
+    id: `${scope}.themes`,
+    defaultMessage: 'Themes',
+  },
+  users: {
+    id: `${scope}.users`,
+    defaultMessage: 'Users',
+  },
 });

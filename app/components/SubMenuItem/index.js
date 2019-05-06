@@ -5,9 +5,10 @@ import Button from './Button';
 function SubMenuItem(props) {
   const { id } = props;
   const { onClick } = props;
+
   return (
-    <Button onClick={onClick}>
-      <li className="menu-item" id={id}>
+    <Button onClick={onClick} id={id}>
+      <li className="menu-item">
         {props.item}
       </li>
     </Button>

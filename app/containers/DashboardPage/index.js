@@ -58,7 +58,7 @@ export function DashboardPage({
         <SideMenu {...itemsProps} />
         <Dashboard {...sidebarBig}>
           <Switch>
-            <Route path="/dashboard/settings/theme" component={ThemePage} />
+            <Route path="/dashboard/settings/themes" component={ThemePage} />
           </Switch>
         </Dashboard>
       </div>
