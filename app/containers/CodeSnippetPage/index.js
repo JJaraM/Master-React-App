@@ -49,8 +49,8 @@ export function CodeSnippetPage({
               title="Code Snippets"
               headers={[
                 <FormattedMessage {...messages.table_type} />,
-                <FormattedMessage {...messages.table_view} />,
                 <FormattedMessage {...messages.table_description} />,
+                <FormattedMessage {...messages.table_view} />,
               ]}
               viewActionTitle={<FormattedMessage {...messages.table_view} />}
               viewAction={onClickView}

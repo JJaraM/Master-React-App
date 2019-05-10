@@ -4,7 +4,7 @@ import { EXPAND, EXPAND_SUCCESS } from './constants';
 export const initialState = {
   collapse: false,
   identifier: '',
-  identifiers: false,
+  identifiers: [],
 };
 
 /* eslint-disable no-param-reassign */
