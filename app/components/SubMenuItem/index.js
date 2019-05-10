@@ -8,9 +8,7 @@ function SubMenuItem(props) {
 
   return (
     <Button onClick={onClick} id={id}>
-      <li className="menu-item">
-        {props.item}
-      </li>
+      <li className="menu-item">{props.item}</li>
     </Button>
   );
 }

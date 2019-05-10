@@ -1,7 +1,7 @@
 export default {
   themes: {
     masakali: {
-      'name': 'masakali',
+      name: 'masakali',
       'form-control-background': '#FFF',
       'form-control-border': '1px solid #e9eaee',
       'form-control-color': '#000',
@@ -32,9 +32,9 @@ export default {
       'table-th-bottom-border': '1px solid #edf2f9',
       'table-td-border-top': '1px solid #edf2f9',
 
-      'colorA': '#212841',
-      'colorB': '#F4F7FC',
-      'colorC': '#FFF',
+      colorA: '#212841',
+      colorB: '#F4F7FC',
+      colorC: '#FFF',
       'card-background': '#FFF',
       'card-border': 'rgba(47,49,54,.9)',
       'card-box-shadow': '0 25px 50px rgba(8,21,66,.06)',
@@ -50,7 +50,7 @@ export default {
     },
     mnyama: {
       // Zulu => Dark
-      'name': 'mnyama',
+      name: 'mnyama',
       'form-control-background': '#36393F',
       'form-control-border': '1px solid rgba(255,255,255,.12)',
       'form-control-color': '#6c757d',
@@ -82,9 +82,9 @@ export default {
       'table-th-bottom-border': '1px solid rgba(255,255,255,.12)',
       'table-td-border-top': '1px solid rgba(255,255,255,.12)',
 
-      'colorA': '#202225',
-      'colorB': '#36393F',
-      'colorC': '#2F3136',
+      colorA: '#202225',
+      colorB: '#36393F',
+      colorC: '#2F3136',
       'card-background': '#323439',
       'card-border': '1px solid rgba(255,255,255,.12)',
       'card-box-shadow':

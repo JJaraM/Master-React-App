@@ -1,0 +1,40 @@
+
+.token.bullet {
+  color: black;
+  display: inline-block;
+  background-color: #ffd152;
+  border-radius: 100px;
+  text-align: center;
+  font-size: .75em;
+  width: 1.67em;
+  height: 1.67em;
+  line-height: 1.67em;
+  font-family: "Open Sans","DejaVu Sans",sans-serif;
+  font-style: normal;
+}
+
+.token.sup {
+  vertical-align: super;
+  font-size: .83em;
+}
+
+:not(pre) > code[class*="language-"], pre[class*="language-"] {
+	background: #343233;
+}
+
+:not(pre) > code[class*="language-comment"], pre[class*="language-comment"] {
+  background-color: #eaf5e9;
+  line-height: 1.875;
+}
+
+code[class*="language-comment"], pre[class*="language-comment"] {
+  color: #343233;
+  white-space: pre-line;
+  margin-top: 1.25rem;
+  text-shadow: none;
+  font-family: 'Work Sans', sans-serif;
+}
+
+.token.strong {
+  font-weight: bolder;
+}

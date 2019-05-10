@@ -4,7 +4,7 @@ import './style.scss';
 
 function Dashboard(props) {
   const { sidebarBig } = props;
-  const className = sidebarBig ? '' : 'big';
+  const className = sidebarBig ? 'small' : 'big';
   return (
     <div className={`main-panel ${className}`}>
       <div className="content-wrapper">{props.children}</div>

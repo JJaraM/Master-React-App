@@ -3,16 +3,10 @@ import PropTypes from 'prop-types';
 import ThemeList from 'components/ThemeList';
 import ThemeItem from 'containers/ThemeItem';
 
-function Themes({items}) {
-  console.log(items);
+function Themes({ items }) {
   let content = null;
   if (items !== false) {
-    content = (
-      <ThemeList
-        items={items}
-        component={ThemeItem}
-      />
-    );
+    content = <ThemeList items={items} component={ThemeItem} />;
   }
   return content;
 }

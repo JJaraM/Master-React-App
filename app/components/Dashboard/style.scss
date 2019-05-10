@@ -10,4 +10,8 @@
   &.big {
     width: calc(100% - 21px);
   }
+
+  &.small {
+      width: calc(100% - 234px);
+  }
 }

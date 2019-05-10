@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import SideMenuList from 'components/SideMenuList';
-import SideMenuListItem from 'containers/SideMenuListItem';
+import SideMenuItem from 'containers/SideMenuItem';
 
 function SideMenu({ items, sidebarBig }) {
   let content = null;
@@ -10,7 +10,7 @@ function SideMenu({ items, sidebarBig }) {
       <SideMenuList
         items={items}
         sidebarBig={sidebarBig}
-        component={SideMenuListItem}
+        component={SideMenuItem}
       />
     );
   }

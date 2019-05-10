@@ -6,6 +6,12 @@ export default [
     icon: 'fas fa-home',
   },
   {
+    id: 'codeSnippet',
+    to: '/dashboard/codeSnippet',
+    label: 'codeSnippet',
+    icon: 'fas fa-home',
+  },
+  {
     id: 'ui',
     to: '/ui',
     label: 'ui',
@@ -31,4 +37,4 @@ export default [
       },
     ],
   },
-]
+];

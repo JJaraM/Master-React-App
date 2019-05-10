@@ -12,6 +12,7 @@ import SideMenu from 'components/SideMenu';
 import Dashboard from 'components/Dashboard';
 import { changeTheme } from 'containers/ThemePage/actions';
 import ThemePage from 'containers/ThemePage';
+import CodeSnippetPage from 'containers/CodeSnippetPage';
 import { loadMenuOptions, actionCollapse } from './actions';
 import { makeItems, makeSelectionSideBarBig } from './selectors';
 import reducer from './reducer';
@@ -56,8 +57,9 @@ export function DashboardPage({
       <TopMenu onClick={onCollapse} />
       <div className="container-fluid page-body-wrapper">
         <SideMenu {...itemsProps} />
-        <Dashboard {...sidebarBig}>
+        <Dashboard sidebarBig={sidebarBig}>
           <Switch>
+            <Route path="/dashboard/codeSnippet" component={CodeSnippetPage} />
             <Route path="/dashboard/settings/themes" component={ThemePage} />
           </Switch>
         </Dashboard>

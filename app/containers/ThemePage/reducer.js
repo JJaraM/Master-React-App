@@ -6,12 +6,15 @@ export const initialState = {
   items: renderThemes(),
 };
 
-
 function renderThemes() {
-  let array = [];
-  for(var k in themesData.themes) {
-    array.push(themesData.themes[k]);
-  }
+  const array = [];
+  const properties = themesData.themes;
+
+  Object.keys(properties).forEach(function loop(property) {
+    if (property) {
+      array.push(themesData.themes[property]);
+    }
+  });
   return array;
 }
 

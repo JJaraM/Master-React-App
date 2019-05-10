@@ -28,5 +28,5 @@
   "boilerplate.containers.LocaleToggle.de": "",
   "boilerplate.containers.LocaleToggle.en": "",
   "boilerplate.containers.NotFoundPage.header": "Seite nicht gefunden.",
-  "boilerplate.containers.sideMenuListItem.home": "Home"
+  "boilerplate.containers.SideMenuItem.home": "Home"
 }

@@ -7,9 +7,7 @@ function ThemeList(props) {
 
   if (props.items) {
     content = props.items.map(item => (
-      <ComponentToRender key={item.name}
-        item={item}
-      />
+      <ComponentToRender key={item.name} item={item} />
     ));
   } else {
     content = <ComponentToRender />;
