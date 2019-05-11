@@ -21,9 +21,16 @@ const makeSelectionSideBarBig = () =>
     dashboardState => dashboardState.sidebarBig,
   );
 
+const makeSelectAlertMessages = () =>
+  createSelector(
+    selectDashboard,
+    dashboardState => dashboardState.alertMessages,
+  );
+
 export {
   selectDashboard,
   makeItems,
   makeSelectDashboardPage,
   makeSelectionSideBarBig,
+  makeSelectAlertMessages,
 };

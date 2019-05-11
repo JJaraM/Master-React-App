@@ -3,6 +3,7 @@ import {
   LOAD_ITEMS_SUCCESS,
   LOAD_COLLAPSE,
   LOAD_COLLAPSE_SUCESS,
+  SAVE_ALERT_MESSAGES,
 } from './constants';
 
 export function menuOptionsLoaded(items) {
@@ -28,5 +29,12 @@ export function collapseLoaded(sidebarBig) {
   return {
     type: LOAD_COLLAPSE_SUCESS,
     sidebarBig,
+  };
+}
+
+export function saveAlertMessages(alertMessages) {
+  return {
+    type: SAVE_ALERT_MESSAGES,
+    alertMessages,
   };
 }

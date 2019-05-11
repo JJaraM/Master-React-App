@@ -4,6 +4,9 @@ import {
   LOAD_ALL_ITEMS_SUCCESS,
   SELECTION,
   SELECTION_SUCCESS,
+  RENDER_ADD_VIEW,
+  RENDER_ADD_VIEW_SUCCESS,
+  RENDER_ADD_VIEW_CLOSE,
 } from './constants';
 
 export function defaultAction() {
@@ -38,5 +41,24 @@ export function selectionItem(item) {
   return {
     type: SELECTION_SUCCESS,
     item,
+  };
+}
+
+export function loadAddView() {
+  return {
+    type: RENDER_ADD_VIEW,
+  };
+}
+
+export function selectRenderViewSuccess(renderAddView) {
+  return {
+    type: RENDER_ADD_VIEW_SUCCESS,
+    renderAddView,
+  };
+}
+
+export function closeAddView() {
+  return {
+    type: RENDER_ADD_VIEW_CLOSE,
   };
 }

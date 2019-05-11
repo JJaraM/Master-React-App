@@ -1,6 +1,8 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import * as Prism from 'prismjs';
+import { FormattedMessage } from 'react-intl';
+import messages from './messages';
 import './customPrism.scss';
 
 class CodeSnippetSelection extends React.Component {
@@ -13,15 +15,22 @@ class CodeSnippetSelection extends React.Component {
   }
 
   async asyncImport() {
-    await import(`prismjs/components/prism-${this.props.item.type}`);
-    Prism.highlightAll();
+    try {
+      await import(`prismjs/components/prism-${this.props.item.type}`);
+      Prism.highlightAll();
+    } catch (err) {
+      Prism.highlightAll();
+    }
   }
 
   render() {
-    if (this.props.item) {
+    if (this.props.item && this.props.item.type && this.props.item.content) {
       this.asyncImport();
       return (
-        <div className="col-lg-12">
+        <div className="col-lg-12 m-b-30">
+          <h6>
+            <FormattedMessage {...messages.result} />
+          </h6>
           <pre>
             <code className={`language-${this.props.item.type}`}>
               {this.props.item.content}
@@ -30,7 +39,7 @@ class CodeSnippetSelection extends React.Component {
         </div>
       );
     }
-    return <></>;
+    return null;
   }
 }
 

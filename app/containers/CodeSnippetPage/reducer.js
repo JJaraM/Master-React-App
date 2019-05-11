@@ -10,6 +10,8 @@ import {
   LOAD_ALL_ITEMS_SUCCESS,
   SELECTION,
   SELECTION_SUCCESS,
+  RENDER_ADD_VIEW_SUCCESS,
+  RENDER_ADD_VIEW_CLOSE,
 } from './constants';
 
 /*
@@ -23,6 +25,7 @@ export const initialState = {
   id: 0,
   item: null,
   loading: 0,
+  renderAddView: false,
 };
 
 /* eslint-disable default-case, no-param-reassign */
@@ -47,6 +50,14 @@ const codeSnippetPageReducer = (state = initialState, action) =>
 
       case SELECTION_SUCCESS:
         draft.item = action.item;
+        break;
+
+      case RENDER_ADD_VIEW_SUCCESS:
+        draft.renderAddView = true;
+        break;
+
+      case RENDER_ADD_VIEW_CLOSE:
+        draft.renderAddView = false;
         break;
     }
   });

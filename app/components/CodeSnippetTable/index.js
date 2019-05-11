@@ -66,7 +66,7 @@ function CodeSnippetTable(props) {
 }
 
 CodeSnippetTable.propTypes = {
-  title: PropTypes.string,
+  title: PropTypes.any,
   headers: PropTypes.array,
   items: PropTypes.array,
   footer: PropTypes.any,

@@ -35,7 +35,7 @@ function Table(props) {
 }
 
 Table.propTypes = {
-  title: PropTypes.string,
+  title: PropTypes.any,
   headers: PropTypes.array,
   rows: PropTypes.array,
   footer: PropTypes.any,

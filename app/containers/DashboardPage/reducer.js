@@ -4,12 +4,14 @@ import {
   LOAD_ITEMS_SUCCESS,
   LOAD_COLLAPSE,
   LOAD_COLLAPSE_SUCESS,
+  SAVE_ALERT_MESSAGES,
 } from './constants';
 
 export const initialState = {
   theme: 'mnyama',
   items: false,
   sidebarBig: true,
+  alertMessages: [],
 };
 
 /* eslint-disable default-case, no-param-reassign */
@@ -29,6 +31,10 @@ const dashboardPageReducer = (state = initialState, action) =>
 
       case LOAD_COLLAPSE_SUCESS:
         draft.sidebarBig = action.sidebarBig;
+        break;
+
+      case SAVE_ALERT_MESSAGES:
+        draft.alertMessages = action.alertMessages;
         break;
     }
   });

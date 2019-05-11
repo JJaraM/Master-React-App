@@ -34,6 +34,12 @@ const makeLoading = () =>
     substate => substate.loading,
   );
 
+const makeRenderAddView = () =>
+  createSelector(
+    selectCodeSnippetPageDomain,
+    substate => substate.renderAddView,
+  );
+
 export {
   selectCodeSnippetPageDomain,
   makeSelectCodeSnippetPage,
@@ -41,4 +47,5 @@ export {
   makeSelectionId,
   makeSelectionItem,
   makeLoading,
+  makeRenderAddView,
 };
