@@ -54,7 +54,6 @@ const codeSnippetPageReducer = (state = initialState, action) =>
         draft.id = action.id;
         break;
 
-
       case SELECTION_SUCCESS:
         draft.item = action.item;
         break;
@@ -70,7 +69,7 @@ const codeSnippetPageReducer = (state = initialState, action) =>
 
       case RENDER_ADD_VIEW_CLOSE:
         draft.renderAddView = false;
-        break
+        break;
 
       case REMOVE_CODE_SNIPPET:
         draft.idToRemove = action.idToRemove;
@@ -78,9 +77,7 @@ const codeSnippetPageReducer = (state = initialState, action) =>
 
       case EDIT_SELECTION:
         draft.id = action.id;
-        break
-
-  
+        break;
     }
   });
 

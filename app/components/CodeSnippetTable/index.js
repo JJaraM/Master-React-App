@@ -2,7 +2,13 @@ import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import Table from '../Table';
 
-function createItem(codeSnippet, viewActionTitle, viewAction, deleteAction, editAction) {
+function createItem(
+  codeSnippet,
+  viewActionTitle,
+  viewAction,
+  deleteAction,
+  editAction,
+) {
   const object = {};
 
   const cols = [];
@@ -42,7 +48,6 @@ function createItem(codeSnippet, viewActionTitle, viewAction, deleteAction, edit
   deleteColumn.tooltip = 'delete';
   cols.push(deleteColumn);
 
-
   const editColumn = {};
   editColumn.id = 5;
   editColumn.type = 'icon-button';
@@ -68,7 +73,13 @@ function CodeSnippetTable(props) {
   } = props;
 
   const tableRows = items.map(codeSnippet =>
-    createItem(codeSnippet, viewActionTitle, viewAction, deleteAction, editAction),
+    createItem(
+      codeSnippet,
+      viewActionTitle,
+      viewAction,
+      deleteAction,
+      editAction,
+    ),
   );
 
   return (

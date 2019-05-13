@@ -56,14 +56,13 @@ function TableColumn(props) {
           );
         }
         if (column.type === 'icon-button') {
-
           return (
             <div
               className={`icon-button fa ${column.value}`}
               role="button"
               onClick={() => column.action(rowId)}
             />
-          )
+          );
         }
         return column.value;
       })()}

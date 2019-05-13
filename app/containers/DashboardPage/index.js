@@ -101,7 +101,6 @@ function mapDispatchToProps(dispatch) {
     getMenuItems: () => dispatch(loadMenuOptions()),
     onChangeTheme: () => {
       dispatch(changeTheme());
-      
     },
     onCollapse: evt => {
       if (evt !== undefined) {

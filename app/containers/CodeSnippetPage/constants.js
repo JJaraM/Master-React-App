@@ -9,9 +9,6 @@ export const RENDER_ADD_VIEW_SUCCESS =
   'app/CodeSnippetPage/RENDER_ADD_VIEW_SUCCESS';
 export const RENDER_ADD_VIEW_CLOSE =
   'app/CodeSnippetPage/RENDER_ADD_VIEW_CLOSE';
-export const REMOVE_CODE_SNIPPET =
-    'app/CodeSnippetPage/REMOVE_CODE_SNIPPET';
-export const EDIT_SELECTION =
-        'app/CodeSnippetPage/EDIT_SELECTION';
-export const RENDER_DONE =
-        'app/CodeSnippetPage/RENDER_DONE';
+export const REMOVE_CODE_SNIPPET = 'app/CodeSnippetPage/REMOVE_CODE_SNIPPET';
+export const EDIT_SELECTION = 'app/CodeSnippetPage/EDIT_SELECTION';
+export const RENDER_DONE = 'app/CodeSnippetPage/RENDER_DONE';

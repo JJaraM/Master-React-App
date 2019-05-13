@@ -10,16 +10,23 @@ import CodeSnippetSelection from 'components/CodeSnippetSelection';
 import { saveAlertMessages } from 'containers/DashboardPage/actions';
 import { closeAddView } from 'containers/CodeSnippetPage/actions';
 import BlockButton from 'components/BlockButton';
+import { makeSelectionId } from 'containers/CodeSnippetPage/selectors';
 import {
   makeSelectCodeSnippet,
   makeSelectType,
   makeSelectTitle,
 } from './selectors';
-import { makeSelectionId } from 'containers/CodeSnippetPage/selectors';
 import reducer from './reducer';
 import saga from './saga';
 import messages from './messages';
-import { saveCodeSnippet, saveType, saveTitle, saveForm, updateForm, load } from './actions';
+import {
+  saveCodeSnippet,
+  saveType,
+  saveTitle,
+  saveForm,
+  updateForm,
+  load,
+} from './actions';
 
 export function CodeSnippetAddForm({
   codeSnippet,
@@ -51,7 +58,6 @@ export function CodeSnippetAddForm({
   useEffect(() => {
     onLoad();
   }, []);
-
 
   let ButtonAction = () => (
     <BlockButton id="btn-codeSnippet" onClick={onSave} fields={fields}>

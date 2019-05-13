@@ -24,7 +24,7 @@ import {
 import reducer from './reducer';
 import saga from './saga';
 import messages from './messages';
-import { loadAllItems, selection, loadAddView, remove, edit} from './actions';
+import { loadAllItems, selection, loadAddView, remove, edit } from './actions';
 
 export function CodeSnippetPage({
   onLoadItems,
@@ -73,7 +73,7 @@ export function CodeSnippetPage({
               <FormattedMessage {...messages.table_description} />,
               <FormattedMessage {...messages.table_view} />,
               <FormattedMessage {...messages.table_delete} />,
-              <FormattedMessage {...messages.table_edit} />
+              <FormattedMessage {...messages.table_edit} />,
             ]}
             viewActionTitle={<FormattedMessage {...messages.table_view} />}
             viewAction={onClickView}

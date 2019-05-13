@@ -1,8 +1,17 @@
 import { call, put, takeLatest, select } from 'redux-saga/effects';
 import request from 'utils/request';
 import { loadAllItemsSuccess } from 'containers/CodeSnippetPage/actions';
-import { makeAllItems, makeSelectionId } from 'containers/CodeSnippetPage/selectors';
-import { saveSuccess, saveType, saveTitle, saveCodeSnippet, renderEdit } from './actions';
+import {
+  makeAllItems,
+  makeSelectionId,
+} from 'containers/CodeSnippetPage/selectors';
+import {
+  saveSuccess,
+  saveType,
+  saveTitle,
+  saveCodeSnippet,
+  renderEdit,
+} from './actions';
 import { SAVE, LOAD, UPDATE } from './constants';
 
 import {
@@ -15,7 +24,6 @@ export default function* codeSnippetAddFormSaga() {
   yield takeLatest(SAVE, save);
   yield takeLatest(UPDATE, update);
   yield takeLatest(LOAD, load);
-
 }
 
 export function* load() {
@@ -28,14 +36,13 @@ export function* load() {
 }
 
 export function* update() {
-
-  let items = yield select(makeAllItems());
+  const items = yield select(makeAllItems());
   const codeSnippet = yield select(makeSelectCodeSnippet());
   const type = yield select(makeSelectType());
   const title = yield select(makeSelectTitle());
   const id = yield select(makeSelectionId());
   const idx = items.findIndex(x => x.id === id);
-  const requestURL = `https://ws-code-snippet.herokuapp.com/v1/codeSnippet/` + id;
+  const requestURL = `https://ws-code-snippet.herokuapp.com/v1/codeSnippet/${id}`;
 
   const item = JSON.stringify({
     title,
@@ -56,8 +63,7 @@ export function* update() {
     items[idx] = result[0];
     yield put(saveSuccess(1));
     yield put(loadAllItemsSuccess(items.slice()));
-  } catch (err) {
-  }
+  } catch (err) {}
 }
 
 export function* save() {

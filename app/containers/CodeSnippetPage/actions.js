@@ -69,13 +69,13 @@ export function closeAddView() {
 export function remove(idToRemove) {
   return {
     type: REMOVE_CODE_SNIPPET,
-    idToRemove
+    idToRemove,
   };
 }
 
 export function edit(id) {
   return {
     type: RENDER_ADD_VIEW,
-    id: id,
+    id,
   };
 }

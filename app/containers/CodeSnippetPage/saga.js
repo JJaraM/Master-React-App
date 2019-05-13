@@ -1,21 +1,25 @@
 import { call, put, takeLatest, select } from 'redux-saga/effects';
 import request from 'utils/request';
+import { renderEdit } from 'containers/CodeSnippetAddForm/actions';
 import {
   loadAllItemsSuccess,
   selectionItem,
   selectRenderViewSuccess,
-
 } from './actions';
-import { renderEdit } from 'containers/CodeSnippetAddForm/actions';
 
 import {
   LOAD_ALL_ITEMS,
   SELECTION,
   RENDER_ADD_VIEW,
   REMOVE_CODE_SNIPPET,
-  RENDER_DONE
+  RENDER_DONE,
 } from './constants';
-import { makeSelectionId, makeAllItems, makeRenderAddView, makeIdToRemove } from './selectors';
+import {
+  makeSelectionId,
+  makeAllItems,
+  makeRenderAddView,
+  makeIdToRemove,
+} from './selectors';
 
 export default function* init() {
   yield takeLatest(LOAD_ALL_ITEMS, loadAllItems);
@@ -42,7 +46,6 @@ export function* selection() {
 }
 
 export function* renderAddView() {
-
   const id = yield select(makeSelectionId());
   const result = yield select(makeRenderAddView());
 
@@ -51,7 +54,7 @@ export function* renderAddView() {
     const item = items.find(x => x.id === id);
     yield put(renderEdit(item.content, item.type, item.title));
   } else {
-    yield put(renderEdit('','',''));
+    yield put(renderEdit('', '', ''));
   }
 
   yield put(selectRenderViewSuccess(!result));
@@ -60,7 +63,7 @@ export function* renderAddView() {
 export function* removeCodeSnippet() {
   const idToRemove = yield select(makeIdToRemove());
   let items = yield select(makeAllItems());
-  const requestURL = `https://ws-code-snippet.herokuapp.com/v1/codeSnippet/` + idToRemove;
+  const requestURL = `https://ws-code-snippet.herokuapp.com/v1/codeSnippet/${idToRemove}`;
   try {
     const result = yield call(request, requestURL, {
       method: 'DELETE',

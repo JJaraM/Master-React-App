@@ -12,9 +12,9 @@ function CodeSnippetAdd({ render, update }) {
     return null;
   }
 
-  let Title = () => (<FormattedMessage {...messages.title} />);
+  let Title = () => <FormattedMessage {...messages.title} />;
   if (update) {
-    Title = () => (<FormattedMessage {...messages.update_title} />);
+    Title = () => <FormattedMessage {...messages.update_title} />;
   }
   return (
     <Card>
