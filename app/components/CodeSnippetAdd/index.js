@@ -7,16 +7,20 @@ import CardBodyHeader from '../CardBodyHeader';
 import CardBody from '../CardBody';
 import messages from './messages';
 
-function CodeSnippetAdd({ render }) {
+function CodeSnippetAdd({ render, update }) {
   if (!render) {
     return null;
   }
 
+  let Title = () => (<FormattedMessage {...messages.title} />);
+  if (update) {
+    Title = () => (<FormattedMessage {...messages.update_title} />);
+  }
   return (
     <Card>
       <CardBody>
         <CardBodyHeader
-          title={<FormattedMessage {...messages.title} />}
+          title={<Title />}
           description={<FormattedMessage {...messages.description} />}
         />
         <CodeSnippetAddForm />
@@ -27,6 +31,7 @@ function CodeSnippetAdd({ render }) {
 
 CodeSnippetAdd.propTypes = {
   render: PropTypes.bool.isRequired,
+  update: PropTypes.bool.isRequired,
 };
 
 export default memo(CodeSnippetAdd);

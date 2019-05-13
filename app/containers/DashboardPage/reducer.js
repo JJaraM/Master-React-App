@@ -10,9 +10,18 @@ import {
 export const initialState = {
   theme: 'mnyama',
   items: false,
-  sidebarBig: true,
+  sidebarBig: getSidebarBig(),
   alertMessages: [],
 };
+
+function getSidebarBig() {
+  let sidebarBig = localStorage.getItem('sidebarBig');
+
+  if (!sidebarBig) {
+    sidebarBig = true;
+  }
+  return JSON.parse(sidebarBig);
+}
 
 /* eslint-disable default-case, no-param-reassign */
 const dashboardPageReducer = (state = initialState, action) =>

@@ -7,6 +7,8 @@ import {
   RENDER_ADD_VIEW,
   RENDER_ADD_VIEW_SUCCESS,
   RENDER_ADD_VIEW_CLOSE,
+  REMOVE_CODE_SNIPPET,
+  EDIT_SELECTION,
 } from './constants';
 
 export function defaultAction() {
@@ -47,6 +49,7 @@ export function selectionItem(item) {
 export function loadAddView() {
   return {
     type: RENDER_ADD_VIEW,
+    id: 0,
   };
 }
 
@@ -60,5 +63,19 @@ export function selectRenderViewSuccess(renderAddView) {
 export function closeAddView() {
   return {
     type: RENDER_ADD_VIEW_CLOSE,
+  };
+}
+
+export function remove(idToRemove) {
+  return {
+    type: REMOVE_CODE_SNIPPET,
+    idToRemove
+  };
+}
+
+export function edit(id) {
+  return {
+    type: RENDER_ADD_VIEW,
+    id: id,
   };
 }

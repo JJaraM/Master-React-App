@@ -29,4 +29,12 @@ export default defineMessages({
     id: `${scope}.table_view`,
     defaultMessage: 'View',
   },
+  table_delete: {
+    id: `${scope}.table_delete`,
+    defaultMessage: 'Delete',
+  },
+  table_edit: {
+    id: `${scope}.table_edit`,
+    defaultMessage: 'Edit',
+  },
 });

@@ -29,6 +29,10 @@ export default defineMessages({
     id: `${scope}.title`,
     defaultMessage: 'Title',
   },
+  update_title: {
+    id: `${scope}.update_title`,
+    defaultMessage: 'Update a Code Snippet',
+  },
   required_title: {
     id: `${scope}.title_required`,
     defaultMessage: 'Title required',
@@ -40,6 +44,10 @@ export default defineMessages({
   save: {
     id: `${scope}.save`,
     defaultMessage: 'Save',
+  },
+  update: {
+    id: `${scope}.update`,
+    defaultMessage: 'Update',
   },
   close: {
     id: `${scope}.close`,

@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import Table from '../Table';
 
-function createItem(codeSnippet, viewActionTitle, viewAction) {
+function createItem(codeSnippet, viewActionTitle, viewAction, deleteAction, editAction) {
   const object = {};
 
   const cols = [];
@@ -29,10 +29,26 @@ function createItem(codeSnippet, viewActionTitle, viewAction) {
 
   const view = {};
   view.id = 3;
-  view.type = 'button';
-  view.value = viewActionTitle;
+  view.type = 'icon-button';
+  view.value = 'fa-eye';
   view.action = viewAction;
   cols.push(view);
+
+  const deleteColumn = {};
+  deleteColumn.id = 4;
+  deleteColumn.type = 'icon-button';
+  deleteColumn.value = 'fa-trash-alt';
+  deleteColumn.action = deleteAction;
+  deleteColumn.tooltip = 'delete';
+  cols.push(deleteColumn);
+
+
+  const editColumn = {};
+  editColumn.id = 5;
+  editColumn.type = 'icon-button';
+  editColumn.value = 'fa-edit';
+  editColumn.action = editAction;
+  cols.push(editColumn);
 
   object.cols = cols;
 
@@ -45,12 +61,14 @@ function CodeSnippetTable(props) {
     title,
     footer,
     viewAction,
+    deleteAction,
     viewActionTitle,
     loading,
+    editAction,
   } = props;
 
   const tableRows = items.map(codeSnippet =>
-    createItem(codeSnippet, viewActionTitle, viewAction),
+    createItem(codeSnippet, viewActionTitle, viewAction, deleteAction, editAction),
   );
 
   return (
@@ -71,6 +89,8 @@ CodeSnippetTable.propTypes = {
   items: PropTypes.array,
   footer: PropTypes.any,
   viewAction: PropTypes.func.isRequired,
+  deleteAction: PropTypes.func.isRequired,
+  editAction: PropTypes.func.isRequired,
   viewActionTitle: PropTypes.any.isRequired,
   loading: PropTypes.number,
 };

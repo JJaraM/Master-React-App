@@ -19,20 +19,24 @@ import {
   makeSelectionItem,
   makeLoading,
   makeRenderAddView,
+  makeSelectionId,
 } from './selectors';
 import reducer from './reducer';
 import saga from './saga';
 import messages from './messages';
-import { loadAllItems, selection, loadAddView } from './actions';
+import { loadAllItems, selection, loadAddView, remove, edit} from './actions';
 
 export function CodeSnippetPage({
   onLoadItems,
   onClickView,
   onClickAdd,
+  onClickDelete,
+  onClickEdit,
   items,
   item,
   loading,
   renderAddView,
+  id,
 }) {
   useInjectReducer({ key: 'codeSnippetPage', reducer });
   useInjectSaga({ key: 'codeSnippetPage', saga });
@@ -68,9 +72,13 @@ export function CodeSnippetPage({
               <FormattedMessage {...messages.table_type} />,
               <FormattedMessage {...messages.table_description} />,
               <FormattedMessage {...messages.table_view} />,
+              <FormattedMessage {...messages.table_delete} />,
+              <FormattedMessage {...messages.table_edit} />
             ]}
             viewActionTitle={<FormattedMessage {...messages.table_view} />}
             viewAction={onClickView}
+            deleteAction={onClickDelete}
+            editAction={onClickEdit}
             items={items}
             loading={loading}
             footer={<RolesFooter />}
@@ -82,7 +90,7 @@ export function CodeSnippetPage({
         </RowSection12>
 
         <RowSection12>
-          <CodeSnippetAdd render={renderAddView} />
+          <CodeSnippetAdd render={renderAddView} update={id !== 0} />
         </RowSection12>
       </ContentWrapper>
     </>
@@ -94,10 +102,13 @@ CodeSnippetPage.propTypes = {
   onLoadItems: PropTypes.func,
   onClickView: PropTypes.func,
   onClickAdd: PropTypes.func,
+  onClickDelete: PropTypes.func,
+  onClickEdit: PropTypes.func,
   items: PropTypes.array,
   item: PropTypes.any,
   loading: PropTypes.number,
   renderAddView: PropTypes.bool,
+  id: PropTypes.number,
 };
 
 const mapStateToProps = createStructuredSelector({
@@ -105,6 +116,7 @@ const mapStateToProps = createStructuredSelector({
   item: makeSelectionItem(),
   loading: makeLoading(),
   renderAddView: makeRenderAddView(),
+  id: makeSelectionId(),
 });
 
 let preSelection = 0;
@@ -121,6 +133,8 @@ function mapDispatchToProps(dispatch) {
       return dispatch(selection(selectedOption));
     },
     onClickAdd: () => dispatch(loadAddView()),
+    onClickEdit: id => dispatch(edit(id)),
+    onClickDelete: id => dispatch(remove(id)),
     dispatch,
   };
 }

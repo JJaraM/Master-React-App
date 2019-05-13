@@ -34,6 +34,8 @@ import './navbar.scss';
 import './topMenu.scss';
 import './table.scss';
 import './prism-okaida.scss';
+import './icons.scss';
+import './tooltip.scss';
 
 export function DashboardPage({
   items,
@@ -97,7 +99,10 @@ const mapStateToProps = createStructuredSelector({
 function mapDispatchToProps(dispatch) {
   return {
     getMenuItems: () => dispatch(loadMenuOptions()),
-    onChangeTheme: () => dispatch(changeTheme()),
+    onChangeTheme: () => {
+      dispatch(changeTheme());
+      
+    },
     onCollapse: evt => {
       if (evt !== undefined) {
         dispatch(actionCollapse());

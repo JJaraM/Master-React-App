@@ -14,6 +14,7 @@ export default function* init() {
 
 export function* collapse() {
   const sidebarBig = yield select(makeSelectionSideBarBig());
+  localStorage.setItem('sidebarBig', !sidebarBig);
   yield put(collapseLoaded(!sidebarBig));
 }
 

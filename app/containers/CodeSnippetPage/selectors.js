@@ -40,6 +40,12 @@ const makeRenderAddView = () =>
     substate => substate.renderAddView,
   );
 
+const makeIdToRemove = () =>
+  createSelector(
+      selectCodeSnippetPageDomain,
+      substate => substate.idToRemove,
+  );
+
 export {
   selectCodeSnippetPageDomain,
   makeSelectCodeSnippetPage,
@@ -48,4 +54,5 @@ export {
   makeSelectionItem,
   makeLoading,
   makeRenderAddView,
+  makeIdToRemove
 };

@@ -1,0 +1,26 @@
+.icon-button {
+  position: relative;
+  display: table-cell;
+  width: 30px;
+  height: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: .25rem;
+  background: rgba(255, 255, 255, 0.22);
+  cursor: pointer;
+
+  &.fa-trash-alt {
+    background: #ff5a6e;
+  }
+
+  &.fa-eye {
+    background: #00CC99;
+  }
+
+  &.fa-edit {
+    background: #2ABBFE;
+  }
+}

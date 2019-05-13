@@ -3,7 +3,10 @@ import {
   SAVE_TYPE,
   SAVE_TITLE,
   SAVE,
+  UPDATE,
   SAVE_SUCCESS,
+  RENDER_SUCCESS,
+  LOAD,
 } from './constants';
 
 export function saveCodeSnippet(codeSnippet) {
@@ -33,9 +36,30 @@ export function saveForm() {
   };
 }
 
+export function updateForm() {
+  return {
+    type: UPDATE,
+  };
+}
+
 export function saveSuccess(save) {
   return {
     type: SAVE_SUCCESS,
     save,
+  };
+}
+
+export function renderEdit(codeSnippet, language, title) {
+  return {
+    type: RENDER_SUCCESS,
+    codeSnippet,
+    language,
+    title,
+  };
+}
+
+export function load() {
+  return {
+    type: LOAD,
   };
 }

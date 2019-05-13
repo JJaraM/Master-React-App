@@ -10,8 +10,12 @@ import {
   LOAD_ALL_ITEMS_SUCCESS,
   SELECTION,
   SELECTION_SUCCESS,
+  RENDER_ADD_VIEW,
   RENDER_ADD_VIEW_SUCCESS,
   RENDER_ADD_VIEW_CLOSE,
+  REMOVE_CODE_SNIPPET,
+  RENDER_EDIT_CODE_SNIPPET,
+  EDIT_SELECTION,
 } from './constants';
 
 /*
@@ -26,6 +30,8 @@ export const initialState = {
   item: null,
   loading: 0,
   renderAddView: false,
+  idToRemove: 0,
+  action: '',
 };
 
 /* eslint-disable default-case, no-param-reassign */
@@ -48,8 +54,14 @@ const codeSnippetPageReducer = (state = initialState, action) =>
         draft.id = action.id;
         break;
 
+
       case SELECTION_SUCCESS:
         draft.item = action.item;
+        break;
+
+      case RENDER_ADD_VIEW:
+        draft.renderAddView = true;
+        draft.id = action.id;
         break;
 
       case RENDER_ADD_VIEW_SUCCESS:
@@ -58,7 +70,17 @@ const codeSnippetPageReducer = (state = initialState, action) =>
 
       case RENDER_ADD_VIEW_CLOSE:
         draft.renderAddView = false;
+        break
+
+      case REMOVE_CODE_SNIPPET:
+        draft.idToRemove = action.idToRemove;
         break;
+
+      case EDIT_SELECTION:
+        draft.id = action.id;
+        break
+
+  
     }
   });
 

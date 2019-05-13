@@ -13,6 +13,10 @@ export default defineMessages({
     id: `${scope}.title`,
     defaultMessage: 'Add Code Snippets',
   },
+  update_title: {
+    id: `${scope}.update_title`,
+    defaultMessage: 'Update Code Snippets',
+  },
   description: {
     id: `${scope}.description`,
     defaultMessage: 'Complete the form below to create your code snippet',

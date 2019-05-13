@@ -38,3 +38,18 @@ code[class*="language-comment"], pre[class*="language-comment"] {
 .token.strong {
   font-weight: bolder;
 }
+
+.copy-codeSnippet {
+  float: right;
+  border: 1px solid #00b88a;
+  padding: 0.1rem;
+  border-radius: 5px;
+  background: #00CC99;
+  cursor: pointer;
+}
+
+.copy-codeSnippet:hover {
+  background: #00b88a ;
+  color: #FFF;
+
+}

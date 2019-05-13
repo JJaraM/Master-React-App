@@ -9,6 +9,7 @@ import {
   SAVE_TYPE,
   SAVE_TITLE,
   SAVE_SUCCESS,
+  RENDER_SUCCESS,
 } from './constants';
 
 export const initialState = {
@@ -36,6 +37,12 @@ const codeSnippetAddFormReducer = (state = initialState, action) =>
 
       case SAVE_SUCCESS:
         draft.save = action.save;
+        break;
+
+      case RENDER_SUCCESS:
+        draft.codeSnippet = action.codeSnippet;
+        draft.language = action.language;
+        draft.title = action.title;
         break;
     }
   });
