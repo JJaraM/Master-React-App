@@ -18,11 +18,11 @@ const showBig = (item, idToRender) => (
   <>
     <Link to={item.to}>
       <div className="row row-item">
-        <div className="menu-item-element col-md-8 col-sm-8 col-xs-8 col-xs-center">
+        <div className="menu-item-element col-8 col-xs-center">
           <FormattedMessage {...messages[item.label]} />
           <MenuItemSubArrow {...item} selection={idToRender} />
         </div>
-        <div className="menu-icon-element col-md-4 col-sm-4 col-xs-4">
+        <div className="menu-icon-element col-4">
           <span className="menu-icon">
             <i className={item.icon} />
           </span>

@@ -4,6 +4,7 @@
 }
 
 
+
 .sidebar {
     font-size: .9rem;
     min-height: calc(100vh - 65px);
@@ -23,6 +24,12 @@
       //background: var(--side-menu-hover-background);
       border-radius: 5px;
     }
+}
+
+@media only screen and (max-width: 320px) {
+  .sidebar {
+    // width: 150px;
+  }
 }
 
 .nav-item {

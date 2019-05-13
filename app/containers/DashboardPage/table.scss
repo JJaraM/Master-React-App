@@ -22,6 +22,12 @@
     border: none;
   }
 
+  @media only screen and (max-width: 320px) {
+      td, th {
+        padding: 0.5%;
+      }
+  }
+
   button {
     background: var(table-button-background);
     border: none;

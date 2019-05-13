@@ -28,3 +28,9 @@
   border: none;
   margin-right: 10px;
 }
+
+@media only screen and (max-width: 320px) {
+  .submit-big-button {
+    padding: 0.275rem .65rem;
+  }
+}
