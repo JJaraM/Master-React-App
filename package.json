@@ -66,9 +66,6 @@
     "babel-core": "7.0.0-bridge.0"
   },
   "dependencies": {
-
-  },
-  "devDependencies": {
     "@babel/polyfill": "7.4.3",
     "chalk": "^2.4.2",
     "compression": "1.7.4",
@@ -100,7 +97,7 @@
     "sass-loader": "^7.1.0",
     "styled-components": "4.2.0",
 
-    
+
 
     "@babel/cli": "7.4.3",
     "@babel/core": "7.4.3",
@@ -172,5 +169,8 @@
     "webpack-hot-middleware": "2.24.3",
     "webpack-pwa-manifest": "4.0.0",
     "whatwg-fetch": "3.0.0"
+  },
+  "devDependencies": {
+
   }
 }
