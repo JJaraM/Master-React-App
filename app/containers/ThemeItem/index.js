@@ -37,7 +37,7 @@ export function ThemeItem({ item, onChangeTheme }) {
                   <button
                     value={item.name}
                     type="submit"
-                    className="btn btn-primary submit-big-button btn-lettuce"
+                    className="btn btn-primary btn-big btn-lettuce"
                     onClick={onChangeTheme}
                   >
                     Change

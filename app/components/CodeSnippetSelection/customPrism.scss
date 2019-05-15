@@ -39,6 +39,11 @@ code[class*="language-comment"], pre[class*="language-comment"] {
   font-weight: bolder;
 }
 
+.action-codeSnippet {
+  margin-right: 4px;
+  margin-left: 4px;
+}
+
 .copy-codeSnippet {
   float: right;
   border: 1px solid #00b88a;
@@ -46,10 +51,23 @@ code[class*="language-comment"], pre[class*="language-comment"] {
   border-radius: 5px;
   background: #00CC99;
   cursor: pointer;
+
+  &:hover {
+    background: #00b88a ;
+    color: #FFF;
+  }
 }
 
-.copy-codeSnippet:hover {
-  background: #00b88a ;
-  color: #FFF;
+.close-codeSnippet {
+  float: right;
+  border: 1px solid #ff5a6e;
+  padding: 0.1rem;
+  border-radius: 5px;
+  background: #ff5a6e;
+  cursor: pointer;
 
+  &:hover {
+    background: #ff465d ;
+    color: #FFF;
+  }
 }

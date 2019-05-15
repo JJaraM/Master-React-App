@@ -4,7 +4,8 @@ const styles = css`
   background: inherit;
   border: inherit;
   width: 100%;
-
+  border: none;
+  
   &:focus {
     outline: none;
   }

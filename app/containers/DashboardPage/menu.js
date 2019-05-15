@@ -1,15 +1,15 @@
 export default [
   {
-    id: 'dashboard',
-    to: '/dashboard',
-    label: 'home',
-    icon: 'fas fa-home',
+    id: 'codeSnippetApp',
+    to: '/dashboard/codeSnippetApp',
+    label: 'codeSnippet',
+    icon: 'fab fa-free-code-camp',
   },
   {
     id: 'codeSnippet',
     to: '/dashboard/codeSnippet',
     label: 'codeSnippet',
-    icon: 'fas fa-home',
+    icon: 'fas fa-code',
   },
   {
     id: 'ui',

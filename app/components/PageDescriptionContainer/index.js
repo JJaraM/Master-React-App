@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function PageDescriptionContainer({ title, description }) {
   return (
-    <div className="pet-background m-b-30">
+    <div className="header-bg m-b-30">
       <div className="row p-b-60 p-t-60">
         <div className="col-md-10 mx-auto text-center text-white p-b-30">
           <div className="m-b-20">

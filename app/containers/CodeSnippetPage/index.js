@@ -14,35 +14,42 @@ import RowSection12 from 'components/RowSection12';
 import CodeSnippetTable from 'components/CodeSnippetTable';
 import CodeSnippetSelection from 'components/CodeSnippetSelection';
 import CodeSnippetAdd from 'components/CodeSnippetAdd';
+import BootstrapModal from 'components/BootstrapModal';
+
 import {
   makeAllItems,
   makeSelectionItem,
   makeLoading,
   makeRenderAddView,
   makeSelectionId,
+  makeRenderDeleteView,
 } from './selectors';
 import reducer from './reducer';
 import saga from './saga';
 import messages from './messages';
-import { loadAllItems, selection, loadAddView, remove, edit } from './actions';
+import { loadAllItems, selection, loadAddView, remove, edit, renderDeletePopup } from './actions';
+import Push from 'push.js';
 
 export function CodeSnippetPage({
-  onLoadItems,
+  onLoadPage,
   onClickView,
   onClickAdd,
   onClickDelete,
   onClickEdit,
+  onClickDeletePopup,
+  onClickViewClose,
   items,
   item,
   loading,
   renderAddView,
+  renderDeleteView,
   id,
 }) {
   useInjectReducer({ key: 'codeSnippetPage', reducer });
   useInjectSaga({ key: 'codeSnippetPage', saga });
 
   useEffect(() => {
-    onLoadItems();
+    onLoadPage();
   }, []);
 
   const RolesFooter = () => (
@@ -77,7 +84,7 @@ export function CodeSnippetPage({
             ]}
             viewActionTitle={<FormattedMessage {...messages.table_view} />}
             viewAction={onClickView}
-            deleteAction={onClickDelete}
+            deleteAction={onClickDeletePopup}
             editAction={onClickEdit}
             items={items}
             loading={loading}
@@ -86,12 +93,20 @@ export function CodeSnippetPage({
         </RowSection12>
 
         <RowSection12>
-          <CodeSnippetSelection item={item} />
+          <CodeSnippetSelection item={item} onClose={onClickViewClose}/>
         </RowSection12>
 
         <RowSection12>
           <CodeSnippetAdd render={renderAddView} update={id !== 0} />
         </RowSection12>
+
+         <BootstrapModal
+          show={renderDeleteView}
+          onYes={onClickDelete}
+          onNo={onClickDeletePopup}
+          title={<FormattedMessage {...messages.popup_title_delete} />}
+          body={<FormattedMessage {...messages.popup_body_delete} />}
+        />
       </ContentWrapper>
     </>
   );
@@ -99,11 +114,13 @@ export function CodeSnippetPage({
 
 CodeSnippetPage.propTypes = {
   dispatch: PropTypes.func.isRequired,
-  onLoadItems: PropTypes.func,
+  onLoadPage: PropTypes.func,
   onClickView: PropTypes.func,
   onClickAdd: PropTypes.func,
   onClickDelete: PropTypes.func,
   onClickEdit: PropTypes.func,
+  onClickDeletePopup: PropTypes.func,
+  onClickViewClose: PropTypes.func,
   items: PropTypes.array,
   item: PropTypes.any,
   loading: PropTypes.number,
@@ -116,25 +133,28 @@ const mapStateToProps = createStructuredSelector({
   item: makeSelectionItem(),
   loading: makeLoading(),
   renderAddView: makeRenderAddView(),
+  renderDeleteView: makeRenderDeleteView(),
   id: makeSelectionId(),
 });
 
-let preSelection = 0;
+let isRenderDeletePopup = false;
+let deleteItem = 0;
 
 function mapDispatchToProps(dispatch) {
   return {
-    onLoadItems: () => dispatch(loadAllItems()),
+    onLoadPage: () => dispatch(loadAllItems()),
     onClickView: option => {
-      let selectedOption = option;
-      if (selectedOption === preSelection) {
-        selectedOption = 0;
-      }
-      preSelection = selectedOption;
-      return dispatch(selection(selectedOption));
+      return dispatch(selection(option));
     },
+    onClickViewClose: () => dispatch(selection(0)),
     onClickAdd: () => dispatch(loadAddView()),
     onClickEdit: id => dispatch(edit(id)),
-    onClickDelete: id => dispatch(remove(id)),
+    onClickDelete: () => dispatch(remove(deleteItem)),
+    onClickDeletePopup: (id) => {
+      deleteItem = id;
+      isRenderDeletePopup = !isRenderDeletePopup;
+      dispatch(renderDeletePopup(isRenderDeletePopup))
+    },
     dispatch,
   };
 }

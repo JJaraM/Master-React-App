@@ -1,25 +1,43 @@
 .main-panel {
   transition: width 0.25s ease, margin 0.25s ease;
   width: calc(100% - 180px);
-  min-height: calc(100vh - 63px);
+  //min-height: calc(100vh - 63px);
   display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: column;
   flex-direction: column;
 
+  .content-wrapper {
+
+      width: 100%;
+      -webkit-flex-grow: 1;
+      flex-grow: 1;
+
+      .row {
+        margin: 0;
+      }
+
+      h1 {
+        font-weight: 500;
+        line-height: 1.2;
+        margin-bottom: .5rem;
+        color: #FFF;
+      }
+  }
+
   &.big {
     width: calc(100% - 21px);
   }
 
+  &.small {
+    width: calc(100% - 234px);
+  }
 
-  // Small devices (landscape phones, 576px and up)
   @media only screen and (max-width: 320px) {
     &.big {
         width: calc(100% - 70px) !important;
     }
   }
 
-  &.small {
-      width: calc(100% - 234px);
-  }
+
 }

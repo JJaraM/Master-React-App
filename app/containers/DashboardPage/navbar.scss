@@ -1,13 +1,13 @@
 
 .navbar {
-  box-shadow: 0 1px 0 rgba(32,34,37,.7), 0 2px 0 rgba(0,0,0,.06);
+  box-shadow: 0 1px 0 rgba(0,0,0,.2), 0 1.5px 0 rgba(0,0,0,.05), 0 2px 0 rgba(0,0,0,.05);
 }
 
 
 
 .sidebar {
     font-size: .9rem;
-    min-height: calc(100vh - 65px);
+    min-height: calc(100vh - 66px);
     background: #222437;
     font-family: "Poppins", sans-serif;
     font-weight: 300;
@@ -105,7 +105,7 @@ main .container-fluid {
 }
 
 .main-menu {
-  border: var(--card-border);
+  //border: var(--card-border);
   height: 100%;
   background: var(--side-menu-background);
   z-index: 2;
@@ -239,16 +239,6 @@ main .container-fluid {
   }
 }
 
-.collapse-topMenu {
-  a {
-    cursor: pointer;
-  }
-  i {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    cursor: pointer;
-  }
-}
 
 
 

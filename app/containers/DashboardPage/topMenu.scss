@@ -5,15 +5,12 @@
   background: var(--top-menu-background);
   height: 65px;
 }
-
-
-
 .search {
   background: var(--form-control-background);
   position: relative;
   width: 230px;
   height: 40px;
-  border: var(--form-control-border);
+  //border: var(--form-control-border);
   border-radius: 5px;
   margin-right: 5px;
 
@@ -24,6 +21,7 @@
     padding: .5rem 1rem;
     background-color: hsla(0,0%,100%,.1);
     width: 100%;
+    height: 100%;
   }
 }
 
@@ -55,6 +53,6 @@
   vertical-align: middle;
 
   i {
-    color: #FFF;
+    color: var(--top-menu-collapse-color);
   }
 }

@@ -46,6 +46,12 @@ const makeIdToRemove = () =>
     substate => substate.idToRemove,
   );
 
+const makeRenderDeleteView = () =>
+  createSelector(
+    selectCodeSnippetPageDomain,
+    substate => substate.renderDelete,
+  );
+
 export {
   selectCodeSnippetPageDomain,
   makeSelectCodeSnippetPage,
@@ -54,5 +60,6 @@ export {
   makeSelectionItem,
   makeLoading,
   makeRenderAddView,
+  makeRenderDeleteView,
   makeIdToRemove,
 };

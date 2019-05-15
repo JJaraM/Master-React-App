@@ -9,7 +9,7 @@ import {
 
 import {
   LOAD_ALL_ITEMS,
-  SELECTION,
+  SELECTION_ID,
   RENDER_ADD_VIEW,
   REMOVE_CODE_SNIPPET,
   RENDER_DONE,
@@ -23,7 +23,7 @@ import {
 
 export default function* init() {
   yield takeLatest(LOAD_ALL_ITEMS, loadAllItems);
-  yield takeLatest(SELECTION, selection);
+  yield takeLatest(SELECTION_ID, selection);
   yield takeLatest(RENDER_ADD_VIEW, renderAddView);
   yield takeLatest(REMOVE_CODE_SNIPPET, removeCodeSnippet);
 }

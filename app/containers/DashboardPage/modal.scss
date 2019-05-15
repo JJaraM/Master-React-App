@@ -1,0 +1,15 @@
+.modal-content {
+  background: var(--card-background);
+  border: var(--card-border);
+  color: var(--global-color);
+}
+
+.modal-header {
+  background: var(--card-header-background);
+  border-bottom: var(--card-border);
+
+}
+
+.modal-footer {
+    border-top: var(--card-border);
+}

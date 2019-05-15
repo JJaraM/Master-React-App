@@ -1,9 +1,3 @@
-/*
- * CodeSnippetPage Messages
- *
- * This contains all the text for the CodeSnippetPage container.
- */
-
 import { defineMessages } from 'react-intl';
 
 export const scope = 'app.containers.CodeSnippetPage';
@@ -36,5 +30,13 @@ export default defineMessages({
   table_edit: {
     id: `${scope}.table_edit`,
     defaultMessage: 'Edit',
+  },
+  popup_title_delete: {
+    id: `${scope}.popup_title_delete`,
+    defaultMessage: 'Delete Code Snippet',
+  },
+  popup_body_delete: {
+    id: `${scope}.popup_body_delete`,
+    defaultMessage: 'Are you sure that you want to remove the selected code snippet?',
   },
 });

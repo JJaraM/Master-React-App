@@ -5,6 +5,16 @@
 }
 
 
+pre {
+  &:focus {
+    outline: none !important;
+  }
+}
+code {
+  &:focus {
+    outline: none !important;
+  }
+}
 
 .header-next-content {
   margin-top: 3rem;

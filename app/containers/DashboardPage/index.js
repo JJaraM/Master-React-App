@@ -13,6 +13,7 @@ import Dashboard from 'components/Dashboard';
 import { changeTheme } from 'containers/ThemePage/actions';
 import ThemePage from 'containers/ThemePage';
 import CodeSnippetPage from 'containers/CodeSnippetPage';
+import CodeSnippetApp from 'containers/CodeSnippetApp';
 import AlertMessage from 'components/AlertMessage';
 import RowSection12 from 'components/RowSection12';
 import { loadMenuOptions, actionCollapse } from './actions';
@@ -23,6 +24,7 @@ import {
 } from './selectors';
 import reducer from './reducer';
 import saga from './saga';
+import './scrollbar.scss';
 import './dashboard.scss';
 import './checkbox.scss';
 import './buttons.scss';
@@ -36,6 +38,7 @@ import './table.scss';
 import './prism-okaida.scss';
 import './icons.scss';
 import './tooltip.scss';
+import './modal.scss';
 
 export function DashboardPage({
   items,
@@ -71,6 +74,7 @@ export function DashboardPage({
           <Switch>
             <Route path="/dashboard/codeSnippet" component={CodeSnippetPage} />
             <Route path="/dashboard/settings/themes" component={ThemePage} />
+            <Route path="/dashboard/codeSnippetApp" component={CodeSnippetApp} />
           </Switch>
           <RowSection12>
             <AlertMessage messages={alertMessages} />

@@ -1,21 +1,15 @@
 import {
-  DEFAULT_ACTION,
   LOAD_ALL_ITEMS,
   LOAD_ALL_ITEMS_SUCCESS,
-  SELECTION,
+  SELECTION_ID,
   SELECTION_SUCCESS,
   RENDER_ADD_VIEW,
   RENDER_ADD_VIEW_SUCCESS,
   RENDER_ADD_VIEW_CLOSE,
   REMOVE_CODE_SNIPPET,
   EDIT_SELECTION,
+  RENDER_DELETE,
 } from './constants';
-
-export function defaultAction() {
-  return {
-    type: DEFAULT_ACTION,
-  };
-}
 
 export function loadAllItems() {
   return {
@@ -34,7 +28,7 @@ export function loadAllItemsSuccess(items, loading) {
 
 export function selection(id) {
   return {
-    type: SELECTION,
+    type: SELECTION_ID,
     id,
   };
 }
@@ -77,5 +71,12 @@ export function edit(id) {
   return {
     type: RENDER_ADD_VIEW,
     id,
+  };
+}
+
+export function renderDeletePopup(renderDelete) {
+  return {
+    type: RENDER_DELETE,
+    renderDelete,
   };
 }

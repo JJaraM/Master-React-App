@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import Table from '../Table';
+import CodeSnippetTypes from 'containers/CodeSnippetTypes';
 
 function createItem(
   codeSnippet,
@@ -82,7 +83,11 @@ function CodeSnippetTable(props) {
     ),
   );
 
+
+
   return (
+
+
     <Table
       headers={headers}
       rows={tableRows}

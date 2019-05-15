@@ -5,10 +5,9 @@
  */
 import produce from 'immer';
 import {
-  DEFAULT_ACTION,
   LOAD_ALL_ITEMS,
   LOAD_ALL_ITEMS_SUCCESS,
-  SELECTION,
+  SELECTION_ID,
   SELECTION_SUCCESS,
   RENDER_ADD_VIEW,
   RENDER_ADD_VIEW_SUCCESS,
@@ -16,6 +15,7 @@ import {
   REMOVE_CODE_SNIPPET,
   RENDER_EDIT_CODE_SNIPPET,
   EDIT_SELECTION,
+  RENDER_DELETE,
 } from './constants';
 
 /*
@@ -32,14 +32,13 @@ export const initialState = {
   renderAddView: false,
   idToRemove: 0,
   action: '',
+  renderDelete: false,
 };
 
 /* eslint-disable default-case, no-param-reassign */
 const codeSnippetPageReducer = (state = initialState, action) =>
   produce(state, draft => {
     switch (action.type) {
-      case DEFAULT_ACTION:
-        break;
 
       case LOAD_ALL_ITEMS:
         draft.items = [];
@@ -50,7 +49,7 @@ const codeSnippetPageReducer = (state = initialState, action) =>
         draft.loading = action.loading;
         break;
 
-      case SELECTION:
+      case SELECTION_ID:
         draft.id = action.id;
         break;
 
@@ -73,11 +72,15 @@ const codeSnippetPageReducer = (state = initialState, action) =>
 
       case REMOVE_CODE_SNIPPET:
         draft.idToRemove = action.idToRemove;
+        draft.renderDelete = false;
         break;
 
       case EDIT_SELECTION:
         draft.id = action.id;
         break;
+
+      case RENDER_DELETE:
+        draft.renderDelete = action.renderDelete;
     }
   });
 

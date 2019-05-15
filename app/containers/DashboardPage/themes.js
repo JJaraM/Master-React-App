@@ -8,6 +8,7 @@ export default {
       'form-control-background-hover': '#FFF',
 
       'top-menu-background': '#FFF',
+      'top-menu-collapse-color': '#000',
 
       'side-menu-background': '#212841',
       'side-menu-color': '#FFF',
@@ -31,6 +32,7 @@ export default {
       'table-th-top-border': '1px solid #edf2f9',
       'table-th-bottom-border': '1px solid #edf2f9',
       'table-td-border-top': '1px solid #edf2f9',
+      'global-color': "#000",
 
       colorA: '#212841',
       colorB: '#F4F7FC',
@@ -57,6 +59,7 @@ export default {
       'form-control-background-hover': '#343233',
 
       'top-menu-background': '#2F3136',
+      'top-menu-collapse-color': '#FFF',
 
       'side-menu-background': '#202225',
       'side-menu-color': '#FFF',
@@ -81,6 +84,7 @@ export default {
       'table-th-top-border': '1px solid rgba(255,255,255,.12)',
       'table-th-bottom-border': '1px solid rgba(255,255,255,.12)',
       'table-td-border-top': '1px solid rgba(255,255,255,.12)',
+      'global-color': "#FFF",
 
       colorA: '#202225',
       colorB: '#36393F',

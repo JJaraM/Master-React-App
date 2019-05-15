@@ -1,6 +1,6 @@
 /**
  *
- * Asynchronously loads the component for CodeSnippetPage
+ * Asynchronously loads the component for CodeSnippetApp
  *
  */
 
