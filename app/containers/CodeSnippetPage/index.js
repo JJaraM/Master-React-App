@@ -27,8 +27,14 @@ import {
 import reducer from './reducer';
 import saga from './saga';
 import messages from './messages';
-import { loadAllItems, selection, loadAddView, remove, edit, renderDeletePopup } from './actions';
-import Push from 'push.js';
+import {
+  loadAllItems,
+  selection,
+  loadAddView,
+  remove,
+  edit,
+  renderDeletePopup,
+} from './actions';
 
 export function CodeSnippetPage({
   onLoadPage,
@@ -93,14 +99,14 @@ export function CodeSnippetPage({
         </RowSection12>
 
         <RowSection12>
-          <CodeSnippetSelection item={item} onClose={onClickViewClose}/>
+          <CodeSnippetSelection item={item} onClose={onClickViewClose} />
         </RowSection12>
 
         <RowSection12>
           <CodeSnippetAdd render={renderAddView} update={id !== 0} />
         </RowSection12>
 
-         <BootstrapModal
+        <BootstrapModal
           show={renderDeleteView}
           onYes={onClickDelete}
           onNo={onClickDeletePopup}
@@ -126,6 +132,7 @@ CodeSnippetPage.propTypes = {
   loading: PropTypes.number,
   renderAddView: PropTypes.bool,
   id: PropTypes.number,
+  renderDeleteView: PropTypes.bool,
 };
 
 const mapStateToProps = createStructuredSelector({
@@ -143,17 +150,15 @@ let deleteItem = 0;
 function mapDispatchToProps(dispatch) {
   return {
     onLoadPage: () => dispatch(loadAllItems()),
-    onClickView: option => {
-      return dispatch(selection(option));
-    },
+    onClickView: option => dispatch(selection(option)),
     onClickViewClose: () => dispatch(selection(0)),
     onClickAdd: () => dispatch(loadAddView()),
     onClickEdit: id => dispatch(edit(id)),
     onClickDelete: () => dispatch(remove(deleteItem)),
-    onClickDeletePopup: (id) => {
+    onClickDeletePopup: id => {
       deleteItem = id;
       isRenderDeletePopup = !isRenderDeletePopup;
-      dispatch(renderDeletePopup(isRenderDeletePopup))
+      dispatch(renderDeletePopup(isRenderDeletePopup));
     },
     dispatch,
   };

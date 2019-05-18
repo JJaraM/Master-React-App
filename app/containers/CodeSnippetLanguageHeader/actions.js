@@ -1,4 +1,10 @@
-import { DEFAULT_ACTION, SHOW_ADD, ON_CHANGE_LANGUAGE, ON_SAVE, ON_SAVE_SUCCESS } from './constants';
+import {
+  DEFAULT_ACTION,
+  SHOW_ADD,
+  ON_CHANGE_LANGUAGE,
+  ON_SAVE,
+  ON_SAVE_SUCCESS,
+} from './constants';
 
 export function defaultAction() {
   return {
@@ -6,10 +12,10 @@ export function defaultAction() {
   };
 }
 
-export function showAdd(showAdd) {
+export function showAdd(viewShowAdd) {
   return {
     type: SHOW_ADD,
-    showAdd,
+    viewShowAdd,
   };
 }
 
@@ -30,6 +36,6 @@ export function saveLanguageSuccess() {
   return {
     type: ON_SAVE_SUCCESS,
     language: '',
-    showAdd: false,
+    viewShowAdd: false,
   };
 }

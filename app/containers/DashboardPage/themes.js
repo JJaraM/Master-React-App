@@ -16,10 +16,10 @@ export default {
       'side-menu-subMenu-background': '#1a1f33',
 
       'side-menu-1-background': '#28304e',
-      'side-menu-1-background-hover' : '#1a2034',
+      'side-menu-1-background-hover': '#1a2034',
 
       'side-menu-2-background': '#2e385b',
-      'side-menu-2-background-hover' : '#292B2F',
+      'side-menu-2-background-hover': '#292B2F',
 
       'body-background': '#F4F7FC',
 
@@ -38,7 +38,7 @@ export default {
       'table-th-top-border': '1px solid #edf2f9',
       'table-th-bottom-border': '1px solid #edf2f9',
       'table-td-border-top': '1px solid #edf2f9',
-      'global-color': "#000",
+      'global-color': '#000',
 
       colorA: '#212841',
       colorB: '#F4F7FC',
@@ -73,10 +73,10 @@ export default {
       'side-menu-subMenu-background': '#343233',
 
       'side-menu-1-background': '#25272b',
-      'side-menu-1-background-hover' : '#292B2F',
+      'side-menu-1-background-hover': '#292B2F',
 
       'side-menu-2-background': '#2f3136',
-      'side-menu-2-background-hover' : '#292B2F',
+      'side-menu-2-background-hover': '#292B2F',
 
       'body-background': '#36393f',
 
@@ -96,7 +96,7 @@ export default {
       'table-th-top-border': '1px solid rgba(255,255,255,.12)',
       'table-th-bottom-border': '1px solid rgba(255,255,255,.12)',
       'table-td-border-top': '1px solid rgba(255,255,255,.12)',
-      'global-color': "#FFF",
+      'global-color': '#FFF',
 
       colorA: '#202225',
       colorB: '#36393F',

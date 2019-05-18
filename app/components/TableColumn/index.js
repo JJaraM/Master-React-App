@@ -58,9 +58,11 @@ function TableColumn(props) {
         if (column.type === 'icon-button') {
           return (
             <div
+              tabIndex="0"
               className={`icon-button fa ${column.value}`}
               role="button"
               onClick={() => column.action(rowId)}
+              onKeyPress={() => column.action(rowId)}
             />
           );
         }

@@ -35,6 +35,7 @@ export function* load() {
   }
 }
 
+/* eslint prefer-destructuring: ["error", {AssignmentExpression: {array: false}}] */
 export function* update() {
   const items = yield select(makeAllItems());
   const codeSnippet = yield select(makeSelectCodeSnippet());
@@ -63,7 +64,9 @@ export function* update() {
     items[idx] = result[0];
     yield put(saveSuccess(1));
     yield put(loadAllItemsSuccess(items.slice()));
-  } catch (err) {}
+  } catch (err) {
+    yield put(saveSuccess(2));
+  }
 }
 
 export function* save() {

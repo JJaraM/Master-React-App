@@ -1,4 +1,4 @@
-import { call, put, takeLatest, select } from 'redux-saga/effects';
+import { call, put, takeLatest } from 'redux-saga/effects';
 import request from 'utils/request';
 import { LOAD_LANGUAGES } from './constants';
 import { loadAllItemsSuccess } from './actions';

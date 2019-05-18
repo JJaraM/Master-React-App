@@ -12,7 +12,6 @@ import {
   SELECTION_ID,
   RENDER_ADD_VIEW,
   REMOVE_CODE_SNIPPET,
-  RENDER_DONE,
 } from './constants';
 import {
   makeSelectionId,
@@ -65,7 +64,7 @@ export function* removeCodeSnippet() {
   let items = yield select(makeAllItems());
   const requestURL = `https://ws-code-snippet.herokuapp.com/v1/codeSnippet/${idToRemove}`;
   try {
-    const result = yield call(request, requestURL, {
+    yield call(request, requestURL, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',

@@ -3,23 +3,22 @@ import PropTypes from 'prop-types';
 import './style.scss';
 
 function AlertMessage(props) {
-  const type = 'danger';
-  let content = <></>;
-
+  let ComponentToRender = null;
   if (props.messages && props.messages.length > 0) {
-    content = props.messages.map(item => <li key={item.id}>{item.message}</li>);
-
-    return (
-      <div className={`alert alert-${type}`} role="alert">
+    const content = props.messages.map(item => (
+      <li key={item.id}>{item.message}</li>
+    ));
+    ComponentToRender = () => (
+      <div className="alert alert-danger" role="alert">
         <ul>{content}</ul>
       </div>
     );
   }
-  return null;
+  return <ComponentToRender />;
 }
 
 AlertMessage.propTypes = {
-  messages: PropTypes.any,
+  messages: PropTypes.any.isRequired,
 };
 
 export default memo(AlertMessage);

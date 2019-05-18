@@ -1,11 +1,8 @@
 import { createSelector } from 'reselect';
 import { initialState } from './reducer';
 
-
 const selectCodeSnippetAppDomain = state =>
   state.codeSnippetApp || initialState;
-
-
 
 const makeSelectCodeSnippetApp = () =>
   createSelector(
@@ -22,5 +19,5 @@ const makeSelectLanguages = () =>
 export {
   selectCodeSnippetAppDomain,
   makeSelectCodeSnippetApp,
-  makeSelectLanguages
+  makeSelectLanguages,
 };

@@ -6,7 +6,6 @@ function RowSection(props) {
     return <div className="change-section row">{props.children}</div>;
   }
   return null;
-
 }
 
 RowSection.propTypes = {

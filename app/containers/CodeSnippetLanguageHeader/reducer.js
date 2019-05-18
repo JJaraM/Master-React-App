@@ -4,10 +4,15 @@
  *
  */
 import produce from 'immer';
-import { DEFAULT_ACTION, SHOW_ADD, ON_CHANGE_LANGUAGE, ON_SAVE_SUCCESS } from './constants';
+import {
+  DEFAULT_ACTION,
+  SHOW_ADD,
+  ON_CHANGE_LANGUAGE,
+  ON_SAVE_SUCCESS,
+} from './constants';
 
 export const initialState = {
-  showAdd: false,
+  viewShowAdd: false,
   language: '',
 };
 
@@ -19,7 +24,7 @@ const codeSnippetLanguageHeaderReducer = (state = initialState, action) =>
         break;
 
       case SHOW_ADD:
-        draft.showAdd = action.showAdd;
+        draft.viewShowAdd = action.viewShowAdd;
         break;
 
       case ON_CHANGE_LANGUAGE:
@@ -27,7 +32,7 @@ const codeSnippetLanguageHeaderReducer = (state = initialState, action) =>
         break;
 
       case ON_SAVE_SUCCESS:
-        draft.showAdd = action.showAdd;
+        draft.viewShowAdd = action.viewShowAdd;
         draft.language = action.language;
         break;
     }

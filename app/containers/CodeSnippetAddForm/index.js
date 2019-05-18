@@ -149,6 +149,7 @@ CodeSnippetAddForm.propTypes = {
   codeSnippet: PropTypes.string,
   language: PropTypes.string,
   title: PropTypes.string,
+  id: PropTypes.any,
 };
 
 const mapStateToProps = createStructuredSelector({
@@ -160,7 +161,7 @@ const mapStateToProps = createStructuredSelector({
 
 function mapDispatchToProps(dispatch) {
   return {
-    onLoad: evt => dispatch(load()),
+    onLoad: () => dispatch(load()),
     onChangeCodeSnippet: evt => dispatch(saveCodeSnippet(evt.target.value)),
     onChangeLanguage: evt => dispatch(saveType(evt.target.value)),
     onChangeTitle: evt => dispatch(saveTitle(evt.target.value)),

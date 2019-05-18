@@ -5,7 +5,7 @@ import SideSubMenuItem from 'containers/SideSubMenuItem';
 
 function SideMenuSub({ items, selection, sidebarBig }) {
   let content = null;
-    
+
   if (items !== false) {
     content = (
       <SideMenuSubList

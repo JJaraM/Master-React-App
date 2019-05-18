@@ -1,4 +1,8 @@
-import { DEFAULT_ACTION, LOAD_LANGUAGES, LOAD_LANGUAGES_SUCCESS } from './constants';
+import {
+  DEFAULT_ACTION,
+  LOAD_LANGUAGES,
+  LOAD_LANGUAGES_SUCCESS,
+} from './constants';
 
 export function defaultAction() {
   return {

@@ -84,7 +84,10 @@ export function DashboardPage({
           <Switch>
             <Route path="/dashboard/codeSnippet" component={CodeSnippetPage} />
             <Route path="/dashboard/settings/themes" component={ThemePage} />
-            <Route path="/dashboard/codeSnippetApp" component={CodeSnippetApp} />
+            <Route
+              path="/dashboard/codeSnippetApp"
+              component={CodeSnippetApp}
+            />
           </Switch>
           <AlertMessageSection />
         </Dashboard>

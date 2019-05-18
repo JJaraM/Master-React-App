@@ -16,5 +16,8 @@ const makeSelectCodeSnippets = () =>
     substate => substate.items,
   );
 
-
-export { selectCodeSnippetLanguageItemDomain, makeSelectLanguage, makeSelectCodeSnippets };
+export {
+  selectCodeSnippetLanguageItemDomain,
+  makeSelectLanguage,
+  makeSelectCodeSnippets,
+};

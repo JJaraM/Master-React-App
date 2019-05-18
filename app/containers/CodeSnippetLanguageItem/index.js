@@ -1,18 +1,15 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Helmet } from 'react-helmet';
-import { FormattedMessage } from 'react-intl';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
 
 import { useInjectSaga } from 'utils/injectSaga';
 import { useInjectReducer } from 'utils/injectReducer';
+import Button from 'components/SubMenuItem/Button';
 import { makeSelectLanguage } from './selectors';
 import reducer from './reducer';
 import saga from './saga';
-import messages from './messages';
-import Button from 'components/SubMenuItem/Button';
 import { select } from './actions';
 
 export function CodeSnippetLanguageItem(props) {
@@ -30,7 +27,6 @@ export function CodeSnippetLanguageItem(props) {
 }
 
 CodeSnippetLanguageItem.propTypes = {
-  dispatch: PropTypes.func.isRequired,
   item: PropTypes.any,
   onSelect: PropTypes.func,
 };
@@ -41,8 +37,7 @@ const mapStateToProps = createStructuredSelector({
 
 function mapDispatchToProps(dispatch) {
   return {
-    onSelect: (evt) => dispatch(select(evt.target.id)),
-    dispatch,
+    onSelect: evt => dispatch(select(evt.target.id)),
   };
 }
 

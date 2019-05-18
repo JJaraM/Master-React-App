@@ -13,7 +13,6 @@ import {
   RENDER_ADD_VIEW_SUCCESS,
   RENDER_ADD_VIEW_CLOSE,
   REMOVE_CODE_SNIPPET,
-  RENDER_EDIT_CODE_SNIPPET,
   EDIT_SELECTION,
   RENDER_DELETE,
 } from './constants';
@@ -39,7 +38,6 @@ export const initialState = {
 const codeSnippetPageReducer = (state = initialState, action) =>
   produce(state, draft => {
     switch (action.type) {
-
       case LOAD_ALL_ITEMS:
         draft.items = [];
         break;

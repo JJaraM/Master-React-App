@@ -1,9 +1,9 @@
-import { call, put, takeLatest, select } from 'redux-saga/effects';
-import { ON_SAVE } from './constants';
-import { makeSelectLanguage } from './selectors';
+import { put, takeLatest, select } from 'redux-saga/effects';
 import { makeSelectLanguages } from 'containers/CodeSnippetApp/selectors';
 import { saveItems } from 'containers/CodeSnippetLanguageItem/actions';
 import { loadAllItemsSuccess } from 'containers/CodeSnippetApp/actions';
+import { makeSelectLanguage } from './selectors';
+import { ON_SAVE } from './constants';
 import { saveLanguageSuccess } from './actions';
 
 export default function* init() {
@@ -13,9 +13,9 @@ export default function* init() {
 export function* onSave() {
   const language = yield select(makeSelectLanguage());
   const languages = yield select(makeSelectLanguages());
-  languages.push({type: language});
+  languages.push({ type: language });
 
-  yield put(loadAllItemsSuccess(languages.slice(), 1))
+  yield put(loadAllItemsSuccess(languages.slice(), 1));
   yield put(saveItems(null));
   yield put(saveLanguageSuccess());
 }

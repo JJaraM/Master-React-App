@@ -1,6 +1,6 @@
 /*
  *
- * CodeSnippetTypes reducer
+ * ExamPage reducer
  *
  */
 import produce from 'immer';
@@ -9,7 +9,7 @@ import { DEFAULT_ACTION } from './constants';
 export const initialState = {};
 
 /* eslint-disable default-case, no-param-reassign */
-const codeSnippetTypesReducer = (state = initialState, action) =>
+const examPageReducer = (state = initialState, action) =>
   produce(state, (/* draft */) => {
     switch (action.type) {
       case DEFAULT_ACTION:
@@ -17,4 +17,4 @@ const codeSnippetTypesReducer = (state = initialState, action) =>
     }
   });
 
-export default codeSnippetTypesReducer;
+export default examPageReducer;

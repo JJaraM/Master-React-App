@@ -24,19 +24,20 @@ class CodeSnippetSelection extends React.Component {
   }
 
   isChildOf(node, parentId) {
-    while (node !== null) {
-      if (node.id === parentId) {
+    let isChildNode = node;
+    while (isChildNode !== null) {
+      if (isChildNode.id === parentId) {
         return true;
       }
-      node = node.parentNode;
+      isChildNode = isChildNode.parentNode;
     }
     return false;
-  };
+  }
 
   getCurrentCursorPosition(parentId) {
-    var selection = window.getSelection(),
-    charCount = -1,
-    node;
+    const selection = window.getSelection();
+    let charCount = -1;
+    let node;
 
     if (selection.focusNode) {
       if (this.isChildOf(selection.focusNode, parentId)) {
@@ -53,19 +54,20 @@ class CodeSnippetSelection extends React.Component {
           } else {
             node = node.parentNode;
             if (node === null) {
-              break
+              break;
             }
           }
         }
       }
     }
-
     return charCount;
-  };
+  }
 
-  onEditCode(item, editFunction, e) {
-    const el = document.getElementById('code-editable-' + item.id);
-    const cursorPosition = this.getCurrentCursorPosition('code-editable-' + item.id);
+  onEditCode(item, editFunction) {
+    const el = document.getElementById(`code-editable-${item.id}`);
+    const cursorPosition = this.getCurrentCursorPosition(
+      `code-editable-${item.id}`,
+    );
     const range = document.createRange();
     const sel = window.getSelection();
 
@@ -78,16 +80,15 @@ class CodeSnippetSelection extends React.Component {
       let cursorPositionInAllNodes = 0;
       const totalChildNodes = el.childNodes.length;
 
-      for (var nodeIndex = 0; nodeIndex < totalChildNodes; ++nodeIndex) {
+      for (let nodeIndex = 0; nodeIndex < totalChildNodes; nodeIndex += 1) {
         const child = el.childNodes[nodeIndex];
         if (child !== undefined) {
           const text = this.getChildText(child);
-          const letters = text.split("");
+          const letters = text.split('');
           const textSize = letters.length;
-          for (var letterIndex = 0; letterIndex < textSize; letterIndex++) {
-            const isNotBlank = letters[letterIndex].trim().length > 0;
-            cursorPositionInAllNodes++;
-            if (cursorPositionInAllNodes === cursorPosition ) {
+          for (let letterIndex = 0; letterIndex < textSize; letterIndex += 1) {
+            cursorPositionInAllNodes += 1;
+            if (cursorPositionInAllNodes === cursorPosition) {
               nodePosition = nodeIndex;
               cursorPositionInNode = letterIndex + 1;
             }
@@ -97,13 +98,12 @@ class CodeSnippetSelection extends React.Component {
 
       try {
         range.setStart(el.childNodes[nodePosition], cursorPositionInNode);
-      } catch(err) {
+      } catch (err) {
         try {
-          nodePosition = nodePosition;
           const child = el.childNodes[nodePosition];
           const text = this.getChildText(child);
           range.setStart(child, text.length - 4);
-        } catch(err2) {
+        } catch (err2) {
           const child = el.childNodes[totalChildNodes - 1];
           const text = this.getChildText(child);
           range.setStart(child, text.length);
@@ -143,42 +143,49 @@ class CodeSnippetSelection extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     if (this.props.item && this.props.item.type && this.props.item.content) {
       this.asyncImport();
       const Copy = () => (
         <div className="action-codeSnippet">
-        <div
-        id={`copy-codeSnippet-${this.props.item.id}`}
-        className="copy-codeSnippet"
-        onClick={() => this.copyToClipboard(this.props.item)}
-        >
-        Copy
-        </div>
+          <div
+            tabIndex="0"
+            role="button"
+            id={`copy-codeSnippet-${this.props.item.id}`}
+            className="copy-codeSnippet"
+            onClick={() => this.copyToClipboard(this.props.item)}
+            onKeyPress={() => this.copyToClipboard(this.props.item)}
+          >
+            Copy
+          </div>
         </div>
       );
 
       const Close = () => (
         <div className="action-codeSnippet">
-        <div
-        id={`copy-codeSnippet-${this.props.item.id}`}
-        className="close-codeSnippet action-codeSnippet"
-        onClick={this.props.onClose}
-        >
-        Close
-        </div>
+          <div
+            tabIndex="0"
+            role="button"
+            id={`copy-codeSnippet-${this.props.item.id}`}
+            className="close-codeSnippet action-codeSnippet"
+            onClick={this.props.onClose}
+            onKeyPress={this.props.onClose}
+          >
+            Close
+          </div>
         </div>
       );
 
       const Code = () => (
         <code
-        id={`code-editable-${this.props.item.id}`}
-        onKeyUp={(evt) => this.onEditCode(this.props.item, this.props.onEdit, evt)}
-        contentEditable="true"
-        suppressContentEditableWarning={true}
-        className={`language-${this.props.item.type}`}
+          role="textbox"
+          tabIndex="0"
+          id={`code-editable-${this.props.item.id}`}
+          onKeyUp={() => this.onEditCode(this.props.item, this.props.onEdit)}
+          contentEditable="true"
+          suppressContentEditableWarning
+          className={`language-${this.props.item.type}`}
         >
-        {this.props.item.content}
+          {this.props.item.content}
         </code>
       );
 
@@ -192,8 +199,8 @@ class CodeSnippetSelection extends React.Component {
               <Close />
               <Copy />
             </div>
-              <Code />
-            </pre>
+            <Code />
+          </pre>
         </div>
       );
     }

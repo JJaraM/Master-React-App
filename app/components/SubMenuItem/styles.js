@@ -5,7 +5,7 @@ const styles = css`
   border: inherit;
   width: 100%;
   border: none;
-  
+
   &:focus {
     outline: none;
   }

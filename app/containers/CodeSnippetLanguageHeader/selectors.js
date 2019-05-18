@@ -13,7 +13,7 @@ const makeSelectCodeSnippetLanguageHeader = () =>
 const makeSelectShowAdd = () =>
   createSelector(
     selectCodeSnippetLanguageHeaderDomain,
-    substate => substate.showAdd,
+    substate => substate.viewShowAdd,
   );
 
 const makeSelectLanguage = () =>
@@ -26,5 +26,5 @@ export {
   selectCodeSnippetLanguageHeaderDomain,
   makeSelectCodeSnippetLanguageHeader,
   makeSelectShowAdd,
-  makeSelectLanguage
+  makeSelectLanguage,
 };

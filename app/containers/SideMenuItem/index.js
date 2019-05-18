@@ -31,7 +31,7 @@ const showBig = (item, idToRender) => (
   </>
 );
 
-const showSmall = (item, idToRender) => (
+const showSmall = item => (
   <>
     <Link to={item.to}>
       <div className="row row-item">
@@ -42,7 +42,6 @@ const showSmall = (item, idToRender) => (
         </div>
       </div>
     </Link>
-
   </>
 );
 
@@ -53,9 +52,18 @@ export function SideMenuItem(props) {
   const { item } = props;
   const { idToRender } = props;
   const { sidebarBig } = props;
-  const content = sidebarBig ? showBig(item, idToRender) : showSmall(item, idToRender);
+  const content = sidebarBig ? showBig(item, idToRender) : showSmall(item);
 
-  return <SubMenuItem id={id} item={content} options={item} selection={idToRender} onClick={props.onExpand} sidebarBig={sidebarBig} />;
+  return (
+    <SubMenuItem
+      id={id}
+      item={content}
+      options={item}
+      selection={idToRender}
+      onClick={props.onExpand}
+      sidebarBig={sidebarBig}
+    />
+  );
 }
 
 SideMenuItem.propTypes = {

@@ -20,7 +20,7 @@ export function SideSubMenuItem(props) {
           </div>
         </div>
       </Link>
-    )
+    );
   }
 
   return (

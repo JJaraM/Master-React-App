@@ -3,7 +3,11 @@ import PropTypes from 'prop-types';
 
 function Sidebar(props) {
   return (
-    <nav className={`sidebar sidebar-offcanvas sidebar-fixed next-menu ${props.cssClass}`}>
+    <nav
+      className={`sidebar sidebar-offcanvas sidebar-fixed next-menu ${
+        props.cssClass
+      }`}
+    >
       {props.children}
     </nav>
   );
@@ -11,6 +15,7 @@ function Sidebar(props) {
 
 Sidebar.propTypes = {
   cssClass: PropTypes.string,
+  children: PropTypes.node.isRequired,
 };
 
 export default memo(Sidebar);

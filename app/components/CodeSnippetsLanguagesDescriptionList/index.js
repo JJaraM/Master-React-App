@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import CodeSnippetLanguagesDescriptionItem from 'containers/CodeSnippetLanguagesDescriptionItem';
-import Sidebar from '../Sidebar';
 import CodeSnippetHeader from 'containers/CodeSnippetHeader';
+import Sidebar from '../Sidebar';
 import SkeletonLoading from '../SkeletonLoading';
 
 function CodeSnippetsLanguagesDescriptionList(props) {
@@ -11,7 +11,7 @@ function CodeSnippetsLanguagesDescriptionList(props) {
   let Container = () => (
     <Sidebar cssClass="items">
       <CodeSnippetHeader />
-      <SkeletonLoading lines={10}/>
+      <SkeletonLoading lines={10} />
     </Sidebar>
   );
 
@@ -34,9 +34,9 @@ function CodeSnippetsLanguagesDescriptionList(props) {
     Container = () => (
       <Sidebar cssClass="items">
         <CodeSnippetHeader />
-        { items }
+        {items}
       </Sidebar>
-    )
+    );
   }
 
   return <Container />;

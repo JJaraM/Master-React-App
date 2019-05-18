@@ -37,6 +37,7 @@ export default defineMessages({
   },
   popup_body_delete: {
     id: `${scope}.popup_body_delete`,
-    defaultMessage: 'Are you sure that you want to remove the selected code snippet?',
+    defaultMessage:
+      'Are you sure that you want to remove the selected code snippet?',
   },
 });

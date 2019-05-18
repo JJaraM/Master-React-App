@@ -1,6 +1,6 @@
 /*
  *
- * CodeSnippetTypes actions
+ * ExamPage actions
  *
  */
 

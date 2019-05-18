@@ -12,25 +12,24 @@ import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
 import { useInjectSaga } from 'utils/injectSaga';
 import { useInjectReducer } from 'utils/injectReducer';
+import SideBarSearchInput from 'components/SideBarSearchInput';
+import BootstrapModal from 'components/BootstrapModal';
 import {
   makeSelectCodeSnippetLanguageHeader,
   makeSelectShowAdd,
-  makeSelectLanguage
+  makeSelectLanguage,
 } from './selectors';
 import reducer from './reducer';
 import saga from './saga';
 import messages from './messages';
 import { showAdd, changeLanguage, saveForm } from './actions';
 
-import SideBarSearchInput from 'components/SideBarSearchInput';
-import BootstrapModal from 'components/BootstrapModal';
-
 export function CodeSnippetLanguageHeader({
   onSave,
   onClose,
   onAdd,
   onChangeLanguage,
-  showAdd,
+  selectShowAdd,
   language,
 }) {
   useInjectReducer({ key: 'codeSnippetLanguageHeader', reducer });
@@ -40,25 +39,29 @@ export function CodeSnippetLanguageHeader({
     <>
       <div className="next-menu-title">
         Languages
-        <div className="fas fa-plus plus" role="button" onClick={onAdd} />
+        <div
+          className="fas fa-plus plus"
+          role="button"
+          tabIndex="0"
+          onClick={onAdd}
+          onKeyUp={onAdd}
+        />
       </div>
       <SideBarSearchInput />
 
       <BootstrapModal
-         show={showAdd}
-         onYes={onSave}
-         onNo={onClose}
-         title={
-           <FormattedMessage {...messages.header} />
-         }
-         body={
-           <input
+        show={selectShowAdd}
+        onYes={onSave}
+        onNo={onClose}
+        title={<FormattedMessage {...messages.header} />}
+        body={
+          <input
             value={language}
             onChange={onChangeLanguage}
             className="form-control"
           />
-         }
-       />
+        }
+      />
     </>
   );
 }
@@ -69,13 +72,13 @@ CodeSnippetLanguageHeader.propTypes = {
   onClose: PropTypes.func.isRequired,
   onChangeLanguage: PropTypes.func.isRequired,
   onAdd: PropTypes.func.isRequired,
-  showAdd: PropTypes.bool,
+  selectShowAdd: PropTypes.bool,
   language: PropTypes.string,
 };
 
 const mapStateToProps = createStructuredSelector({
   codeSnippetLanguageHeader: makeSelectCodeSnippetLanguageHeader(),
-  showAdd: makeSelectShowAdd(),
+  selectShowAdd: makeSelectShowAdd(),
   language: makeSelectLanguage(),
 });
 
@@ -84,7 +87,7 @@ function mapDispatchToProps(dispatch) {
     onAdd: () => dispatch(showAdd(true)),
     onSave: () => dispatch(saveForm()),
     onClose: () => dispatch(showAdd(false)),
-    onChangeLanguage: (evt) => dispatch(changeLanguage(evt.target.value)),
+    onChangeLanguage: evt => dispatch(changeLanguage(evt.target.value)),
     dispatch,
   };
 }

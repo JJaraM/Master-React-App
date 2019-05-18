@@ -1,7 +1,6 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Helmet } from 'react-helmet';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
 import Button from 'components/SubMenuItem/Button';
@@ -24,7 +23,6 @@ export function CodeSnippetLanguagesDescriptionItem(props) {
 }
 
 CodeSnippetLanguagesDescriptionItem.propTypes = {
-  dispatch: PropTypes.func.isRequired,
   onSelect: PropTypes.func,
   item: PropTypes.any,
 };
@@ -35,8 +33,7 @@ const mapStateToProps = createStructuredSelector({
 
 function mapDispatchToProps(dispatch) {
   return {
-    onSelect: (item) => dispatch(selectCodeSnippet(item)),
-    dispatch,
+    onSelect: item => dispatch(selectCodeSnippet(item)),
   };
 }
 

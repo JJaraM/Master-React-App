@@ -1,26 +1,27 @@
 import React, { memo } from 'react';
-import { Button, Modal } from 'react-bootstrap'
+import { Modal } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import BlockButton from '../BlockButton';
 
-function BootstrapModal({show, title, body, onYes, onNo}) {
-
+function BootstrapModal({ show, title, body, onYes, onNo }) {
   return (
     <Modal show={show} centered>
       <Modal.Header>
         <Modal.Title>{title}</Modal.Title>
       </Modal.Header>
 
-      <Modal.Body>
-        {body}
-      </Modal.Body>
+      <Modal.Body>{body}</Modal.Body>
 
       <Modal.Footer>
         <BlockButton id="btn-codeSnippet" onClick={onYes}>
           Yes
         </BlockButton>
 
-        <BlockButton id="btn-codeSnippet-close" className="tomato" onClick={onNo}>
+        <BlockButton
+          id="btn-codeSnippet-close"
+          className="tomato"
+          onClick={onNo}
+        >
           No
         </BlockButton>
       </Modal.Footer>
@@ -37,7 +38,7 @@ BootstrapModal.propTypes = {
 };
 
 BootstrapModal.defaultProps = {
-  show: true
+  show: true,
 };
 
 export default memo(BootstrapModal);

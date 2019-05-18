@@ -1,9 +1,9 @@
 // import produce from 'immer';
-import codeSnippetPageReducer from '../reducer';
+import examPageReducer from '../reducer';
 // import { someAction } from '../actions';
 
 /* eslint-disable default-case, no-param-reassign */
-describe('codeSnippetPageReducer', () => {
+describe('examPageReducer', () => {
   let state;
   beforeEach(() => {
     state = {
@@ -13,7 +13,7 @@ describe('codeSnippetPageReducer', () => {
 
   it('returns the initial state', () => {
     const expectedResult = state;
-    expect(codeSnippetPageReducer(undefined, {})).toEqual(expectedResult);
+    expect(examPageReducer(undefined, {})).toEqual(expectedResult);
   });
 
   /**

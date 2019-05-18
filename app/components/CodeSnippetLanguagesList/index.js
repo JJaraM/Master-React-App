@@ -1,18 +1,16 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
-import { FormattedMessage } from 'react-intl';
-import messages from './messages';
 import CodeSnippetLanguageItem from 'containers/CodeSnippetLanguageItem';
-import Sidebar from '../Sidebar';
 import CodeSnippetLanguageHeader from 'containers/CodeSnippetLanguageHeader';
+import Sidebar from '../Sidebar';
 import SkeletonLoading from '../SkeletonLoading';
 
 function CodeSnippetLanguagesList(props) {
   const ComponentToRender = CodeSnippetLanguageItem;
-  let Container = (props) => (
+  let Container = () => (
     <Sidebar cssClass="languages">
       <CodeSnippetLanguageHeader />
-      <SkeletonLoading lines={10}/>
+      <SkeletonLoading lines={10} />
     </Sidebar>
   );
 
@@ -23,9 +21,9 @@ function CodeSnippetLanguagesList(props) {
     Container = () => (
       <Sidebar cssClass="languages">
         <CodeSnippetLanguageHeader />
-        { languages }
+        {languages}
       </Sidebar>
-    )
+    );
   }
 
   return <Container />;

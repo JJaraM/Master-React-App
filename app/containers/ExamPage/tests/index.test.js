@@ -1,6 +1,6 @@
 /**
  *
- * Tests for CodeSnippetPage
+ * Tests for ExamPage
  *
  * @see https://github.com/react-boilerplate/react-boilerplate/tree/master/docs/testing
  *
@@ -11,16 +11,16 @@ import { render } from 'react-testing-library';
 import { IntlProvider } from 'react-intl';
 // import 'jest-dom/extend-expect'; // add some helpful assertions
 
-import { CodeSnippetPage } from '../index';
+import { ExamPage } from '../index';
 import { DEFAULT_LOCALE } from '../../../i18n';
 
-describe('<CodeSnippetPage />', () => {
+describe('<ExamPage />', () => {
   it('Expect to not log errors in console', () => {
     const spy = jest.spyOn(global.console, 'error');
     const dispatch = jest.fn();
     render(
       <IntlProvider locale={DEFAULT_LOCALE}>
-        <CodeSnippetPage dispatch={dispatch} />
+        <ExamPage dispatch={dispatch} />
       </IntlProvider>,
     );
     expect(spy).not.toHaveBeenCalled();
@@ -40,7 +40,7 @@ describe('<CodeSnippetPage />', () => {
       container: { firstChild },
     } = render(
       <IntlProvider locale={DEFAULT_LOCALE}>
-        <CodeSnippetPage />
+        <ExamPage />
       </IntlProvider>,
     );
     expect(firstChild).toMatchSnapshot();
