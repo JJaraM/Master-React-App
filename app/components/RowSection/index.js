@@ -2,7 +2,11 @@ import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
 function RowSection(props) {
-  return <div className="change-section row">{props.children}</div>;
+  if (props.children) {
+    return <div className="change-section row">{props.children}</div>;
+  }
+  return null;
+
 }
 
 RowSection.propTypes = {

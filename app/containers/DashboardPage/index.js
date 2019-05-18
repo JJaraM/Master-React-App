@@ -61,6 +61,16 @@ export function DashboardPage({
     sidebarBig,
   };
 
+  let AlertMessageSection = () => null;
+
+  if (alertMessages && alertMessages.length > 0) {
+    AlertMessageSection = () => (
+      <RowSection12>
+        <AlertMessage messages={alertMessages} />
+      </RowSection12>
+    );
+  }
+
   return (
     <>
       <Helmet>
@@ -76,9 +86,7 @@ export function DashboardPage({
             <Route path="/dashboard/settings/themes" component={ThemePage} />
             <Route path="/dashboard/codeSnippetApp" component={CodeSnippetApp} />
           </Switch>
-          <RowSection12>
-            <AlertMessage messages={alertMessages} />
-          </RowSection12>
+          <AlertMessageSection />
         </Dashboard>
       </div>
     </>

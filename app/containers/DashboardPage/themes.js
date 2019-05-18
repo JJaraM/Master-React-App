@@ -15,6 +15,12 @@ export default {
       'side-menu-hover-background': '#1a1f33',
       'side-menu-subMenu-background': '#1a1f33',
 
+      'side-menu-1-background': '#28304e',
+      'side-menu-1-background-hover' : '#1a2034',
+
+      'side-menu-2-background': '#2e385b',
+      'side-menu-2-background-hover' : '#292B2F',
+
       'body-background': '#F4F7FC',
 
       'subcard-background': '#F7F7F7',
@@ -65,6 +71,12 @@ export default {
       'side-menu-color': '#FFF',
       'side-menu-hover-background': 'rgba(114,118,125, .3)',
       'side-menu-subMenu-background': '#343233',
+
+      'side-menu-1-background': '#25272b',
+      'side-menu-1-background-hover' : '#292B2F',
+
+      'side-menu-2-background': '#2f3136',
+      'side-menu-2-background-hover' : '#292B2F',
 
       'body-background': '#36393f',
 

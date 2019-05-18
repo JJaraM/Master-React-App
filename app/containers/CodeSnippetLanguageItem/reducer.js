@@ -3,7 +3,7 @@ import { SELECTION, ITEMS } from './constants';
 
 export const initialState = {
   language: '',
-  items: [],
+  items: undefined,
 };
 
 /* eslint-disable default-case, no-param-reassign */

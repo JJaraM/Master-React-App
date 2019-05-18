@@ -1,6 +1,5 @@
 import { SELECTION, ITEMS } from './constants';
 
-
 export function select(language) {
   return {
     type: SELECTION,

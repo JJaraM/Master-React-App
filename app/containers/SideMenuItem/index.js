@@ -7,7 +7,6 @@ import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
 import { Link } from 'react-router-dom';
 import SubMenuItem from 'components/SubMenuItem';
-import SideMenuSub from 'components/SideMenuSub';
 import MenuItemSubArrow from 'components/MenuItemSubArrow';
 import reducer from './reducer';
 import messages from './messages';
@@ -29,20 +28,22 @@ const showBig = (item, idToRender) => (
         </div>
       </div>
     </Link>
-    <SideMenuSub items={item} selection={idToRender} />
   </>
 );
 
-const showSmall = item => (
-  <Link to={item.to}>
-    <div className="row row-item">
-      <div className="menu-icon-element col-md-12 col-sm-12 col-xs-12">
-        <span className="menu-icon">
-          <i className={item.icon} />
-        </span>
+const showSmall = (item, idToRender) => (
+  <>
+    <Link to={item.to}>
+      <div className="row row-item">
+        <div className="menu-icon-element col-md-12 col-sm-12 col-xs-12">
+          <span className="menu-icon">
+            <i className={item.icon} />
+          </span>
+        </div>
       </div>
-    </div>
-  </Link>
+    </Link>
+
+  </>
 );
 
 export function SideMenuItem(props) {
@@ -52,9 +53,9 @@ export function SideMenuItem(props) {
   const { item } = props;
   const { idToRender } = props;
   const { sidebarBig } = props;
-  const content = sidebarBig ? showBig(item, idToRender) : showSmall(item);
+  const content = sidebarBig ? showBig(item, idToRender) : showSmall(item, idToRender);
 
-  return <SubMenuItem id={id} item={content} onClick={props.onExpand} />;
+  return <SubMenuItem id={id} item={content} options={item} selection={idToRender} onClick={props.onExpand} sidebarBig={sidebarBig} />;
 }
 
 SideMenuItem.propTypes = {

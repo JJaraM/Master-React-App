@@ -2,21 +2,39 @@ import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import CodeSnippetLanguagesDescriptionItem from 'containers/CodeSnippetLanguagesDescriptionItem';
 import Sidebar from '../Sidebar';
-import SideBarSearchInput from '../SideBarSearchInput';
+import CodeSnippetHeader from 'containers/CodeSnippetHeader';
+import SkeletonLoading from '../SkeletonLoading';
 
 function CodeSnippetsLanguagesDescriptionList(props) {
-  let Container = () => null;
   const ComponentToRender = CodeSnippetLanguagesDescriptionItem;
 
-  if (props.items && props.items.length > 0) {
-    const languages = props.items.map(item => (
+  let Container = () => (
+    <Sidebar cssClass="items">
+      <CodeSnippetHeader />
+      <SkeletonLoading lines={10}/>
+    </Sidebar>
+  );
+
+  if (props.items === undefined) {
+    Container = () => null;
+  }
+
+  if (props.items === null) {
+    Container = () => (
+      <Sidebar cssClass="items">
+        <CodeSnippetHeader />
+      </Sidebar>
+    );
+  }
+
+  if (props.items != null && props.items.length > 0) {
+    const items = props.items.map(item => (
       <ComponentToRender key={item.id} item={item} />
     ));
     Container = () => (
       <Sidebar cssClass="items">
-        <SideBarSearchInput />
-        <div className="next-menu-title">Code Snippets</div>
-        { languages }
+        <CodeSnippetHeader />
+        { items }
       </Sidebar>
     )
   }

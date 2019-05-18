@@ -13,3 +13,8 @@
 .modal-footer {
     border-top: var(--card-border);
 }
+
+.modal-backdrop.show {
+  background: rgb(0, 0, 0);
+  opacity: 0.85;
+}

@@ -7,15 +7,29 @@ import { FormattedMessage } from 'react-intl';
 import messages from './messages';
 
 export function SideSubMenuItem(props) {
-  const { item } = props;
+  const { item, sidebarBig } = props;
+
+  if (!sidebarBig) {
+    return (
+      <Link to={item.to}>
+        <div className="row row-item">
+          <div className="menu-item-element col-12 col-xs-center">
+            <span className="menu-icon">
+              <i className={item.icon} />
+            </span>
+          </div>
+        </div>
+      </Link>
+    )
+  }
 
   return (
     <Link to={item.to}>
       <div className="row row-item">
-        <div className="menu-item-element col-md-8 col-sm-8 col-xs-8 col-xs-center">
+        <div className="menu-item-element col-8 col-xs-center">
           <FormattedMessage {...messages[item.label]} />
         </div>
-        <div className="menu-icon-element col-md-4 col-sm-4 col-xs-4">
+        <div className="menu-icon-element col-4">
           <span className="menu-icon">
             <i className={item.icon} />
           </span>
@@ -26,6 +40,7 @@ export function SideSubMenuItem(props) {
 }
 
 SideSubMenuItem.propTypes = {
+  sidebarBig: PropTypes.bool,
   dispatch: PropTypes.func.isRequired,
   onExpand: PropTypes.func,
   item: PropTypes.any,

@@ -12,12 +12,6 @@ export default [
     icon: 'fas fa-code',
   },
   {
-    id: 'ui',
-    to: '/ui',
-    label: 'ui',
-    icon: 'fas fa-bookmark',
-  },
-  {
     id: 'settings',
     to: '?',
     label: 'settings',
@@ -27,13 +21,7 @@ export default [
         id: 'settings.themes',
         to: '/dashboard/settings/themes',
         label: 'themes',
-        icon: 'fas fa-cogs',
-      },
-      {
-        id: 'settings.users',
-        to: '/dashboard/settings/users',
-        label: 'users',
-        icon: 'fas fa-cogs',
+        icon: 'fas fa-palette',
       },
     ],
   },

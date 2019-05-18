@@ -1,0 +1,83 @@
+body {
+  margin: 0;
+}
+
+.skeleton-container {
+  padding: 0 !important;
+}
+
+.post {
+  display: flex;
+  padding: 10px 10px 0px 10px;
+}
+
+.post .avatar {
+  float: left;
+  width: 52px;
+  height: 52px;
+  background-color: #ccc;
+  border-radius: 25%;
+  margin: 8px;
+  background-image: linear-gradient(90deg, #3A3C40 0px, #4d4f53 40px, #3A3C40 80px);
+  background-size: 600px;
+  animation: shine-avatar 1.6s infinite linear;
+}
+
+@keyframes shine-lines {
+  0% {
+    background-position: -100px;
+  }
+}
+
+@keyframes shine-avatar {
+  0% {
+    background-position: -32px;
+  }
+  40%, 100% {
+    background-position: 208px;
+  }
+}
+
+.languages {
+  .post .line {
+    width: 120px;
+  }
+
+  @keyframes shine-lines {
+    40%, 100% {
+      background-position: 120px;
+    }
+  }
+}
+
+.items {
+  .post .line {
+    width: 170px;
+  }
+
+  @keyframes shine-lines {
+    40%, 100% {
+      background-position: 170px;
+    }
+  }
+}
+
+.post .line {
+  float: left;
+  height: 16px;
+  border-radius: 7px;
+  background-image: linear-gradient(90deg, #3A3C40 0px, #4d4f53 40px, #3A3C40 80px);
+  background-size: 600px;
+  animation: shine-lines 1.6s infinite linear;
+}
+
+
+
+
+.post .avatar + .line {
+  margin-top: 11px;
+  width: 100px;
+}
+.post .line ~ .line {
+  background-color: #ddd;
+}

@@ -4,11 +4,17 @@ import { FormattedMessage } from 'react-intl';
 import messages from './messages';
 import CodeSnippetLanguageItem from 'containers/CodeSnippetLanguageItem';
 import Sidebar from '../Sidebar';
-import SideBarSearchInput from '../SideBarSearchInput';
+import CodeSnippetLanguageHeader from 'containers/CodeSnippetLanguageHeader';
+import SkeletonLoading from '../SkeletonLoading';
 
 function CodeSnippetLanguagesList(props) {
-  let Container = () => null;
   const ComponentToRender = CodeSnippetLanguageItem;
+  let Container = (props) => (
+    <Sidebar cssClass="languages">
+      <CodeSnippetLanguageHeader />
+      <SkeletonLoading lines={10}/>
+    </Sidebar>
+  );
 
   if (props.languages) {
     const languages = props.languages.map(item => (
@@ -16,8 +22,7 @@ function CodeSnippetLanguagesList(props) {
     ));
     Container = () => (
       <Sidebar cssClass="languages">
-        <SideBarSearchInput />
-        <div className="next-menu-title">Languages</div>
+        <CodeSnippetLanguageHeader />
         { languages }
       </Sidebar>
     )

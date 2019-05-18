@@ -7,9 +7,8 @@
 
 .sidebar {
     font-size: .9rem;
-    min-height: calc(100vh - 66px);
+    min-height: calc(100vh - 65px);
     background: #222437;
-    font-family: "Poppins", sans-serif;
     font-weight: 300;
     padding: 0;
     width: 234px;
@@ -249,4 +248,88 @@ main .container-fluid {
 
 .separator {
   border-bottom: 1px solid #d7d7d7;
+}
+
+
+.next-menu {
+  padding-left: 5px !important;
+  padding-right: 5px !important;
+  background-color: #2f3136 !important;
+  padding-top: 10px;
+
+  &.languages {
+    width: 150px;
+    background-color: var(--side-menu-1-background) !important;
+
+    .plus {
+      padding-left: 18px;
+    }
+  }
+
+  &.items {
+    width: 200px;
+    background-color: var(--side-menu-2-background)  !important;
+
+    .plus {
+      padding-left: 49px;
+    }
+  }
+
+  .search-container {
+    padding: 10px 10px 10px 10px;
+  }
+
+  .search {
+    height: 30px;
+    width: 100%;
+
+    .search-icon {
+      font-size: 12px;
+      border-radius: 10px;
+      color: #8f8f8f;
+      position: absolute;
+      top: 7px;
+      right: 5px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+  }
+
+
+  .next-menu-title {
+    font-size: 12px;
+    color: #c7c2c2;
+    //opacity: .3;
+    text-transform: uppercase;
+    font-weight: 500;
+    -webkit-transition: opacity .15s ease;
+    transition: opacity .15s ease;
+    padding: 9px 20px;
+    display: block;
+    cursor: default;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  .item {
+    //white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 500;
+    color: #72767d;
+    padding: 10px 10px 10px 10px;
+    cursor: pointer;
+
+    &:hover {
+      background: var(--side-menu-1-background-hover);
+      border-radius: 5px;
+    }
+  }
 }
