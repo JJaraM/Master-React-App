@@ -11,7 +11,7 @@ export default function* codeSnippetLanguageItemSaga() {
 
 export function* findByLanguage() {
   const language = yield select(makeSelectLanguage());
-  const requestURL = `http://ws-code-snippet.herokuapp.com/v1/codeSnippet/language/${language}`;
+  const requestURL = `https://ws-code-snippet.herokuapp.com/v1/codeSnippet/language/${language}`;
 
   try {
     const items = yield call(request, requestURL);
