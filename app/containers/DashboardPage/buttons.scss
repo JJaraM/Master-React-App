@@ -14,6 +14,14 @@
   }
 }
 
+.btn-sky {
+  border-color: #2ABBFE;
+  background-color: #2ABBFE;
+  &:hover, &:not(:disabled):not(.disabled).active, &:not(:disabled):not(.disabled):active {
+    background-color: #0199E0;
+  }
+}
+
 .btn-disable {
   border-color: #00e08b !important;
   background-color: #14b372 !important;
@@ -27,6 +35,7 @@
   font-size: 1.05rem;
   border: none;
   margin-right: 10px;
+  margin-bottom: 10px;
 }
 
 @media only screen and (max-width: 320px) {
@@ -37,4 +46,13 @@
 
 div[role="button"] {
   cursor: pointer;
+  outline: none;
+}
+
+input[type=checkbox] {
+  cursor: pointer;
+}
+
+.lbl-exam {
+  padding-left: 5px;
 }

@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import Button from './Button';
 
 function TopMenu({ onClick }) {
+  const logo = '{JJara}';
+
   return (
     <nav className="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <Button
@@ -20,7 +22,7 @@ function TopMenu({ onClick }) {
         </span>
       </div>
       <a className="navbar-logo" href="/">
-        Logo
+        {logo}
       </a>
     </nav>
   );

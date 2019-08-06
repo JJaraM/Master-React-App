@@ -12,6 +12,7 @@ import SideMenu from 'components/SideMenu';
 import Dashboard from 'components/Dashboard';
 import { changeTheme } from 'containers/ThemePage/actions';
 import ThemePage from 'containers/ThemePage';
+import ExamPage from 'containers/ExamPage';
 import CodeSnippetPage from 'containers/CodeSnippetPage';
 import CodeSnippetApp from 'containers/CodeSnippetApp';
 import AlertMessage from 'components/AlertMessage';
@@ -82,12 +83,10 @@ export function DashboardPage({
         <SideMenu {...itemsProps} />
         <Dashboard sidebarBig={sidebarBig}>
           <Switch>
+            <Route path="/dashboard/exam" component={ExamPage} />
             <Route path="/dashboard/codeSnippet" component={CodeSnippetPage} />
             <Route path="/dashboard/settings/themes" component={ThemePage} />
-            <Route
-              path="/dashboard/codeSnippetApp"
-              component={CodeSnippetApp}
-            />
+            <Route path="/dashboard/codeSnippetApp" component={CodeSnippetApp} />
           </Switch>
           <AlertMessageSection />
         </Dashboard>

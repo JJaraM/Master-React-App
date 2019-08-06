@@ -320,7 +320,7 @@ main .container-fluid {
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
     flex-grow: 1;
-    font-size: 15px;
+    font-size: 13px;
     line-height: 20px;
     font-weight: 500;
     color: #72767d;
@@ -328,6 +328,11 @@ main .container-fluid {
     cursor: pointer;
 
     &:hover {
+      background: var(--side-menu-1-background-hover);
+      border-radius: 5px;
+    }
+
+    &.selected {
       background: var(--side-menu-1-background-hover);
       border-radius: 5px;
     }

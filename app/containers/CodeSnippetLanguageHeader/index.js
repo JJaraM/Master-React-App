@@ -40,6 +40,7 @@ export function CodeSnippetLanguageHeader({
       <div className="next-menu-title">
         Languages
         <div
+          id="btn-add-language"
           className="fas fa-plus plus"
           role="button"
           tabIndex="0"
@@ -56,9 +57,11 @@ export function CodeSnippetLanguageHeader({
         title={<FormattedMessage {...messages.header} />}
         body={
           <input
+            id="input-language"
             value={language}
             onChange={onChangeLanguage}
             className="form-control"
+            autoFocus
           />
         }
       />

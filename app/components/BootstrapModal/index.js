@@ -4,6 +4,15 @@ import PropTypes from 'prop-types';
 import BlockButton from '../BlockButton';
 
 function BootstrapModal({ show, title, body, onYes, onNo }) {
+
+  /*document.onkeyup = function(e) {
+    if (e.which == 27) {
+      document.getElementById('btn-codeSnippet-close').click();
+    } else if (e.which == 13) {
+      document.getElementById('btn-codeSnippet').click();
+    }
+  };*/
+
   return (
     <Modal show={show} centered>
       <Modal.Header>
@@ -13,7 +22,10 @@ function BootstrapModal({ show, title, body, onYes, onNo }) {
       <Modal.Body>{body}</Modal.Body>
 
       <Modal.Footer>
-        <BlockButton id="btn-codeSnippet" onClick={onYes}>
+        <BlockButton
+          id="btn-codeSnippet"
+          onClick={onYes}
+          hotKey="Enter">
           Yes
         </BlockButton>
 
@@ -21,6 +33,7 @@ function BootstrapModal({ show, title, body, onYes, onNo }) {
           id="btn-codeSnippet-close"
           className="tomato"
           onClick={onNo}
+          hotKey="Escape"
         >
           No
         </BlockButton>

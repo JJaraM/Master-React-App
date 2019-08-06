@@ -11,11 +11,16 @@ import reducer from './reducer';
 
 export function CodeSnippetLanguagesDescriptionItem(props) {
   useInjectReducer({ key: 'codeSnippetLanguagesDescriptionItem', reducer });
-  const { item } = props;
+  const { item, codeSnippetLanguagesDescriptionItem } = props;
+
+  let selection = '';
+  if (codeSnippetLanguagesDescriptionItem !== null && codeSnippetLanguagesDescriptionItem.codeSnippet !== null) {
+    selection = codeSnippetLanguagesDescriptionItem.codeSnippet.id === item.id ? 'selected' : '';
+  }
 
   return (
     <Button onClick={() => props.onSelect(props.item)}>
-      <div id={item.id} className="row item" key={item.type}>
+      <div id={item.id} className={`row item ${selection}`} key={item.type}>
         {item.title}
       </div>
     </Button>

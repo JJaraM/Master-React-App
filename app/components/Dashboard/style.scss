@@ -12,6 +12,7 @@
       width: 100%;
       -webkit-flex-grow: 1;
       flex-grow: 1;
+      font-size: 14px;
 
       .row {
         margin: 0;
@@ -22,6 +23,12 @@
         line-height: 1.2;
         margin-bottom: .5rem;
         color: #FFF;
+        font-size: 16px;
+      }
+
+      .btn-big {
+        //padding: 5px;
+        //font-size: 12px;
       }
   }
 

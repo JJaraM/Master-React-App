@@ -33,4 +33,8 @@ export default defineMessages({
     id: `${scope}.codeSnippet`,
     defaultMessage: 'Code Snippets',
   },
+  exam: {
+    id: `${scope}.exam`,
+    defaultMessage: 'Exams',
+  }
 });

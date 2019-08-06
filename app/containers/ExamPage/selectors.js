@@ -7,13 +7,11 @@ import { initialState } from './reducer';
 
 const selectExamPageDomain = state => state.examPage || initialState;
 
-/**
- * Other specific selectors
- */
-
-/**
- * Default selector used by ExamPage
- */
+const makeAllItems = () =>
+   createSelector(
+     selectExamPageDomain,
+     substate => substate.items,
+);
 
 const makeSelectExamPage = () =>
   createSelector(
@@ -21,5 +19,36 @@ const makeSelectExamPage = () =>
     substate => substate,
   );
 
-export default makeSelectExamPage;
-export { selectExamPageDomain };
+const makeSelectedOption = () =>
+  createSelector(
+      selectExamPageDomain,
+      substate => substate.selectedOption,
+  );
+
+const makeSelectedOptions = () =>
+  createSelector(
+      selectExamPageDomain,
+      substate => substate.options,
+  );
+
+const makeQuestionNumber = () =>
+  createSelector(
+      selectExamPageDomain,
+      substate => substate.questionNumber,
+  );
+
+const makeSelectResults = () =>
+  createSelector(
+      selectExamPageDomain,
+      substate => substate.results,
+  );
+
+export {
+  selectExamPageDomain,
+  makeSelectExamPage,
+  makeAllItems,
+  makeSelectedOption,
+  makeSelectedOptions,
+  makeSelectResults,
+  makeQuestionNumber
+};

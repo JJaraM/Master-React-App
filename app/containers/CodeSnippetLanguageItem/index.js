@@ -15,11 +15,13 @@ import { select } from './actions';
 export function CodeSnippetLanguageItem(props) {
   useInjectReducer({ key: 'codeSnippetLanguageItem', reducer });
   useInjectSaga({ key: 'codeSnippetLanguageItem', saga });
-  const { item } = props;
+  const { item, language } = props;
+
+  const selection = language === item.type ? 'selected' : '';
 
   return (
     <Button onClick={props.onSelect}>
-      <div id={item.type} className="row item" key={item.type}>
+      <div id={item.type} className={`row item ${selection}`} key={item.type}>
         {item.type}
       </div>
     </Button>

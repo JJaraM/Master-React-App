@@ -12,6 +12,12 @@ export default [
     icon: 'fas fa-code',
   },
   {
+    id: 'exam',
+    to: '/dashboard/exam',
+    label: 'exam',
+    icon: 'fas fa-book-open',
+  },
+  {
     id: 'settings',
     to: '?',
     label: 'settings',
