@@ -20,5 +20,5 @@ export default defineMessages({
   instruction: {
     id: `${scope}.instruction`,
     defaultMessage: 'Title description',
-  }
+  },
 });

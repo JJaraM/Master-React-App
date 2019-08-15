@@ -8,15 +8,20 @@ import { compose } from 'redux';
 import PageDescriptionContainer from 'components/PageDescriptionContainer';
 import { useInjectSaga } from 'utils/injectSaga';
 import { useInjectReducer } from 'utils/injectReducer';
-import { makeSelectExamPage, makeAllItems, makeSelectedOption, makeSelectResults } from './selectors';
-import reducer from './reducer';
-import saga from './saga';
-import messages from './messages';
 import Card from 'components/Card';
 import CardBody from 'components/CardBody';
 import BlockButton from 'components/BlockButton';
 import ExamOption from 'components/ExamOption';
 import ExamOptionSideList from 'components/ExamOptionSideList';
+import messages from './messages';
+import saga from './saga';
+import reducer from './reducer';
+import {
+  makeSelectExamPage,
+  makeAllItems,
+  makeSelectedOption,
+  makeSelectResults,
+} from './selectors';
 
 import {
   loadAllItems,
@@ -25,7 +30,7 @@ import {
   nextQuestionOnNext,
   save,
   selectedOption,
-  refreshSelection
+  refreshSelection,
 } from './actions';
 
 import './style.scss';
@@ -37,7 +42,7 @@ export function ExamPage({
   selection,
   onSelect,
   onNext,
-  onGoToQuestion
+  onGoToQuestion,
 }) {
   useInjectReducer({ key: 'examPage', reducer });
   useInjectSaga({ key: 'examPage', saga });
@@ -57,20 +62,23 @@ export function ExamPage({
           <div className="col-sm-4">
             <Card>
               <CardBody>
-                <p className="text-muted">
-                  Questions:
-                </p>
-                <ExamOptionSideList items={items.questions} onGoToQuestion={onGoToQuestion} />
+                <p className="text-muted">Questions:</p>
+                <ExamOptionSideList
+                  items={items.questions}
+                  onGoToQuestion={onGoToQuestion}
+                />
               </CardBody>
             </Card>
           </div>
 
           <div className="col-sm-8">
-            <ExamOption items={items}
+            <ExamOption
+              items={items}
               selectedOption={selection}
               onSelect={onSelect}
               onNext={onNext}
-              selectedOptionByQuestion={selectedOptionByQuestion}/>
+              selectedOptionByQuestion={selectedOptionByQuestion}
+            />
           </div>
         </div>
       </div>
@@ -93,13 +101,14 @@ const mapStateToProps = createStructuredSelector({
 function mapDispatchToProps(dispatch) {
   return {
     onLoadPage: () => dispatch(loadAllItems()),
-    onSelect: (questionNumber, option) => dispatch(selectResponse(questionNumber, option)),
-    onNext: (selection) => {
+    onSelect: (questionNumber, option) =>
+      dispatch(selectResponse(questionNumber, option)),
+    onNext: selection => {
       dispatch(save());
       dispatch(refreshSelection(selection));
     },
-    onGoToQuestion: (selection) => {
-      //dispatch(save());
+    onGoToQuestion: selection => {
+      // dispatch(save());
       dispatch(refreshSelection(selection));
     },
     dispatch,

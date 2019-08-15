@@ -8,7 +8,7 @@ function CodeSnippetSelectionInfo(props) {
   if (!props.item) {
     return null;
   }
-  
+
   return (
     <div className="main-panel small">
       <ContentWrapper>
@@ -22,16 +22,15 @@ function CodeSnippetSelectionInfo(props) {
             </div>
 
             <div className="col-md-10 mx-auto text-center text-white p-b-30">
-              <BlockButton
-                id="btn-codeSnippet"
-                hotKey="Enter">
+              <BlockButton id="btn-codeSnippet" hotKey="Enter">
                 Save
               </BlockButton>
 
               <BlockButton
                 id="btn-codeSnippet-close"
                 className="tomato"
-                hotKey="Escape">
+                hotKey="Escape"
+              >
                 Delete
               </BlockButton>
             </div>

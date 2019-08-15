@@ -8,10 +8,10 @@ import { initialState } from './reducer';
 const selectExamPageDomain = state => state.examPage || initialState;
 
 const makeAllItems = () =>
-   createSelector(
-     selectExamPageDomain,
-     substate => substate.items,
-);
+  createSelector(
+    selectExamPageDomain,
+    substate => substate.items,
+  );
 
 const makeSelectExamPage = () =>
   createSelector(
@@ -21,26 +21,26 @@ const makeSelectExamPage = () =>
 
 const makeSelectedOption = () =>
   createSelector(
-      selectExamPageDomain,
-      substate => substate.selectedOption,
+    selectExamPageDomain,
+    substate => substate.selectedOption,
   );
 
 const makeSelectedOptions = () =>
   createSelector(
-      selectExamPageDomain,
-      substate => substate.options,
+    selectExamPageDomain,
+    substate => substate.options,
   );
 
 const makeQuestionNumber = () =>
   createSelector(
-      selectExamPageDomain,
-      substate => substate.questionNumber,
+    selectExamPageDomain,
+    substate => substate.questionNumber,
   );
 
 const makeSelectResults = () =>
   createSelector(
-      selectExamPageDomain,
-      substate => substate.results,
+    selectExamPageDomain,
+    substate => substate.results,
   );
 
 export {
@@ -50,5 +50,5 @@ export {
   makeSelectedOption,
   makeSelectedOptions,
   makeSelectResults,
-  makeQuestionNumber
+  makeQuestionNumber,
 };

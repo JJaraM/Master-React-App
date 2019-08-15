@@ -13,7 +13,7 @@ import {
   SELECTED_OPTION,
   NEXT_QUESTION_ON_NEXT,
   REFRESH_SELECTION,
-  REFRESH_SELECTION_SUCCESS
+  REFRESH_SELECTION_SUCCESS,
 } from './constants';
 
 export const initialState = {
@@ -30,8 +30,8 @@ const examPageReducer = (state = initialState, action) =>
   produce(state, draft => {
     switch (action.type) {
       case LOAD_ALL_ITEMS_SUCCESS:
-          draft.items = action.items;
-          break;
+        draft.items = action.items;
+        break;
 
       case NEXT_QUESTION:
         draft.selectedOption = action.questionNumber;
@@ -56,40 +56,40 @@ const examPageReducer = (state = initialState, action) =>
         break;
 
       case NEXT_QUESTION_SUCCESS: {
-          const results = [...state.results];
-          const index = results.findIndex(
-            result => result.questionNumber === action.selectedOption,
-          );
+        const results = [...state.results];
+        const index = results.findIndex(
+          result => result.questionNumber === action.selectedOption,
+        );
 
-          const result = {
-            questionNumber: action.selectedOption,
-            responses: action.options
-          }
+        const result = {
+          questionNumber: action.selectedOption,
+          responses: action.options,
+        };
 
-          if (index >= 0) {
-            results.splice(index, 1);
-          }
+        if (index >= 0) {
+          results.splice(index, 1);
+        }
 
-          draft.results = [...state.results, result];
+        console.log(results);
 
-          break;
+        draft.results = [...state.results, result];
+
+        break;
       }
 
       case SELECT_OPTION: {
-          const options = [...state.options];
-          const index = options.findIndex(
-            option => option === action.option,
-          );
-          if (index === -1) {
-            draft.options = [...state.options, action.option];
-          }
-          if (index !== -1) {
-            options.splice(index, 1);
-            return Object.assign({}, state, {
-              options,
-            });
-          }
-          break;
+        const options = [...state.options];
+        const index = options.findIndex(option => option === action.option);
+        if (index === -1) {
+          draft.options = [...state.options, action.option];
+        }
+        if (index !== -1) {
+          options.splice(index, 1);
+          return Object.assign({}, state, {
+            options,
+          });
+        }
+        break;
       }
     }
   });

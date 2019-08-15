@@ -15,7 +15,7 @@ import {
   SELECTED_OPTION,
   SAVE,
   REFRESH_SELECTION,
-  REFRESH_SELECTION_SUCCESS
+  REFRESH_SELECTION_SUCCESS,
 } from './constants';
 
 export function loadAllItems() {
@@ -43,41 +43,41 @@ export function selectResponse(questionNumber, option) {
     type: SELECT_OPTION,
     questionNumber,
     option,
-  }
+  };
 }
 
 export function nextQuestion(questionNumber) {
   return {
     type: NEXT_QUESTION,
     questionNumber,
-  }
+  };
 }
 
 export function selectedOption(selectedOption) {
   return {
     type: SELECTED_OPTION,
     selectedOption,
-  }
+  };
 }
 
 export function refreshSelection(selectedOption) {
   return {
     type: REFRESH_SELECTION,
     selectedOption,
-  }
+  };
 }
 
 export function nextQuestionOnNext(questionNumber) {
   return {
     type: NEXT_QUESTION_ON_NEXT,
     questionNumber,
-  }
+  };
 }
 
 export function save() {
   return {
-    type: SAVE
-  }
+    type: SAVE,
+  };
 }
 
 export function nextQuestionSuccess(selectedOption, options) {
@@ -85,13 +85,13 @@ export function nextQuestionSuccess(selectedOption, options) {
     type: NEXT_QUESTION_SUCCESS,
     selectedOption,
     options,
-  }
+  };
 }
 
 export function refreshOnSuccessAction(selectedOption, options) {
   return {
     type: REFRESH_SELECTION_SUCCESS,
     selectedOption,
-    options
-  }
+    options,
+  };
 }

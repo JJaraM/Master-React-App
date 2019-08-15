@@ -36,5 +36,5 @@ export default defineMessages({
   exam: {
     id: `${scope}.exam`,
     defaultMessage: 'Exams',
-  }
+  },
 });

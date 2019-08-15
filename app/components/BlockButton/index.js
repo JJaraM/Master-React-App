@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import { onClickAction } from './actions';
 
-///https://medium.com/@melwinalm/crcreating-keyboard-shortcuts-in-javascripteating-keyboard-shortcuts-in-javascript-763ca19beb9e
+// /https://medium.com/@melwinalm/crcreating-keyboard-shortcuts-in-javascripteating-keyboard-shortcuts-in-javascript-763ca19beb9e
 function BlockButton(props) {
   const { className, onClick, id, fields, hotKey } = props;
 
@@ -11,8 +11,9 @@ function BlockButton(props) {
       id={props.id}
       onClick={evt => onClickAction(onClick, id, evt, fields)}
       type="submit"
-      className={`btn btn-primary btn-big btn-${className}`}>
-      { props.children }
+      className={`btn btn-primary btn-big btn-${className}`}
+    >
+      {props.children}
     </button>
   );
 }

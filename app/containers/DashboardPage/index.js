@@ -86,7 +86,10 @@ export function DashboardPage({
             <Route path="/dashboard/exam" component={ExamPage} />
             <Route path="/dashboard/codeSnippet" component={CodeSnippetPage} />
             <Route path="/dashboard/settings/themes" component={ThemePage} />
-            <Route path="/dashboard/codeSnippetApp" component={CodeSnippetApp} />
+            <Route
+              path="/dashboard/codeSnippetApp"
+              component={CodeSnippetApp}
+            />
           </Switch>
           <AlertMessageSection />
         </Dashboard>

@@ -14,8 +14,14 @@ export function CodeSnippetLanguagesDescriptionItem(props) {
   const { item, codeSnippetLanguagesDescriptionItem } = props;
 
   let selection = '';
-  if (codeSnippetLanguagesDescriptionItem !== null && codeSnippetLanguagesDescriptionItem.codeSnippet !== null) {
-    selection = codeSnippetLanguagesDescriptionItem.codeSnippet.id === item.id ? 'selected' : '';
+  if (
+    codeSnippetLanguagesDescriptionItem !== null &&
+    codeSnippetLanguagesDescriptionItem.codeSnippet !== null
+  ) {
+    selection =
+      codeSnippetLanguagesDescriptionItem.codeSnippet.id === item.id
+        ? 'selected'
+        : '';
   }
 
   return (

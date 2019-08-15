@@ -6,7 +6,7 @@ import {
   NEXT_QUESTION,
   NEXT_QUESTION_ON_NEXT,
   SAVE,
-  REFRESH_SELECTION
+  REFRESH_SELECTION,
 } from './constants';
 
 import {
@@ -35,17 +35,17 @@ export function* refreshSelection() {
   const responses = yield select(makeSelectResults());
   let array = [];
   responses.map(response => {
-      if (response.questionNumber === selectedOption) {
-        array = response.responses;
-      }
+    if (response.questionNumber === selectedOption) {
+      array = response.responses;
+    }
   });
   yield put(refreshOnSuccessAction(selectedOption, array));
 }
 
 export function* nextQuestion() {
-    let options = yield select(makeSelectedOptions());
-    const selectedOption = yield select(makeSelectedOption());
-    yield put(nextQuestionSuccess(selectedOption, options));
+  const options = yield select(makeSelectedOptions());
+  const selectedOption = yield select(makeSelectedOption());
+  yield put(nextQuestionSuccess(selectedOption, options));
 }
 
 export function* loadAllItems() {
