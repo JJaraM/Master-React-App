@@ -60,11 +60,12 @@ export function* update() {
         'Content-Type': 'application/json',
       },
     });
-
+    
     items[idx] = result[0];
     yield put(saveSuccess(1));
     yield put(loadAllItemsSuccess(items.slice()));
   } catch (err) {
+    
     yield put(saveSuccess(2));
   }
 }

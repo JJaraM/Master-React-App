@@ -1,26 +1,23 @@
 import { createSelector } from 'reselect';
 import { initialState } from './reducer';
 
-/**
- * Direct selector to the codeSnippetHeader state domain
- */
-
 const selectCodeSnippetHeaderDomain = state =>
   state.codeSnippetHeader || initialState;
 
-/**
- * Other specific selectors
- */
-
-/**
- * Default selector used by CodeSnippetHeader
- */
-
-const makeSelectCodeSnippetHeader = () =>
+const makeShow = () =>
   createSelector(
     selectCodeSnippetHeaderDomain,
-    substate => substate,
+    substate => substate.show,
   );
 
-export default makeSelectCodeSnippetHeader;
-export { selectCodeSnippetHeaderDomain };
+const makeTitle = () =>
+  createSelector(
+    selectCodeSnippetHeaderDomain,
+    substate => substate.title,
+  );
+
+export { 
+  selectCodeSnippetHeaderDomain, 
+  makeShow,
+  makeTitle
+};

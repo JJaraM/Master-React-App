@@ -8,6 +8,7 @@ import { useInjectReducer } from 'utils/injectReducer';
 import { makeSelectCodeSnippetLanguagesDescriptionItem } from './selectors';
 import { selectCodeSnippet } from './actions';
 import reducer from './reducer';
+import './style.scss';
 
 export function CodeSnippetLanguagesDescriptionItem(props) {
   useInjectReducer({ key: 'codeSnippetLanguagesDescriptionItem', reducer });
@@ -28,7 +29,14 @@ export function CodeSnippetLanguagesDescriptionItem(props) {
     <Button onClick={() => props.onSelect(props.item)}>
       <div id={item.id} className={`row item ${selection}`} key={item.type}>
         {item.title}
+          {/* 
+          <div className='col-9 text-label'>{item.title}</div>
+          <div className='col-1 delete center'>
+            X
+          </div>
+          */}
       </div>
+     
     </Button>
   );
 }

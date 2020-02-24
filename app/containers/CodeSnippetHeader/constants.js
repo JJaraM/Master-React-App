@@ -1,7 +1,3 @@
-/*
- *
- * CodeSnippetHeader constants
- *
- */
-
-export const DEFAULT_ACTION = 'app/CodeSnippetHeader/DEFAULT_ACTION';
+export const CHANGE_TITLE = 'app/CodeSnippetHeader/CHANGE_TITLE';
+export const SHOW = 'app/CodeSnippetHeader/SHOW';
+export const SAVE = 'app/CodeSnippetHeader/SAVE';

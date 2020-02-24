@@ -1,18 +1,21 @@
-/*
- *
- * CodeSnippetHeader reducer
- *
- */
 import produce from 'immer';
-import { DEFAULT_ACTION } from './constants';
+import { SHOW, CHANGE_TITLE } from './constants';
 
-export const initialState = {};
+export const initialState = {
+  show: false,
+  title: ''
+};
 
 /* eslint-disable default-case, no-param-reassign */
 const codeSnippetHeaderReducer = (state = initialState, action) =>
-  produce(state, (/* draft */) => {
+  produce(state, (draft) => {
     switch (action.type) {
-      case DEFAULT_ACTION:
+      case SHOW:
+        draft.show = action.show;
+        break;
+
+      case CHANGE_TITLE:
+        draft.title = action.title;
         break;
     }
   });

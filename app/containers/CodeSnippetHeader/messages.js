@@ -11,6 +11,6 @@ export const scope = 'app.containers.CodeSnippetHeader';
 export default defineMessages({
   header: {
     id: `${scope}.header`,
-    defaultMessage: 'This is the CodeSnippetHeader container!',
+    defaultMessage: 'Add a new code snippet description',
   },
 });

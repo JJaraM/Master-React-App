@@ -1,13 +1,21 @@
-/*
- *
- * CodeSnippetHeader actions
- *
- */
+import { SHOW, CHANGE_TITLE, SAVE } from './constants';
 
-import { DEFAULT_ACTION } from './constants';
-
-export function defaultAction() {
+export function show(show) {
   return {
-    type: DEFAULT_ACTION,
+    type: SHOW,
+    show
+  };
+}
+
+export function changeTitle(title) {
+  return {
+    type: CHANGE_TITLE,
+    title
+  };
+}
+
+export function save() {
+  return {
+    type: SAVE
   };
 }

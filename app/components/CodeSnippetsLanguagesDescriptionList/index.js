@@ -27,14 +27,24 @@ function CodeSnippetsLanguagesDescriptionList(props) {
     );
   }
 
-  if (props.items != null && props.items.length > 0) {
-    const items = props.items.map(item => (
+  let items = [];
+  let isNotEmpty = props.items !== null && props.items !== undefined;
+
+  let isValid =  isNotEmpty && props.items.length == 1 
+      && props.items[0].title !== null || isNotEmpty && props.items.length > 1;
+
+  if (isNotEmpty && isValid) {
+    items = props.items.map(item => (
       <ComponentToRender key={item.id} item={item} />
     ));
+  }
+
+  if (isNotEmpty && props.items.length > 0) {
+    
     Container = () => (
       <Sidebar cssClass="items">
         <CodeSnippetHeader />
-        {items}
+        { items }
       </Sidebar>
     );
   }

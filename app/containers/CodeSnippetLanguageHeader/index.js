@@ -1,9 +1,3 @@
-/**
- *
- * CodeSnippetLanguageHeader
- *
- */
-
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -27,7 +21,7 @@ import { showAdd, changeLanguage, saveForm } from './actions';
 export function CodeSnippetLanguageHeader({
   onSave,
   onClose,
-  onAdd,
+  onShow,
   onChangeLanguage,
   selectShowAdd,
   language,
@@ -44,8 +38,8 @@ export function CodeSnippetLanguageHeader({
           className="fas fa-plus plus"
           role="button"
           tabIndex="0"
-          onClick={onAdd}
-          onKeyUp={onAdd}
+          onClick={onShow}
+          onKeyUp={onShow}
         />
       </div>
       <SideBarSearchInput />
@@ -74,7 +68,7 @@ CodeSnippetLanguageHeader.propTypes = {
   onSave: PropTypes.func.isRequired,
   onClose: PropTypes.func.isRequired,
   onChangeLanguage: PropTypes.func.isRequired,
-  onAdd: PropTypes.func.isRequired,
+  onShow: PropTypes.func.isRequired,
   selectShowAdd: PropTypes.bool,
   language: PropTypes.string,
 };
@@ -87,9 +81,9 @@ const mapStateToProps = createStructuredSelector({
 
 function mapDispatchToProps(dispatch) {
   return {
-    onAdd: () => dispatch(showAdd(true)),
-    onSave: () => dispatch(saveForm()),
+    onShow: () => dispatch(showAdd(true)),
     onClose: () => dispatch(showAdd(false)),
+    onSave: () => dispatch(saveForm()),
     onChangeLanguage: evt => dispatch(changeLanguage(evt.target.value)),
     dispatch,
   };
