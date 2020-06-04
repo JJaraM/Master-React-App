@@ -6,7 +6,7 @@ import Sidebar from '../Sidebar';
 import SkeletonLoading from '../SkeletonLoading';
 
 function CodeSnippetLanguagesList(props) {
-  const ComponentToRender = CodeSnippetLanguageItem;
+
   let Container = () => (
     <Sidebar cssClass="languages">
       <CodeSnippetLanguageHeader />
@@ -14,9 +14,9 @@ function CodeSnippetLanguagesList(props) {
     </Sidebar>
   );
 
-  if (props.languages) {
+  if (props.languages.length > 0) {
     const languages = props.languages.map(item => (
-      <ComponentToRender key={item.type} item={item} />
+      <CodeSnippetLanguageItem key={item.type} item={item} />
     ));
     Container = () => (
       <Sidebar cssClass="languages">

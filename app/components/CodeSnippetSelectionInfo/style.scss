@@ -1,0 +1,37 @@
+.dropdown-menu {
+    min-width: 6rem;
+    background: rgba(255,255,255,0.1);
+    box-shadow: 0 1px 3px rgba(0,0,0,.3);
+
+    a {
+        text-decoration: none;
+        color: #c7c2c2;
+        font-size: 12px;
+
+       
+    }
+
+    &:hover {
+        background: var(--side-menu-2-background);
+    }
+
+}
+
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    box-shadow: none !important;
+ }
+ 
+
+.option {
+    padding-left: 10px;
+    
+}
+
+.drop-down-option {
+    font-size: 10px;
+    background: rgba(255,255,255,0.1);
+
+    i {
+        color: #c7c2c2;
+    }
+}

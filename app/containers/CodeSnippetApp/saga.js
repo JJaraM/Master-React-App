@@ -24,7 +24,7 @@ export default function* init() {
     const items = yield call(request, requestURL);
     yield put(loadAllItemsSuccess(items, 1));
   } catch (err) {
-    yield put(loadAllItemsSuccess([], 2));
+    yield put(loadAllItemsSuccess(null, 2));
   }
  
 }
