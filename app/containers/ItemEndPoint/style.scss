@@ -1,0 +1,35 @@
+.method-type {
+    
+    width: 20px;
+    height: 20px;
+    padding-left: 6px;
+    padding-right: 6px;
+    border-radius: 5px;
+    color: transparent;
+    
+    &.method-get {
+        background: #61affe;
+        border: 1px solid #61affe;
+    }
+
+    &.method-post {
+        background: #00CC99;
+        border: 1px solid #00b88a;
+    }
+
+    &.method-put {
+        background: #fca130;
+        border: 1px solid #fca130;
+    }
+        
+    &.method-delete {
+        border: 1px solid #ff5a6e;
+        background: #ff5a6e;
+    }
+
+    &::first-letter {
+        color: #FFF;
+        text-transform: uppercase;
+    }
+
+}

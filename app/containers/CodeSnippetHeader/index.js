@@ -38,8 +38,9 @@ export function CodeSnippetHeader({
           onClick={onClickShow}
           onKeyUp={onClickShow}
         />
+              <SideBarSearchInput />
       </div>
-      <SideBarSearchInput />
+
 
       <BootstrapModal
         show={show}

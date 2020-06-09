@@ -1,0 +1,25 @@
+.response-model {
+    padding-top: 20px;
+}
+
+table {
+
+    .field {
+        color: var(--card-hyperlink);
+        padding-left: 1rem;
+    }
+
+    .details {
+        padding-left: 3rem;
+    }
+
+    .format {
+        color: var(--card-hyperlink);
+        padding-right: 5px;
+    }
+
+    .type {
+        color: #2196f3;
+        font-weight: 600;
+    }
+}

@@ -16,6 +16,7 @@ import FeaturePage from 'containers/FeaturePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import DashboardPage from 'containers/DashboardPage/Loadable';
 import GlobalStyle from '../../global-styles';
+import WebServiceEndPoint from 'containers/WebServiceEndPoint';
 
 const AppWrapper = styled.div`
   width: 100%;
@@ -32,7 +33,7 @@ export default function App() {
       </Helmet>
 
       <Switch>
-        <Route exact path="/" component={HomePage} />
+        <Route exact path="/" component={WebServiceEndPoint} />
         <Route path="/features" component={FeaturePage} />
         <Route path="/dashboard" component={DashboardPage} />
         <Route path="" component={NotFoundPage} />

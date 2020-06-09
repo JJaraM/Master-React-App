@@ -1,7 +1,7 @@
 .main-panel {
   transition: width 0.25s ease, margin 0.25s ease;
-  width: calc(100% - 180px);
-  //min-height: calc(100vh - 63px);
+  width: calc(100% - 0px);
+  min-height: calc(100vh - 0px);
   display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: column;
@@ -32,18 +32,25 @@
       }
   }
 
+  
   &.big {
     width: calc(100% - 21px);
   }
 
   &.small {
-    width: calc(100% - 234px);
+    
   }
 
   @media only screen and (max-width: 320px) {
     &.big {
         width: calc(100% - 70px) !important;
     }
+  }
+
+
+  :not(pre)>code[class*="language-"], pre[class*="language-"] {
+    background: #2f3136;
+    margin-top: 0px;
   }
 
 

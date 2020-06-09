@@ -28,5 +28,5 @@ export default defineMessages({
   users: {
     id: `${scope}.users`,
     defaultMessage: 'Users',
-  },
+  }
 });

@@ -31,5 +31,6 @@
   "boilerplate.containers.SideMenuItem.home": "Home",
   "boilerplate.containers.CodeSnippetPage.table_type": "Type",
   "boilerplate.containers.CodeSnippetPage.table_description": "Description",
-  "boilerplate.containers.CodeSnippetPage.table_view": "View"
+  "boilerplate.containers.CodeSnippetPage.table_view": "View",
+  "app.containers.WebServicePage.title": "Web Services"
 }

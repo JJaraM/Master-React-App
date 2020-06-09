@@ -68,7 +68,7 @@ export default {
       'top-menu-collapse-color': '#FFF',
 
       'side-menu-background': '#202225',
-      'side-menu-color': '#FFF',
+      'side-menu-color': '#c7c2c2',
       'side-menu-hover-background': 'rgba(114,118,125, .3)',
       'side-menu-subMenu-background': '#343233',
 

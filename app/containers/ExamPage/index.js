@@ -101,8 +101,10 @@ const mapStateToProps = createStructuredSelector({
 function mapDispatchToProps(dispatch) {
   return {
     onLoadPage: () => dispatch(loadAllItems()),
-    onSelect: (questionNumber, option) =>
-      dispatch(selectResponse(questionNumber, option)),
+    onSelect: (questionNumber, option) => {
+      console.log('onSelect');
+      dispatch(selectResponse(questionNumber, option))
+    },
     onNext: selection => {
       dispatch(save());
       dispatch(refreshSelection(selection));

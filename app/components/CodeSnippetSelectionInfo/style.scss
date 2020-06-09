@@ -1,5 +1,5 @@
 .dropdown-menu {
-    min-width: 6rem;
+    min-width: 10rem;
     background: rgba(255,255,255,0.1);
     box-shadow: 0 1px 3px rgba(0,0,0,.3);
 
@@ -11,10 +11,18 @@
        
     }
 
-    &:hover {
-        background: var(--side-menu-2-background);
-    }
 
+}
+
+
+.dropdown-menu {
+    padding: 0;
+    li {
+        &:hover {
+            background: var(--side-menu-2-background);
+            cursor: pointer;
+        }
+    }
 }
 
 .btn:focus, .btn:active:focus, .btn.active:focus {

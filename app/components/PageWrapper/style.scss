@@ -1,0 +1,10 @@
+.page-body-sub-item-wrapper {
+    min-height: calc(100vh - 66px);
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    padding-left: 0;
+    padding-right: 0;
+}
+  

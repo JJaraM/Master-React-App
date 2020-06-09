@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
 
-import CodeSnippetLanguagesList from 'components/CodeSnippetLanguagesList';
+import PrimaryList from 'components/PrimaryList';
 import CodeSnippetsLanguagesDescriptionList from 'components/CodeSnippetsLanguagesDescriptionList';
 import CodeSnippetSelectionInfo from 'components/CodeSnippetSelectionInfo';
 
@@ -15,10 +15,11 @@ import { makeSelectCodeSnippets } from 'containers/CodeSnippetLanguageItem/selec
 import { makeSelectedCodeSnippetContent } from 'containers/CodeSnippetLanguagesDescriptionItem/selectors';
 import { selectCodeSnippet } from 'containers/CodeSnippetLanguagesDescriptionItem/actions';
 import { makeSelectCodeSnippetApp, makeSelectLanguages } from './selectors';
-
 import reducer from './reducer';
 import saga from './saga';
 import { loadLanguages } from './actions';
+import CodeSnippetLanguageHeader from 'containers/CodeSnippetLanguageHeader';
+import CodeSnippetLanguageList from 'components/CodeSnippetLanguageList';
 
 export function CodeSnippetApp({
   onLoadPage,
@@ -40,7 +41,12 @@ export function CodeSnippetApp({
         <title>CodeSnippetApp</title>
         <meta name="description" content="Description of CodeSnippetApp" />
       </Helmet>
-      <CodeSnippetLanguagesList languages={languages} />
+      
+      <PrimaryList items={ languages } >
+        <CodeSnippetLanguageHeader />
+        <CodeSnippetLanguageList items = { languages } />
+      </PrimaryList>
+      
       <CodeSnippetsLanguagesDescriptionList items={items} />
       <CodeSnippetSelectionInfo
         item={selectedItem}

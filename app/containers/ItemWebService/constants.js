@@ -1,0 +1,1 @@
+export const SELECT = 'app/ItemWebService/SELECT';

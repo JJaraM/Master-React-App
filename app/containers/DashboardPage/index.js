@@ -15,6 +15,8 @@ import ThemePage from 'containers/ThemePage';
 import ExamPage from 'containers/ExamPage';
 import CodeSnippetPage from 'containers/CodeSnippetPage';
 import CodeSnippetApp from 'containers/CodeSnippetApp';
+import WebServicePage from 'containers/WebServicePage';
+
 import AlertMessage from 'components/AlertMessage';
 import RowSection12 from 'components/RowSection12';
 import { loadMenuOptions, actionCollapse } from './actions';
@@ -25,21 +27,21 @@ import {
 } from './selectors';
 import reducer from './reducer';
 import saga from './saga';
-import './scrollbar.scss';
-import './dashboard.scss';
-import './checkbox.scss';
-import './buttons.scss';
-import './card.scss';
-import './customPrism.scss';
-import './form.scss';
-import './home.scss';
-import './navbar.scss';
-import './topMenu.scss';
-import './table.scss';
-import './prism-okaida.scss';
-import './icons.scss';
-import './tooltip.scss';
-import './modal.scss';
+import './styles/scrollbar.scss';
+import './styles/dashboard.scss';
+import './styles/checkbox.scss';
+import './styles/buttons.scss';
+import './styles/card.scss';
+import './styles/customPrism.scss';
+import './styles/form.scss';
+import './styles/home.scss';
+import './styles/navbar.scss';
+import './styles/topMenu.scss';
+import './styles/table.scss';
+import './styles/prism-okaida.scss';
+import './styles/icons.scss';
+import './styles/tooltip.scss';
+import './styles/modal.scss';
 
 export function DashboardPage({
   items,
@@ -85,10 +87,9 @@ export function DashboardPage({
           <Switch>
             <Route path="/dashboard/exam" component={ExamPage} />
             <Route path="/dashboard/codeSnippet" component={CodeSnippetPage} />
+            <Route path="/dashboard/webservices" component={WebServicePage} />
             <Route path="/dashboard/settings/themes" component={ThemePage} />
-            <Route
-              path="/dashboard/codeSnippetApp"
-              component={CodeSnippetApp}
+            <Route path="/dashboard/codeSnippetApp" component={CodeSnippetApp}
             />
           </Switch>
           <AlertMessageSection />

@@ -17,7 +17,7 @@ const showBig = (item, idToRender) => (
   <>
     <Link to={item.to}>
       <div className="row row-item">
-        <div className="menu-item-element col-8 col-xs-center">
+        <div className="menu-item-element col-6 col-xs-center">
           <FormattedMessage {...messages[item.label]} />
           <MenuItemSubArrow {...item} selection={idToRender} />
         </div>

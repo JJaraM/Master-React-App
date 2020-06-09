@@ -8,7 +8,7 @@ function TopMenu({ onClick }) {
   return (
     <nav className="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <Button
-        className="collapse-topMenu"
+        className="collapse-menu collapse-topMenu"
         id="sidebarCollapse"
         onClick={onClick}
         role="presentation"

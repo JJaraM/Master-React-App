@@ -18,6 +18,12 @@ export default [
     icon: 'fas fa-book-open',
   },
   {
+    id: 'webservices',
+    to: '/dashboard/webservices',
+    label: 'webservices',
+    icon: 'fab fa-edge',
+  },
+  {
     id: 'settings',
     to: '?',
     label: 'settings',
@@ -31,4 +37,5 @@ export default [
       },
     ],
   },
+
 ];

@@ -37,4 +37,8 @@ export default defineMessages({
     id: `${scope}.exam`,
     defaultMessage: 'Exams',
   },
+  webservices: {
+    id: `${scope}.webservices`,
+    defaultMessage: 'Web Services',
+  },
 });

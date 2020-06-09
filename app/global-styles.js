@@ -7,6 +7,7 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     line-height: 1.5;
     font-size: 14px;
+    overflow: hidden;
   }
 
   body {
@@ -19,8 +20,6 @@ const GlobalStyle = createGlobalStyle`
 
   #app {
 
-    min-height: 100%;
-    min-width: 100%;
   }
 
   p,
