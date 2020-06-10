@@ -35,10 +35,7 @@ export function WebServiceRequest({
   useInjectReducer({ key: 'webServiceRequest', reducer });
   useInjectSaga({ key: 'webServiceRequest', saga });
 
-  useEffect(() => {
-    onLoad();
-  });
-
+  onLoad();
 
   if (selectedEndPoint === undefined) {
       return (<></>);

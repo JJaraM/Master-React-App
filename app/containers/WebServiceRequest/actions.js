@@ -1,4 +1,4 @@
-import { CHANGE, EXECUTE, RESPONSE } from './constants';
+import { CHANGE, EXECUTE, RESPONSE, PAGE_LOAD } from './constants';
 
 export function change(value, method, url, parameterName, parameterType) {
   return {
@@ -24,5 +24,11 @@ export function saveResponse(response, result, method, url, address, requestURL)
     address,
     requestURL
   };
+}
+
+export function pageLoad() {
+  return {
+    type: PAGE_LOAD,
+  }
 }
 
