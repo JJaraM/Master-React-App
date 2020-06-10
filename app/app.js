@@ -33,7 +33,8 @@ import configureStore from './configureStore';
 import { translationMessages } from './i18n';
 
 import '!!style-loader!css-loader!./vendor/css/bootstrap.min.css';
-
+import 'jquery/dist/jquery.slim.min.js';
+import 'bootstrap/dist/js/bootstrap.min.js';
 // Observe loading of Open Sans (to remove open sans, remove the <link> tag in
 // the index.html file and this observer)
 const openSansObserver = new FontFaceObserver('Open Sans', {});

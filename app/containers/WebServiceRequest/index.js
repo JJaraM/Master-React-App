@@ -197,11 +197,8 @@ function mapDispatchToProps(dispatch) {
         });
       }
       
-      if (requestMenuOption) {
-        requestMenuOption.classList.add('active');
-      }
-
-      if (!requestMenuOption.classList.contains('active')) {
+    
+      if (requestMenuOption && requestMenuOption.classList && !requestMenuOption.classList.contains('active')) {
         if (responseElement) {
           responseElement.click();
         }
@@ -209,6 +206,12 @@ function mapDispatchToProps(dispatch) {
           httpResponseElement.click();
         }
       }
+
+      if (requestMenuOption) {
+        requestMenuOption.classList.add('active');
+      }
+
+    
     },
     onChange: (value, method, url, parameterName, parameterType) => 
         dispatch(change(value, method, url, parameterName, parameterType)),
