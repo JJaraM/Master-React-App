@@ -190,19 +190,24 @@ function mapDispatchToProps(dispatch) {
       const httpResponseElement = document.getElementById("a-http-url");
       const requestMenuOption = document.getElementById("request-menu-option");
       const menuOption = document.getElementById("webServicePageMenu");
-      if (responseElement) {
-        responseElement.click();
-      }
-      if (httpResponseElement) {
-        httpResponseElement.click();
-      }
+      
       if (menuOption) {
         menuOption.childNodes.forEach(function(item){
           item.classList.remove('active')
         });
       }
+      
       if (requestMenuOption) {
         requestMenuOption.classList.add('active');
+      }
+
+      if (!requestMenuOption.classList.contains('active')) {
+        if (responseElement) {
+          responseElement.click();
+        }
+        if (httpResponseElement) {
+          httpResponseElement.click();
+        }
       }
     },
     onChange: (value, method, url, parameterName, parameterType) => 
