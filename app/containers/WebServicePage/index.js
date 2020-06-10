@@ -87,6 +87,15 @@ export function WebServicePage({
           title={  <FormattedMessage { ...messages.title } /> }
         />
         <ListWebService items={ filteredItems } />
+
+        <div className="next-menu-settings ">
+
+          <div className="next-menu-title non-collapse">
+              Settings
+              <div id="btn-add-language" className="fas fa-cog cog" role="button" ></div>
+              
+          </div>
+        </div>
       </PrimaryList>
       <WebServiceEndPoint />
 

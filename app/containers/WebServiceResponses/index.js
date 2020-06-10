@@ -37,7 +37,7 @@ export function WebServiceResponses({
       const code = item[0];
       return <TabItem key={`a-response-${code}`} id={`a-response-${code}`} href={`response-${code}`}> { code } </TabItem>;
     });
-    
+
     tabItemsContent = Object.entries(selectedEndPoint[1].responses).map(item => {
       const code = item[0];
       let properties = [];
@@ -49,20 +49,23 @@ export function WebServiceResponses({
         //console.log(webServiceInfo.definitions[ref]);
         //console.log(webServiceInfo.definitions[ref].properties);
 
-
-        properties = Object.entries(webServiceInfo.definitions[ref].properties).map(property => {
-          const type = property[1].type === undefined ? '' : property[1].type;
-          const format = property[1].format === undefined ? '' : "(" + property[1].format + ")";
-          return (
-            <tr>
-              <td className='field'>{ property[0] }</td>
-              <td className='details'> 
-                <span className="type">{ type } </span>
-                <span className="format">{ format }</span>
-              </td>
-            </tr>
-          );
-        });
+        if (webServiceInfo.definitions[ref] && webServiceInfo.definitions[ref].properties) {
+          properties = Object.entries(webServiceInfo.definitions[ref].properties).map(property => {
+          
+            const type = property[1].type === undefined ? '' : property[1].type;
+            const format = property[1].format === undefined ? '' : "(" + property[1].format + ")";
+            return (
+              <tr>
+                <td className='field'>{ property[0] }</td>
+                <td className='details'> 
+                  <span className="type">{ type } </span>
+                  <span className="format">{ format }</span>
+                </td>
+              </tr>
+            );
+          });
+        }
+        
       }
 
       const description = item[1].description;

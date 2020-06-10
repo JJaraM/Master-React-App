@@ -16,6 +16,7 @@ import ExamPage from 'containers/ExamPage';
 import CodeSnippetPage from 'containers/CodeSnippetPage';
 import CodeSnippetApp from 'containers/CodeSnippetApp';
 import WebServicePage from 'containers/WebServicePage';
+import PageSettingsWebServices from 'containers/PageSettingsWebServices';
 
 import AlertMessage from 'components/AlertMessage';
 import RowSection12 from 'components/RowSection12';
@@ -89,6 +90,7 @@ export function DashboardPage({
             <Route path="/dashboard/codeSnippet" component={CodeSnippetPage} />
             <Route path="/dashboard/webservices" component={WebServicePage} />
             <Route path="/dashboard/settings/themes" component={ThemePage} />
+            <Route path="/dashboard/settings/webservices" component={PageSettingsWebServices} />
             <Route path="/dashboard/codeSnippetApp" component={CodeSnippetApp}
             />
           </Switch>

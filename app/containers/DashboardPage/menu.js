@@ -35,6 +35,12 @@ export default [
         label: 'themes',
         icon: 'fas fa-palette',
       },
+      {
+        id: 'settings.webservices',
+        to: '/dashboard/settings/webservices',
+        label: 'webservices',
+        icon: 'fab fa-edge',
+      }
     ],
   },
 

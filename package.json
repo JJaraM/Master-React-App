@@ -124,11 +124,11 @@
     "jest-styled-components": "6.3.1",
     "json-formatter-js": "^2.3.4",
     "lint-staged": "8.1.5",
-    "lodash": "4.17.11",
-    "minimist": "1.2.0",
+    "lodash": "^4.17.15",
+    "minimist": "^1.2.5",
     "ngrok": "3.1.1",
     "node-plop": "0.18.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.14.1",
     "null-loader": "0.1.1",
     "offline-plugin": "5.0.6",
     "plop": "2.3.0",
@@ -172,7 +172,7 @@
     "webpack-cli": "3.3.0",
     "webpack-dev-middleware": "3.6.2",
     "webpack-hot-middleware": "2.24.3",
-    "webpack-pwa-manifest": "4.0.0",
+    "webpack-pwa-manifest": "^4.2.0",
     "whatwg-fetch": "3.0.0"
   },
   "devDependencies": {}

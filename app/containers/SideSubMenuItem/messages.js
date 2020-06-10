@@ -28,5 +28,9 @@ export default defineMessages({
   users: {
     id: `${scope}.users`,
     defaultMessage: 'Users',
-  }
+  },
+  webservices: {
+    id: `${scope}.webservices`,
+    defaultMessage: 'Web Services',
+  },
 });
