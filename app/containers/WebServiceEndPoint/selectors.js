@@ -10,7 +10,7 @@ const makeSelectWebServiceEndPoint = () =>
     substate => substate,
   );
 
-const getItems = () =>
+const selectedWebServiceInformation = () =>
   createSelector(
     selectWebServiceEndPointDomain,
     substate => substate.items,
@@ -30,4 +30,4 @@ const getCollapse = () =>
   
 
 export default makeSelectWebServiceEndPoint;
-export { selectWebServiceEndPointDomain, getItems, getFilterText,getCollapse };
+export { selectWebServiceEndPointDomain, selectedWebServiceInformation, getFilterText,getCollapse };

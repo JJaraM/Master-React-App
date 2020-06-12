@@ -26,10 +26,10 @@ export function SideSubMenuItem(props) {
   return (
     <Link to={item.to}>
       <div className="row row-item">
-        <div className="menu-item-element col-8 col-xs-center">
+        <div className="menu-item-element col-7 col-xs-center">
           <FormattedMessage {...messages[item.label]} />
         </div>
-        <div className="menu-icon-element col-4">
+        <div className="menu-icon-element col-5">
           <span className="menu-icon">
             <i className={item.icon} />
           </span>

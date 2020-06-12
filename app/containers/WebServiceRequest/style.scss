@@ -40,19 +40,30 @@
 
  .container-row {
     overflow: auto;
-    height: 78vh;
+    height: 70vh;
  }
 
  .response-container-panel {
     max-height: 10vh;
  }
 
+ .sticky {
+    position: sticky;
+    top: 0px;
+ }
+ 
  .container-tab-panel {
     background: #2f3136;
     padding: 10px;
     border-radius: 5px;
     padding-right: 15px;
     padding-left: 15px;
+
+    label {
+        font-weight: 800;
+        color: var(--card-hyperlink);
+        padding-right: 10px;
+    }
  }
 
 .nav-link-container-tab-panel-active {
@@ -115,3 +126,4 @@
     }
     
 }
+

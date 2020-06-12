@@ -14,6 +14,14 @@
   }
 }
 
+.btn-watching {
+  background-color: #7289da;
+  background-color: #7289da;
+  &:hover, &:not(:disabled):not(.disabled).active, &:not(:disabled):not(.disabled):active {
+    background-color: #5b6dae;
+  }
+}
+
 .btn-sky {
   border-color: #2ABBFE;
   background-color: #2ABBFE;

@@ -1,5 +1,5 @@
 import produce from 'immer';
-import { CHANGE, EXECUTE, RESPONSE } from './constants';
+import { CHANGE, EXECUTE, RESPONSE, HISTORY } from './constants';
 
 export const initialState = {
   item: [],
@@ -10,6 +10,7 @@ export const initialState = {
   response: false,
   result: false,
   responses: [],
+  history: [],
 };
 
 /* eslint-disable default-case, no-param-reassign */
@@ -21,7 +22,27 @@ const webServiceRequestReducer = (state = initialState, action) =>
         draft.method = action.method;
         draft.url = action.url;
         break;
-      
+
+      case HISTORY:
+        const dataHistory = {
+          response: action.response,
+          result: action.result,
+          method: action.method,
+          url: action.url,
+          address: action.address,
+          requestURL: action.requestURL,
+          date: action.date,
+        }
+
+        let resultHistory = {
+            ...state,
+            history: [
+                ...state.history, 
+                dataHistory
+            ],
+        };
+        return resultHistory;
+
       case RESPONSE:
         const dataResponse = {
           response: action.response,
@@ -30,6 +51,7 @@ const webServiceRequestReducer = (state = initialState, action) =>
           url: action.url,
           address: action.address,
           requestURL: action.requestURL,
+          date: action.date,
         }
 
         const indexResponse = state.responses.findIndex(x => 

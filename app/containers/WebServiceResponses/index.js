@@ -9,7 +9,7 @@ import TabGroupContent from 'components/TabGroupContent';
 import TabItemContent from 'components/TabItemContent';
 import { selectedEndPoint } from 'containers/ItemEndPoint/selectors';
 import { selectedWebService } from 'containers/ItemWebService/selectors';
-import { getItems } from 'containers/WebServiceEndPoint/selectors';
+import { selectedWebServiceInformation } from 'containers/WebServiceEndPoint/selectors';
 
 import './style.scss';
 
@@ -116,7 +116,7 @@ WebServiceResponses.PropTypes = {
 const mapStateToProps = createStructuredSelector({
   selectedEndPoint: selectedEndPoint(),
   webServiceSelection: selectedWebService(),
-  webServiceInfo: getItems(),
+  webServiceInfo: selectedWebServiceInformation(),
 });
 
 function mapDispatchToProps(dispatch) {

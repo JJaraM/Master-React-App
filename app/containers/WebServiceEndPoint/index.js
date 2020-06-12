@@ -10,7 +10,7 @@ import reducer from './reducer';
 import saga from './saga';
 import messages from './messages';
 import { fetch, filter, collapse } from './actions';
-import { getItems, getFilterText, getCollapse } from './selectors';
+import { selectedWebServiceInformation, getFilterText, getCollapse } from './selectors';
 
 import SecondaryList from 'components/SecondaryList';
 import ListEndPoints from 'components/ListEndPoints';
@@ -74,7 +74,7 @@ export function WebServiceEndPoint({
 }
 
 const mapStateToProps = createStructuredSelector({
-  items: getItems(),
+  items: selectedWebServiceInformation(),
   filterText: getFilterText(),
   webServiceSelection: selectedWebService(),
   collapseView: getCollapse(),

@@ -10,6 +10,10 @@ export default function* init() {
 
 export function* executeCall() {
   const item = yield select(selectedWebService());
+
   let items = yield call(request, item.url);
+
+  console.log(items);
+
   yield put(fetchDone(items));
 }

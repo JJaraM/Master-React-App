@@ -19,7 +19,7 @@ function TableColumn(props) {
             <button
               type="button"
               value={column.id}
-              className="btn btn-primary btn-sm btn-lettuce"
+              className={`btn btn-primary btn-sm btn-lettuce ${column.className}`}
               onClick={() => column.action(rowId)}
             >
               {column.value}

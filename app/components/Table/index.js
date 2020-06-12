@@ -19,9 +19,11 @@ function Table(props) {
         <table className="table table-hover">
           <thead>
             <tr>
-              {headers.map(header => (
-                <th key={header.props.id}>{header}</th>
-              ))}
+              {headers.map(header => {
+                  const id = _.uniqueId("prefix-");
+                  return <th key={id}>{header}</th>
+                }
+              )}
             </tr>
           </thead>
           <tbody>

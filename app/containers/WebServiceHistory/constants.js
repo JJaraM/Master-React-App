@@ -1,0 +1,1 @@
+export const SELECTION = "app/WebServiceHistory/SELECTION";

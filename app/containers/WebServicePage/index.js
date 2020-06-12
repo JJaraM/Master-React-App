@@ -7,6 +7,7 @@ import { Switch, Route } from 'react-router-dom';
 import { useInjectSaga } from 'utils/injectSaga';
 import { useInjectReducer } from 'utils/injectReducer';
 import { FormattedMessage } from 'react-intl';
+import { Link } from 'react-router-dom';
 
 import reducer from './reducer';
 import saga from './saga';
@@ -23,6 +24,8 @@ import PageWrapper from 'components/PageWrapper';
 import WebServiceEndPoint from 'containers/WebServiceEndPoint';
 import WebServiceRequest from 'containers/WebServiceRequest';
 import WebServiceResponses from 'containers/WebServiceResponses';
+import WebServiceHistory from 'containers/WebServiceHistory';
+
 import { selectedEndPoint } from 'containers/ItemEndPoint/selectors';
 import { filterItems } from './utils';
 
@@ -43,7 +46,7 @@ export function WebServicePage({
     onFetch();
   }, []);
   
-
+  
   const filteredItems = collapseView ? [] : filterItems(items, filterText);
   let Header = () => <></>;
 
@@ -64,7 +67,7 @@ export function WebServicePage({
               
               </button>
               <ul className="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
-                <li><a className="option" href="#">View History</a></li>
+                <li><Link className="option" to="/dashboard/webservices/history">View History</Link></li>
                 <li><a className="option" href="#">Clear History</a></li>
                 <li><a className="option" href="#">Save</a></li>
                 <li><a className="option" href="#">Delete</a></li>
@@ -88,14 +91,15 @@ export function WebServicePage({
         />
         <ListWebService items={ filteredItems } />
 
-        <div className="next-menu-settings ">
 
+        {/* 
+        <div className="next-menu-settings ">
           <div className="next-menu-title non-collapse">
               Settings
               <div id="btn-add-language" className="fas fa-cog cog" role="button" ></div>
-              
           </div>
         </div>
+        */}
       </PrimaryList>
       <WebServiceEndPoint />
 
@@ -104,6 +108,7 @@ export function WebServicePage({
         <Switch>
           <Route path="/dashboard/webservices/request" component={ WebServiceRequest } />
           <Route path="/dashboard/webservices/responses" component={ WebServiceResponses } />
+          <Route path="/dashboard/webservices/history" component={ WebServiceHistory } />
         </Switch>
       </WebServicePageMenuRouter>
     </PageWrapper>

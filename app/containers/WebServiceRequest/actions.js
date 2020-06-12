@@ -1,4 +1,4 @@
-import { CHANGE, EXECUTE, RESPONSE, PAGE_LOAD } from './constants';
+import { CHANGE, EXECUTE, RESPONSE, PAGE_LOAD, HISTORY } from './constants';
 
 export function change(value, method, url, parameterName, parameterType) {
   return {
@@ -14,7 +14,7 @@ export function execute(method, url) {
   };
 }
 
-export function saveResponse(response, result, method, url, address, requestURL) {
+export function saveResponse(response, result, method, url, address, requestURL, date) {
   return {
     type: RESPONSE,
     response,
@@ -22,7 +22,21 @@ export function saveResponse(response, result, method, url, address, requestURL)
     method, 
     url,
     address,
-    requestURL
+    requestURL,
+    date
+  };
+}
+
+export function history(response, result, method, url, address, requestURL, date) {
+  return {
+    type: HISTORY,
+    response,
+    result,
+    method, 
+    url,
+    address,
+    requestURL,
+    date
   };
 }
 

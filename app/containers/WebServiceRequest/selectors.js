@@ -41,6 +41,12 @@ const selectedResponses = () =>
     substate => substate.responses,
   );
 
+const selectedHistory = () =>
+  createSelector(
+    selectorWebServiceRequest,
+    substate => substate.history,
+  );
+
 export { 
   selectorWebServiceRequest, 
   selectedItem,
@@ -48,5 +54,6 @@ export {
   selectUrl,
   selectedResponse,
   selectedResult,
-  selectedResponses
+  selectedResponses,
+  selectedHistory
 };

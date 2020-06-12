@@ -21,6 +21,7 @@ import TabGroup from 'components/TabGroup';
 import TabItem from 'components/TabItem';
 import TabGroupContent from 'components/TabGroupContent';
 import TabItemContent from 'components/TabItemContent';
+import HttpResponsePanel  from 'components/HttpResponsePanel';
 
 export function WebServiceRequest({
   selectedEndPoint,
@@ -39,7 +40,6 @@ export function WebServiceRequest({
     onLoad();
   });
 
-
   if (selectedEndPoint === undefined) {
       return (<></>);
   }
@@ -48,6 +48,8 @@ export function WebServiceRequest({
   let result = 'N/A';
   let url = 'N/A';
   let headers = 'N/A';
+  let statusCode = 'N/A';
+  let statusText = 'N/A';
 
   if (responses) {
     responseToRender = responses.filter(
@@ -60,7 +62,8 @@ export function WebServiceRequest({
   if (responseToRender) {
     result = responseToRender.result;
     url = responseToRender.requestURL;
-    headers = '';
+    statusCode = responseToRender.response.status;
+    statusText = responseToRender.response.statusText;
   }
 
   let CardHeader = () => (
@@ -146,22 +149,8 @@ export function WebServiceRequest({
               </div>
             </div>
           </div>
-
-
           <div className="col-sm-5">
-            <TabGroup>
-              <TabItem id="a-response" href="response"> Response </TabItem>
-              <TabItem id="a-headers" href="headers"> Headers </TabItem>
-            </TabGroup>
-            <TabGroupContent>
-              <TabItemContent id="response">  
-                <Content text={ result } />    
-              </TabItemContent>
-   
-              <TabItemContent id="headers">  
-                { headers }   
-              </TabItemContent>
-            </TabGroupContent>
+            <HttpResponsePanel result={ result } httpCode={ statusCode } httpReason={ statusText }/>
           </div>
         </div>
 
@@ -210,8 +199,6 @@ function mapDispatchToProps(dispatch) {
       if (requestMenuOption) {
         requestMenuOption.classList.add('active');
       }
-
-    
     },
     onChange: (value, method, url, parameterName, parameterType) => 
         dispatch(change(value, method, url, parameterName, parameterType)),
