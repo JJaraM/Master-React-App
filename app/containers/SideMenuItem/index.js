@@ -53,7 +53,7 @@ export function SideMenuItem(props) {
   const { idToRender } = props;
   const { sidebarBig } = props;
   const content = sidebarBig ? showBig(item, idToRender) : showSmall(item);
-  
+
   return (
     <SubMenuItem
       id={id}
@@ -81,6 +81,7 @@ const mapStateToProps = createStructuredSelector({
 function mapDispatchToProps(dispatch) {
   return {
     onExpand: evt => {
+      console.log(evt.currentTarget.id);
       evt.preventDefault();
       dispatch(collapse(evt.currentTarget.id));
     },

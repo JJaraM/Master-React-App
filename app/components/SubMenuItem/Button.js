@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 
 import './styles.scss';
 
@@ -18,14 +17,18 @@ function selectElement(id) {
 }
 
 function Button(props) {
-  const id = _.uniqueId("sub-menu-item-button-");
-  selectElement(id);
+  let id = props.id;
+
+  if (!id) {
+    id = _.uniqueId("sub-menu-item-button-");
+    selectElement(id);
+  }
 
   return (
-    <div key={ id } id={ id } onClick={ () => {
+    <div key={ id } id={ id } onClick={ (evt) => {
       selectElement(id);
       if (props.onClick) {
-        props.onClick();
+        props.onClick(evt);
       }
 
     } } className="sub-menu-item-btn">
@@ -37,6 +40,7 @@ function Button(props) {
 Button.propTypes = {
   to: PropTypes.string,
   onClick: PropTypes.func,
+  id: PropTypes.string,
 };
 
 export default Button;

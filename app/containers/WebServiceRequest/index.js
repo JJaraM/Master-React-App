@@ -47,7 +47,6 @@ export function WebServiceRequest({
   let responseToRender = {};
   let result = 'N/A';
   let url = 'N/A';
-  let headers = 'N/A';
   let statusCode = 'N/A';
   let statusText = 'N/A';
 
@@ -185,7 +184,6 @@ function mapDispatchToProps(dispatch) {
           item.classList.remove('active')
         });
       }
-      
     
       if (requestMenuOption && requestMenuOption.classList && !requestMenuOption.classList.contains('active')) {
         if (responseElement) {
