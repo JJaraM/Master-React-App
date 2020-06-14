@@ -181,7 +181,9 @@ function mapDispatchToProps(dispatch) {
       
       if (menuOption) {
         menuOption.childNodes.forEach(function(item){
-          item.classList.remove('active')
+          item.childNodes.forEach(function(subItem){
+            subItem.classList.remove('active')
+          });
         });
       }
     

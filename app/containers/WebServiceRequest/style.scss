@@ -1,16 +1,16 @@
 .card-header {
     &.input-panel {
-         font-weight: 700;
-         letter-spacing: .08em;
-         text-transform: uppercase;
-         background: var(--table-th-background);
-         margin-top: -14px;
-         color: var(--table-th-color);
-         border-top: var(--table-th-top-border);
-         border-bottom: var(--table-th-bottom-border);
-         font-size: 0.9rem;
+        font-weight: 700;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        background: var(--table-th-background);
+        margin-top: -14px;
+        color: var(--table-th-color);
+        border-top: var(--table-th-top-border);
+        border-bottom: var(--table-th-bottom-border);
+        font-size: 0.9rem;
     }
- }
+}
  
  .form-input {
      display: flex;
