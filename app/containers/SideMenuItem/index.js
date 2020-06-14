@@ -53,7 +53,7 @@ export function SideMenuItem(props) {
   const { idToRender } = props;
   const { sidebarBig } = props;
   const content = sidebarBig ? showBig(item, idToRender) : showSmall(item);
-
+  
   return (
     <SubMenuItem
       id={id}

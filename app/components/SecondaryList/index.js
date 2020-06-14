@@ -4,7 +4,6 @@ import Sidebar from '../Sidebar';
 import SkeletonLoading from '../SkeletonLoading';
 
 function SecondaryList(props) {
-
   let Container = () => (
     <SkeletonLoading lines={10} />
   );

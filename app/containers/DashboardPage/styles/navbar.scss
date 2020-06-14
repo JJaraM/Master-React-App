@@ -296,13 +296,10 @@ main .container-fluid {
 
 
 .next-menu {
-  //padding-left: 5px !important;
-  //padding-right: 5px !important;
-  background-color: #2f3136 !important;
-  //padding-top: 10px;
+  padding-left: 5px !important;
+  padding-right: 5px !important;
   height: 100px;
   overflow: auto;
-
 
   .plus {
     float: right;
@@ -319,17 +316,23 @@ main .container-fluid {
     min-width: 150px;
     background-color: var(--side-menu-1-background) !important;
 
-
+    .sub-menu-item-btn {
+      &:hover, &.active {
+        background: var(--side-menu-2-background-hover);
+      }
+    }
   }
-
+  
   &.items {
     width: 200px;
     min-width: 200px;
     background-color: var(--side-menu-2-background)  !important;
-  }
 
-  .search-container {
-    //padding: 10px 10px 10px 10px;
+    .sub-menu-item-btn {
+      &:hover, &.active {
+        background: var(--side-menu-1-background-hover);
+      }
+    }
   }
 
   .search {
@@ -403,13 +406,11 @@ main .container-fluid {
     padding: 10px 10px 10px 10px;
     cursor: pointer;
 
-    &:hover {
-      background: var(--side-menu-1-background-hover);
-      border-radius: 5px;
-    }
+   
+  }
 
-    &.selected {
-      background: var(--side-menu-1-background-hover);
+  .sub-menu-item-btn {
+    &:hover, &.active {
       border-radius: 5px;
     }
   }

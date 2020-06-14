@@ -9,6 +9,10 @@
 .item-name {
     padding-left: 10px;
     width: 85%;
+
+    .active {
+        background: var(--side-menu-1-background-hover);
+    }
 }
 
 .item-row-container {

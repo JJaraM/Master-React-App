@@ -8,7 +8,7 @@ function SubMenuItem(props) {
 
   return (
     <>
-      <Button onClick={onClick} id={id}>
+      <Button onClick={ onClick } id={id}>
         <li className="menu-item">
           {props.item}
           <SideMenuSub

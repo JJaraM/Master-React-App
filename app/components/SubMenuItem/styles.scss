@@ -1,0 +1,10 @@
+.sub-menu-item-btn {
+    background: inherit;
+    border: inherit;
+    width: 100%;
+    border: none;
+    padding: 1px;
+    &:focus {
+      outline: none;
+    }
+}
