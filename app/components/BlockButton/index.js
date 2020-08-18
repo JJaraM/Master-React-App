@@ -10,7 +10,7 @@ function BlockButton(props) {
   return (
     <button
       id={props.id}
-      value = { value }
+      value={value}
       onClick={evt => onClickAction(onClick, id, evt, fields)}
       type="submit"
       className={`btn btn-primary btn-big btn-${className}`}

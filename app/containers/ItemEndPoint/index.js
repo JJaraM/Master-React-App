@@ -16,13 +16,14 @@ export function ItemEndPoint({
   onFetch,
 }) {
   useInjectReducer({ key: 'itemEndPoint', reducer });
-  
+
   const items = Object.entries(item[1]).map(entry => {
     const method = entry[0];
     entry[1].url = item[0];
+    const buttonKey = method + '-' + entry[1].url;
 
     return (
-      <Button onClick={() => true}>
+     <Button key = {buttonKey} onClick={() => true}>
         <Link to="/dashboard/webservices/request" onClick={() => onFetch(entry)}>
           <div id={item.type} className={`row item`} key={item.type}>
             <div className={`method-type method-${method}`}>
@@ -37,7 +38,7 @@ export function ItemEndPoint({
     );
   });
 
-  return <> { items } </>;
+  return <> {items} </>;
 }
 
 ItemEndPoint.propTypes = {

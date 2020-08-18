@@ -24,7 +24,7 @@ export function* getMenuItems() {
 
 export function* changeTheme() {
   let userConfigurationTheme = localStorage.getItem('theme');
-  const defaultTheme = 'mnyama';
+  const defaultTheme = 'dark';
   if (
     userConfigurationTheme === null ||
     userConfigurationTheme === undefined ||
@@ -36,9 +36,16 @@ export function* changeTheme() {
   if (theme === undefined) {
     theme = themesData.themes[defaultTheme];
   }
+
   Object.keys(theme).forEach(key => {
     const cssKey = `--${key}`;
-    const cssValue = theme[key];
+    let cssValue = theme[key];
+
+    if (cssValue instanceof Object) {
+      cssValue = cssValue.value;
+    }
+
+    
     document.body.style.setProperty(cssKey, cssValue);
   });
 }

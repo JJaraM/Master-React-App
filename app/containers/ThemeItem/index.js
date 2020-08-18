@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { changeTheme } from 'containers/ThemePage/actions';
+import BlockButton from 'components/BlockButton';
 
 export function ThemeItem({ item, onChangeTheme }) {
   return (
@@ -34,14 +35,9 @@ export function ThemeItem({ item, onChangeTheme }) {
 
               <div className="col-sm-12">
                 <div className="theme-name text-center">
-                  <button
-                    value={item.name}
-                    type="submit"
-                    className="btn btn-primary btn-big btn-lettuce"
-                    onClick={onChangeTheme}
-                  >
+                  <BlockButton className="lettuce" value={item.name} onClick={onChangeTheme} >
                     Change
-                  </button>
+                  </BlockButton>
                 </div>
               </div>
             </div>
@@ -60,7 +56,7 @@ ThemeItem.propTypes = {
 function mapDispatchToProps(dispatch) {
   return {
     onChangeTheme: evt => {
-      if (evt !== undefined) {
+      if (evt) {
         localStorage.setItem('theme', evt.target.value);
         dispatch(changeTheme());
       }

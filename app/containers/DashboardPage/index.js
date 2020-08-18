@@ -31,7 +31,6 @@ import saga from './saga';
 import './styles/scrollbar.scss';
 import './styles/dashboard.scss';
 import './styles/checkbox.scss';
-import './styles/buttons.scss';
 import './styles/card.scss';
 import './styles/customPrism.scss';
 import './styles/form.scss';

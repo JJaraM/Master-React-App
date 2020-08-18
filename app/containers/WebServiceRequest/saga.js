@@ -7,7 +7,7 @@ import { selectedWebServiceInformation } from 'containers/WebServiceEndPoint/sel
 import request from 'utils/request';
 
 export default function* init() {
-  yield takeLatest(EXECUTE, execute);
+    yield takeLatest(EXECUTE, execute);
 }
 
 export function* execute() {
@@ -17,9 +17,9 @@ export function* execute() {
     const webService = yield select(selectedWebService());
     const webServiceInfo = yield select(selectedWebServiceInformation());
 
-    const item = selection.filter(x => 
+    const item = selection.filter(x =>
         x.method === method &&
-        x.url === url 
+        x.url === url
     );
 
     const queryValues = item.filter(x => x.parameterType === 'query')
@@ -29,8 +29,8 @@ export function* execute() {
     const basePath = webServiceInfo.basePath === '/' ? "" : webServiceInfo.basePath;
 
     let requestURL = scheme
-    + "://" + webServiceInfo.host + basePath + url + '?' + queryValues.join('&');
- 
+        + "://" + webServiceInfo.host + basePath + url + '?' + queryValues.join('&');
+
     if (pathVariables.length > 0) {
         pathVariables.forEach(x => {
             requestURL = requestURL.replace(`{${x.parameterName}}`, encodeURIComponent(x.value));
@@ -39,17 +39,25 @@ export function* execute() {
 
     const date = new Date();
     const response = yield call(fetch, requestURL, {
-        method: 'GET',
+        method: method.toUpperCase(),
         headers: {
-          'Content-Type': 'application/json',
+            'Content-Type': 'application/json',
         },
     });
 
-    const json = yield call([response, response.json]) ;
+    let json = {};
+    try {
+        json = yield call([response, response.json]);
+        yield put(history(response, json, method, url, webService.address, requestURL, date));
+        yield put(saveResponse(response, json, method, url, webService.address, requestURL, date));
+    } catch (ex) {
+        yield put(saveResponse(response, json, method, url, webService.address, requestURL, date));
+        console.log(response);
+        console.log(ex);
+    }
 
-    yield put(history(response, json, method, url, webService.address, requestURL, date));
-    yield put(saveResponse(response, json, method, url, webService.address, requestURL, date));
- 
+
+
 
 }
 

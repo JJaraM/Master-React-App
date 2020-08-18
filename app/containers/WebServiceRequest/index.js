@@ -1,5 +1,4 @@
 import React, { memo, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
@@ -7,7 +6,6 @@ import { selectedEndPoint } from 'containers/ItemEndPoint/selectors';
 import Card from 'components/Card';
 import CardBody from 'components/CardBody';
 import BlockButton from 'components/BlockButton';
-import Content from 'components/Content';
 import WebServiceRequestParameters from 'components/WebServiceRequestParameters';
 import { change, execute } from './actions';
 import { selectedWebService } from 'containers/ItemWebService/selectors';
@@ -21,7 +19,7 @@ import TabGroup from 'components/TabGroup';
 import TabItem from 'components/TabItem';
 import TabGroupContent from 'components/TabGroupContent';
 import TabItemContent from 'components/TabItemContent';
-import HttpResponsePanel  from 'components/HttpResponsePanel';
+import HttpResponsePanel from 'components/HttpResponsePanel';
 
 export function WebServiceRequest({
   selectedEndPoint,
@@ -33,15 +31,17 @@ export function WebServiceRequest({
   responses
 }) {
 
+  console.log('render');
+
   useInjectReducer({ key: 'webServiceRequest', reducer });
   useInjectSaga({ key: 'webServiceRequest', saga });
-
+  
   useEffect(() => {
     onLoad();
   });
 
   if (selectedEndPoint === undefined) {
-      return (<></>);
+    return (<></>);
   }
 
   let responseToRender = {};
@@ -52,10 +52,10 @@ export function WebServiceRequest({
 
   if (responses) {
     responseToRender = responses.filter(
-      x =>  x.method === selectedEndPoint[0] &&
-            x.address === webServiceSelection.address &&
-            x.url === selectedEndPoint[1].url
-    )[0]; 
+      x => x.method === selectedEndPoint[0] &&
+        x.address === webServiceSelection.address &&
+        x.url === selectedEndPoint[1].url
+    )[0];
   }
 
   if (responseToRender) {
@@ -95,14 +95,17 @@ export function WebServiceRequest({
     }
 
     return (
-      <div className="col-md-12 center">
-        <BlockButton id="btn-codeSnippet-save" className="lettuce" onClick={
-          () => onExecute(selectedEndPoint[0], selectedEndPoint[1].url)
-        }>
-          Send
-        </BlockButton>
-        <ClearButton />
-      </div>
+      <>
+        <div className="col-md-4 "></div>
+        <div className="col-md-8">
+          <BlockButton id="btn-codeSnippet-save" className="lettuce" onClick={
+            () => onExecute(selectedEndPoint[0], selectedEndPoint[1].url)
+          }>
+            Send
+          </BlockButton>
+          <ClearButton />
+        </div>
+      </>
     );
   }
 
@@ -111,54 +114,52 @@ export function WebServiceRequest({
   }
 
   return (
-      <>
-        <div className="row container-row">
-          <div className="col-sm-7">
-            <div className="row">
-              
-              <div className="col-sm-12">
-                <div className="container-panel">
-                  <Card>
-                    <CardHeader />
+    <>
+      <div className="row container-row">
+        <div className="col-sm-7">
+          <div className="row">
 
-                    <CardBody>
-                      <WebServiceRequestParameters 
-                        selectedItem = { selectedEndPoint } 
-                        selectedItemData = { selectedItemData }
-                        onChange = { onChange }
-                      />
-                      
-                      <div className="form-row ">
-                        <ButtonContainer />
-                      </div>
-                    </CardBody>
-                  </Card>
-                </div>
-              </div>
-
-              <div className="col-sm-12">
-                <TabGroup>
-                  <TabItem id="a-http-url" href="http-url"> Request </TabItem>
-                  <TabItem id="a-curl" href="curl"> Curl </TabItem>
-                </TabGroup>
-                <TabGroupContent>
-                  <TabItemContent id="http-url"> { url } </TabItemContent>
-                  <TabItemContent id="curl"> N/A </TabItemContent>
-                </TabGroupContent>
+            <div className="col-sm-12">
+              <div className="container-panel">
+                <Card>
+                  <CardHeader />
+                  <CardBody>
+                    <WebServiceRequestParameters
+                      selectedItem={selectedEndPoint}
+                      selectedItemData={selectedItemData}
+                      onChange={onChange}
+                    />
+                    <div className="form-row ">
+                      <ButtonContainer />
+                    </div>
+                  </CardBody>
+                </Card>
               </div>
             </div>
-          </div>
-          <div className="col-sm-5">
-            <HttpResponsePanel result={ result } httpCode={ statusCode } httpReason={ statusText }/>
+
+            <div className="col-sm-12">
+              <TabGroup>
+                <TabItem id="a-http-url" href="http-url"> Request </TabItem>
+                <TabItem id="a-curl" href="curl"> Curl </TabItem>
+              </TabGroup>
+              <TabGroupContent>
+                <TabItemContent id="http-url"> {url} </TabItemContent>
+                <TabItemContent id="curl"> N/A </TabItemContent>
+              </TabGroupContent>
+            </div>
           </div>
         </div>
+        <div className="col-sm-5">
+          <HttpResponsePanel result={result} httpCode={statusCode} httpReason={statusText} />
+        </div>
+      </div>
 
-      </>
+    </>
   );
 }
 
 WebServiceRequest.propTypes = {
-    
+
 };
 
 const mapStateToProps = createStructuredSelector({
@@ -173,35 +174,43 @@ function mapDispatchToProps(dispatch) {
     onExecute: (method, url) => {
       dispatch(execute(method, url));
     },
-    onLoad:() => {
+    onLoad: () => {
+      console.log('onLoad');
+
       const responseElement = document.getElementById("a-response");
       const httpResponseElement = document.getElementById("a-http-url");
       const requestMenuOption = document.getElementById("request-menu-option");
+
+      if (requestMenuOption && requestMenuOption.classList && !requestMenuOption.classList.contains('active')) {
+        if (responseElement) {
+          console.log('click');
+          responseElement.click();
+        }
+        if (httpResponseElement)
+          httpResponseElement.click();
+      }
+
       const menuOption = document.getElementById("webServicePageMenu");
-      
       if (menuOption) {
-        menuOption.childNodes.forEach(function(item){
-          item.childNodes.forEach(function(subItem){
+        menuOption.childNodes.forEach(function (item) {
+          item.childNodes.forEach(function (subItem) {
             subItem.classList.remove('active')
           });
         });
-      }
-    
-      if (requestMenuOption && requestMenuOption.classList && !requestMenuOption.classList.contains('active')) {
-        if (responseElement) {
-          responseElement.click();
-        }
-        if (httpResponseElement) {
-          httpResponseElement.click();
-        }
       }
 
       if (requestMenuOption) {
         requestMenuOption.classList.add('active');
       }
+
+      const el = document.getElementById('menu-top-dropdown-label');
+      if (el) {
+        el.innerHTML = '';
+        el.classList.remove('label-current-selection');
+      }
     },
-    onChange: (value, method, url, parameterName, parameterType) => 
-        dispatch(change(value, method, url, parameterName, parameterType)),
+    onChange: (value, method, url, parameterName, parameterType) =>
+      dispatch(change(value, method, url, parameterName, parameterType)),
     dispatch,
   }
 }

@@ -15,11 +15,10 @@ const onClickAction = function onClickAction(func, id, evt, fields) {
   }
 
   func(evt, fields);
-  
+
   if (button) {
     button.classList.remove(className);
   }
- 
 };
 
 export { onClickAction };

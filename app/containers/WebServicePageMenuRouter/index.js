@@ -1,26 +1,13 @@
-import React, { memo, useEffect } from 'react';
+import React, { memo } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
-
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
-import { useInjectSaga } from 'utils/injectSaga';
-import { useInjectReducer } from 'utils/injectReducer';
-import { FormattedMessage } from 'react-intl';
 import { Link } from 'react-router-dom';
-
-import MenuHeader from 'components/MenuHeader';
-import PrimaryList from 'components/PrimaryList';
-import ListWebService from 'components/ListWebService';
-import PageWrapper from 'components/PageWrapper';
-
-import WebServiceEndPoint from 'containers/WebServiceEndPoint';
 import WebServiceRequest from 'containers/WebServiceRequest';
 import WebServiceResponses from 'containers/WebServiceResponses';
 import WebServiceHistory from 'containers/WebServiceHistory';
-
 import { selectedEndPoint } from 'containers/ItemEndPoint/selectors';
-
 import ContentWrapper from 'components/ContentWrapper';
 import WebServicePageMenu  from 'components/WebServicePageMenu';
 
@@ -60,19 +47,17 @@ export function WebServicePageMenuRouter({
   }
   
   return (
-    <Router>
-        <div className="main-panel small">
-            <ContentWrapper>
-                <WebServicePageMenu selectedItem={selectedItem} />
-                <Header />
-                <Switch>
-                    <Route path="/dashboard/webservices/request" component={ WebServiceRequest } />
-                    <Route path="/dashboard/webservices/responses" component={ WebServiceResponses } />
-                    <Route path="/dashboard/webservices/history" component={ WebServiceHistory } />
-                </Switch>
-            </ContentWrapper>
-        </div>
-    </Router>
+    <div className="main-panel small">
+      <ContentWrapper>
+          <WebServicePageMenu selectedItem={selectedItem} />
+          <Header />
+          <Switch>
+              <Route path="/dashboard/webservices/request" component={ WebServiceRequest } />
+              <Route path="/dashboard/webservices/responses" component={ WebServiceResponses } />
+              <Route path="/dashboard/webservices/history" component={ WebServiceHistory } />
+          </Switch>
+      </ContentWrapper>
+  </div>
   );
 }
 

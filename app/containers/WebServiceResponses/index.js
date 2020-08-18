@@ -45,9 +45,6 @@ export function WebServiceResponses({
 
       if (item[1].schema) {
         ref = item[1].schema.$ref.replace('#/definitions/', '');
-        //console.log(ref);
-        //console.log(webServiceInfo.definitions[ref]);
-        //console.log(webServiceInfo.definitions[ref].properties);
 
         if (webServiceInfo.definitions[ref] && webServiceInfo.definitions[ref].properties) {
           properties = Object.entries(webServiceInfo.definitions[ref].properties).map(property => {
@@ -121,7 +118,10 @@ const mapStateToProps = createStructuredSelector({
 
 function mapDispatchToProps(dispatch) {
   return {
+
     onLoad:(code) => {
+
+
       const responseElement = document.getElementById("a-response-" + code);
       const requestMenuOption = document.getElementById("responses-menu-option");
       const menuOption = document.getElementById("webServicePageMenu");
@@ -137,6 +137,11 @@ function mapDispatchToProps(dispatch) {
       }
       if (requestMenuOption) {
         requestMenuOption.classList.add('active');
+      }
+      const el = document.getElementById('menu-top-dropdown-label');
+      if (el) {
+        el.innerHTML = ''; 
+        el.classList.remove('label-current-selection');
       }
     },
     dispatch,
