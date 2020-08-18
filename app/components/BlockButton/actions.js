@@ -10,9 +10,16 @@
 const onClickAction = function onClickAction(func, id, evt, fields) {
   const className = 'btn-disable';
   const button = document.getElementById(id);
-  button.classList.add(className);
+  if (button) {
+    button.classList.add(className);
+  }
+
   func(evt, fields);
-  button.classList.remove(className);
+  
+  if (button) {
+    button.classList.remove(className);
+  }
+ 
 };
 
 export { onClickAction };

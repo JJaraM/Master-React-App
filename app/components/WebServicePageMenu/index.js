@@ -6,12 +6,12 @@ function WebServicePageMenu({ selectedItem }) {
     let List = () => (
         <ul id='webServicePageMenu' className="nav nav-tabs">
             <li className="nav-item">
-                <Link id='request-menu-option' className="nav-link" to="/dashboard/webservices/request">
+                <Link id='request-menu-option' className="nav-link" to="request">
                     Request
                 </Link>
             </li>
             <li className="nav-item">
-                <Link id='responses-menu-option' className="nav-link" to="/dashboard/webservices/responses">
+                <Link id='responses-menu-option' className="nav-link" to="responses">
                     Responses
                 </Link>
             </li>

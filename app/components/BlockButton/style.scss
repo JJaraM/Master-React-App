@@ -1,0 +1,66 @@
+.btn-tomato {
+  border-color: #ff5a6e;
+  background: #ff5a6e;
+  &:hover,
+  &:not(:disabled):not(.disabled).active,
+  &:not(:disabled):not(.disabled):active {
+    background-color: #ff465d;
+  }
+}
+
+.btn-lettuce {
+  border-color: #00e08b;
+  background-color: #00e08b;
+  &:hover,
+  &:not(:disabled):not(.disabled).active,
+  &:not(:disabled):not(.disabled):active {
+    background-color: #00c77b;
+  }
+}
+
+.btn-watching {
+  background-color: #7289da;
+  background-color: #7289da;
+  &:hover,
+  &:not(:disabled):not(.disabled).active,
+  &:not(:disabled):not(.disabled):active {
+    background-color: #5b6dae;
+  }
+}
+
+.btn-sky {
+  border-color: #2abbfe;
+  background-color: #2abbfe;
+  &:hover,
+  &:not(:disabled):not(.disabled).active,
+  &:not(:disabled):not(.disabled):active {
+    background-color: #0199e0;
+  }
+}
+
+.btn-disable {
+  border-color: #00e08b !important;
+  background-color: #14b372 !important;
+  cursor: wait !important;
+  opacity: 0.9 !important;
+}
+
+.btn-big {
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  font-size: 1.05rem;
+  border: none;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 320px) {
+  .btn-big {
+    padding: 0.275rem 0.65rem;
+  }
+}
+
+div[role="button"] {
+  cursor: pointer;
+  outline: none;
+}

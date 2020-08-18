@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import './style.scss';
+
 function WebServiceRequestParameters(props) {
     const { selectedItem, selectedItemData } = props;
    
@@ -13,7 +15,7 @@ function WebServiceRequestParameters(props) {
     if (!parameters) {
         return <></>;
     }
-    
+  
     const items = parameters.map(parameter => {
         let value = '';
 
@@ -46,7 +48,7 @@ function WebServiceRequestParameters(props) {
 
         let Format = () => <></>;
         if (parameter.format) {
-            Format = () => <div className="metadata">{parameter.type}</div>
+            Format = () => <div className="parameter format">{parameter.format}</div>
         }
 
         let Description = () => <></>;
@@ -67,6 +69,11 @@ function WebServiceRequestParameters(props) {
                         </label>
                         <Required />
                     </div>
+
+                    <div className="metadata">
+                        { parameter.in }
+                    </div>
+             
                     <DataType />
                     <Format />
                 </div>

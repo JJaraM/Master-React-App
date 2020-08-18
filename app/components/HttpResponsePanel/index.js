@@ -32,9 +32,9 @@ function HttpResponsePanel(props) {
 }
 
 HttpResponsePanel.propTypes = {
-  httpCode: PropTypes.string,
-  httpReason: PropTypes.string,
-  result: PropTypes.object,
+  httpCode: PropTypes.any,
+  httpReason: PropTypes.any,
+  result: PropTypes.any,
 };
 
 export default HttpResponsePanel;
