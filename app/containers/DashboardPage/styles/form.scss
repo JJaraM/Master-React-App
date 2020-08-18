@@ -1,12 +1,12 @@
 .form-control {
-  background-color: var(--form-control-background);
+  background-color: var(--primary-color);
   border: var(--form-control-border);
   color: var(--form-control-color);
 
 }
 
 .form-control:focus {
-  background-color: var(--form-control-background-hover);
+  background-color: var(--primary-color-hover);
   border: var(--form-control-border);
   color: var(--form-control-color);
   outline: none;

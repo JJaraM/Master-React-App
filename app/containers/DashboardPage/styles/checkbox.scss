@@ -26,13 +26,13 @@
   left: 0;
   height: 16px;
   width: 16px;
-  background-color: var(--form-control-background);
+  background-color: var(--primary-color);
   border: var(--form-control-border);
 }
 
 /* On mouse-over, add a grey background color */
 .container:hover input ~ .checkmark {
-  background-color: var(--form-control-background-hover);
+  background-color: var(--primary-color-hover);
 }
 
 /* When the checkbox is checked, add a blue background */

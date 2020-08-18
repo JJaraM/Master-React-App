@@ -1,5 +1,5 @@
-import light from './masakali';
-import dark from './mnyama';
+import light from './light';
+import dark from './dark';
 
 export default {
   themes: {

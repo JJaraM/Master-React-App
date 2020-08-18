@@ -76,7 +76,7 @@
 }
 
 body {
-  background: var(--body-background) !important;
+  background: var(--primary-color) !important;
   font-family: sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -232,4 +232,14 @@ a:hover {
 
 .m-b-30 {
   margin-bottom: 30px;
+}
+
+
+
+input[type=checkbox] {
+  cursor: pointer;
+}
+
+.lbl-exam {
+  padding-left: 5px;
 }
